@@ -1,0 +1,37 @@
+[
+    {
+        "id": "0",
+        "client": "Head of Translational Medicine",
+        "position": "",
+        "company": "mid-size global biopharmaceutical client",
+        "quote": "It is a pleasure to work with Vindhya biosciences! We partner with them to use cutting-edge data science approaches to analyze large multi-modal clinical -omics datasets from interventional clinical trials. The Vindhya team is very communicative, receptive, knowledgeable and consistently available for questions and to discuss our projects. It is easy to explain what we need and get thoughtful input and solutions and outputs per agreed on timelines."
+    },
+    {
+        "id": "1",
+        "client": "Dr. Vasudeo Badarinarayanan",
+        "position": "Head of Biology",
+        "company": "Eloxx Pharmaceuticals",
+        "quote": "We had a great time working with Vindhya Data Science. The team is very engaged in our projects and can tackle preclinical/translational projects with great expertise. The machine learning models that they built showed very good performance that moved our project forward. In addition, we found the shiny app that they built for visualizing our data to be very useful to inspect the data and develop hypotheses. We were able to discuss complex projects with ease - they understood the drug discovery context very well due to their hands-on experience in the field."
+    },
+    {
+        "id": "2",
+        "client": "Director of drug discovery",
+        "position": "",
+        "company": "Biopharma company",
+        "quote": "We have worked with Vindhya data Science for numerous projects including RNAseq analysis of preclinical and clinical samples. Vindhya provides exceptional expertise and enthusiasm. Their personnel seamlessly integrate as part of our team to understand key questions and deliver decision-driving data."
+    },
+    {
+        "id": "3",
+        "client": "Dr. Kathryn Beckermann",
+        "position": "Kidney cancer oncologist and PI",
+        "company": "Vanderbilt University Medical Center",
+        "quote": "The bioinformatics team at Vindhya is awesome! Our work in kidney cancer has moved along nicely thanks to the contributions of the Vindhya data scientists' work in the OPTIC RCC trial, genomics projects and spatial biology. We found that they pay attention to the details of the patient's genomic data, imaging data and metadata yielding high quality results. We look forward to a long-term relationship with them in this important and exciting area of research."
+    },
+    {
+        "id": "4",
+        "client": "VP of Discovery",
+        "position": "",
+        "company": "a small biotechnology company",
+        "quote": "Instead of building up a bioinformatics group inside our startup, we partnered with Vindhya Data Science on two computation-heavy types of projects. We were thrilled by the level of expertise and attention to detail from the VDS scientists, who built the software we needed to our exact specifications. They remained engaged, responsive, and efficient through several revisions and changes in specifications. Thanks to our collaboration with VDS, we find ourselves well in front of our field in both areas, neither of which have been addressed by commercial software packages."
+    }
+]

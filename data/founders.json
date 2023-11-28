@@ -1,0 +1,24 @@
+[
+        {
+            "id": 0,
+            "name": "N R Nirmala, Ph.D.",
+            "shortName": "Nirmala",
+            "email": "nirmala@vindhyadatascience.com",
+            "title": "Co-founder & CEO",
+            "tagline": "Leader in bioinformatics and drug discovery striving to improve healthcare",
+            "experience": "30 years at Novartis/Tufts Medical Center",
+            "expertise": "Biomarker Discovery, Drug Repurposing, Real World Evidence, Research Strategy & Business Development",
+            "bio": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat quidem porro repudiandae unde est non dolorum sequi. Molestias similique, libero vel harum porro ipsum enim. Molestiae ex fuga dolore totam."
+        },
+        {
+            "id": 1,
+            "name": "Anupama Reddy, Ph.D.",
+            "shortName": "Anupama",
+            "email": "anupama@vindhyadatascience.com",
+            "title": "Co-founder & COO",
+            "tagline": "Computational biologist passionate about decoding genomes to target diseases",
+            "experience": "12 years at Novartis/Duke University",
+            "expertise": "Machine Learning, Genomics, Cancer Biology, Image Analysis, Integrative Analysis, Translational Research",
+            "bio": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat quidem porro repudiandae unde est non dolorum sequi. Molestias similique, libero vel harum porro ipsum enim. Molestiae ex fuga dolore totam."
+        }
+]

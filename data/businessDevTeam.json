@@ -1,0 +1,24 @@
+[
+        {
+            "id": 0,
+            "name": "Neha Patel, Ph.D.",
+            "shortName": "Neha",
+            "email": "neha@vindhyadatascience.com",
+            "title": "Business Development",
+            "tagline": "",
+            "experience": "20 years at Organon, Novartis, GSK",
+            "expertise": "Drug & technology development (all phases), Strategy & Business development, R&D leadership",
+            "bio": ""
+        },
+        {
+            "id": 1,
+            "name": "Booma Yandava",
+            "shortName": "Booma",
+            "email": "booma@vindhyadatascience.com",
+            "title": "Business Development",
+            "tagline": "",
+            "experience": "15 years at Samyang, Sanofi, Ultragenyx",
+            "expertise": "Drug development, Early-stage discovery, Transaction services, Licensing, Alliance management, Corporate strategy",
+            "bio": ""
+        }
+]
