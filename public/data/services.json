@@ -1,0 +1,38 @@
+[
+    { 
+            "id": 1,
+            "title": "Drug Discovery",
+            "content": [
+                "Drug target ID and characterization",
+                "Biomarker discovery for patient stratification",
+                "Identification of resistance mechanisms",
+                "Analysis of drug combination data",
+                "Machine learning and statistical association testing",
+                "Analysis of high-throughput screens (CRISPR, RNAi, drug perturbation)",
+                "Image analysis of histology slides to identify biomarkers"
+        ]
+    },
+    {
+            "id": 2,
+            "title": "Genomic Analyses",
+            "content": [
+               "Analysis of public domain data",
+               "Integration of multiple 'omics data",
+               "Analysis of RNA-seq from bulk and single cell samples",
+               "Identification of variants (SNPs, structural, CN) based on DNA-seq",
+               "Analysis of immune repertoire sequencing (B/T cells)",
+               "Analysis of cell-free DNA for estimating tumor fraction"
+        ]
+    },
+    {
+            "id": 3,
+            "title": "Software Development",
+            "content": [
+                "Development of cloud-based infrastructure (Google cloud, AWS)",
+                "Development of pipelines",
+                "Data organization in databases",
+                "Development of web-based interfaces for data visualization. e.g., Shiny app",
+                "Development and deployment of a  machine learning platform (PrismML) for genomics"
+        ]
+    }
+]

@@ -1,0 +1,108 @@
+@import 'variables'; // @import '@picocss/pico/scss/pico'; is in variables
+
+// Override pico css light and dark theme variables
+[data-theme=light],
+:root:not([data-theme=dark]) {
+    --background-color: #{$white};
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1 {
+    font-size: 3.2em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    --font-weight: 400 !important;
+}
+
+.border-bar {
+    background: $vds-gradient;
+    height: 0.25rem;
+    width: 100%;
+}
+
+.border-bar-reverse {
+    background: $vds-gradient-rev;
+    height: 0.25rem;
+    width: 100%;
+}
+
+/* Global CSS variables */
+:root {
+    --spacing-company: 3rem;
+    --font-weight: 400;
+    --border-radius: 10px;
+    --font-family: 'Source Sans Pro', sans-serif !important;
+}
+
+/* Typography */
+h2,
+h3,
+hgroup> :last-child {
+    font-size: 2em;
+    font-weight: 400;
+    color: var(--h5-color);
+}
+
+
+small {
+    color: var(--muted-color);
+}
+
+header,
+footer {
+    padding: var(--spacing-company) 0;
+}
+
+header hgroup> :last-child {
+    color: var(--h3-color);
+}
+
+header hgroup {
+    margin-bottom: var(--spacing-company);
+}
+
+footer {
+    background-color: black;
+}
+
+footer>div>small,
+p>small {
+    color: white;
+}
+
+footer>div>small>a {
+    color: white;
+    text-decoration: underline;
+}
+
+.alt-section {
+    // background-color: #1a1c2c;
+    background-color: $vds-primary-1;
+    padding: 40px 0px 40px 0px;
+    margin-bottom: 40px;
+}
+
+.alt-section * {
+    color: white;
+}
+.alt-section * hgroup *:last-child {
+    color: rgb(196, 195, 195);
+}
+
+.alt-section > .container {
+    margin-bottom: 0px;
+}
+
+.alt-section > .container > hgroup {
+    margin-top: 38px
+}
+

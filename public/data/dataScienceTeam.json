@@ -1,0 +1,68 @@
+[
+        {
+            "id": 0,
+            "name": "Adnan Derti, Ph.D.",
+            "shortName": "Adnan",
+            "email": "adnan@vindhyadatascience.com",
+            "title": "Senior Data Scientist",
+            "tagline": "Computational biologist devoted to oncology",
+            "experience": "15 years at Novartis, Merck, Gritstone",
+            "expertise": "Drug Discovery, Genomics, Proteomics, Complex Variants, Cancer Biology, Biomarker Identification",
+            "bio": ""
+        },
+        {
+            "id": 1,
+            "name": "Alex Nesta, Ph.D.",
+            "shortName": "Alex",
+            "email": "alex@vindhyadatascience.com",
+            "title": "Data Scientist",
+            "tagline": "",
+            "experience": "6 years at Univ. Conn, Jackson Lab",
+            "expertise": "Genetics, RNA biology, Cancer Biology, Alternative Splicing, Structural Variation, Neoantigen Discovery",
+            "bio": ""
+        },
+        {
+            "id": 2,
+            "name": "Jared Brewer, Ph.D.",
+            "shortName": "Jared",
+            "email": "jared@vindhyadatascience.com",
+            "title": "Data Scientist",
+            "tagline": "Experienced immunologist applying bioinformatics approaches to oncology",
+            "experience": "8+ years of experience studying microbiology and immunology, 5+ years in bioinformatics and computational biology",
+            "expertise": "Spatial biology, image analysis, RNA-seq, single-cell technologies, immunoprofiling, database mining",
+            "bio": "Jared comes from an experimental biology background studying the intersection between bacterial pathogenesis, innate immune signaling, and cell biological  responses in tuberculosis infection, having taken a multimodal approach to studying these complex phenomena; at Vindhya, he has applied the computational skills developed during these studies to immuno-oncology, helping to identify biomarkers both from RNA-seq and scRNA-seq approaches as well as spatial profiling, including spatial proteomics."
+        },
+        {
+            "id": 3,
+            "name": "Cara Abecunas, Ph.D.",
+            "shortName": "Cara",
+            "email": "cara@vindhyadatascience.com",
+            "title": "Data Scientist",
+            "tagline": "Cancer biologist adept in computational methods, systems pharmacology, bioinformatics, and data science, focused on pinpointing effective drugs and targets in oncology.",
+            "experience": "6 years at University of Michigan and University of Virginia",
+            "expertise": "Drug Discovery, Quantitative Pharmacology, Genomics, Cancer Biology, Multiplex IF Microscopy/Quantitative Image Analysis, Machine Learning and Statistical Modeling",
+            "bio": "Cara holds a PhD in computational biology from the University of Michigan, specializing in systems pharmacology for identifying cancer vulnerabilities. With expertise in machine learning, bioinformatics, and quantitative pharmacology, she bridges experimental and computational domains, crafting effective designs and understanding data intricacies. At Vindhya, Cara contributes to diverse projects, utilizing her skills in high-throughput multiplexed imaging, single-cell analysis, and statistical modeling. She has also pioneered a successful machine learning framework, integrating regression, classification, and patient survival models across multiple projects at Vindhya."
+        },
+        {
+            "id": 4,
+            "name": "Eric Davis, Ph.D.",
+            "shortName": "Eric",
+            "email": "eric@vindhyadatascience.com",
+            "title": "Data Engineer",
+            "tagline": "Bioinformatics Scientist and Software Engineer",
+            "experience": "8 years at UNC-Chapel Hill",
+            "expertise": "Genomics, 3D chromatin structure, Software development, Pipeline engineering, Interactive data visualization, Reproducible research",
+            "bio": "Eric holds a Ph.D. in Bioinformatics and Computational Biology from UNC-Chapel Hill where he studied how DNA loops regulate gene transcription in human development and disease. In addition to his Bioinformatics knowledge, Eric is a full-stack software developer. He has built Bioconductor packages, R Shiny web applications, interactive data visualization dashboards, and consulted as a web developer. Eric is passionate about reproducible research, using technology like Docker/Singularity along with Snakemake/Nextflow to build and execute bioinformatic pipelines on HPC systems and in the cloud. At Vindhya, Eric has helped clients build high-quality software packages and bolster their reproducible research infrastructure."
+        },
+        {
+            "id": 5,
+            "name": "Sarah Dexheimer",
+            "shortName": "Sarah",
+            "email": "sarah@vindhyadatascience.com",
+            "title": "Data Engineer",
+            "tagline": "",
+            "experience": "",
+            "expertise": "",
+            "bio": ""
+        }
+]

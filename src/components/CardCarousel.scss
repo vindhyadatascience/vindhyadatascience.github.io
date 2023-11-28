@@ -1,0 +1,93 @@
+@import '../variables';
+
+.swiper-container {
+    width: 100%;
+    padding: 0px 125px;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    padding: 0px
+}
+
+.card {
+    cursor: grab;
+    border-radius: 10px;
+    box-shadow: rgba(0,0,0,0.1) 0px 12px 24px;  
+    padding: 20px;
+} 
+
+[data-theme=dark],
+.card {  
+    border: none;
+}
+
+[data-theme=light],
+:root:not([data-theme=dark])
+.card {
+    border: 1px solid #ccc;
+}
+
+.card > h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $vds-secondary-2;
+    margin: 10px 20px;
+}
+
+.card > ul {
+    font-size: large;
+}
+
+.swiper-slide-next, .swiper-slide-prev {
+    opacity: 0.5;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    background-color: $vds-secondary-2;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.swiper-button-next:after, .swiper-button-prev:after {
+    font-size: 14px;
+    font-weight: 800;
+    color: white;
+}
+
+.swiper-button-next:after {
+    content: "next"; 
+}
+
+.swiper-button-prev:after {
+    content: "prev";
+}
+
+@media only screen and (max-width: 800px) {
+    .swiper-button-next, .swiper-button-prev {
+        display: none;
+    }
+
+    .swiper-container {
+        width: 100%;
+        padding: 0px;
+    }
+}
+
+.bullet {
+    list-style: none;
+    text-indent: -2em;
+}
+.bullet:before {
+    content: "✓";
+    font-size: 20px;
+    font-weight: 700;
+    padding-right: 1em;
+    color: $vds-secondary-2;
+}
+
+.card > ul {
+    padding-left: 3em;
+}

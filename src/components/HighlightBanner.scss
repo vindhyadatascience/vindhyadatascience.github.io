@@ -1,0 +1,49 @@
+@import '../variables';
+
+.highlight-banner {
+    background-color: $vds-primary-1;
+    padding: 20px 40px;
+}
+
+.banner-grid {
+    display: grid;
+    grid-template-columns: 4fr 4fr 1fr 2fr !important;
+    column-gap: 1rem;
+    align-items: center;
+}
+
+.divider {
+    border-right: 1px solid $vds-secondary-2;
+    height: 100%;
+    max-width: 10px;
+    justify-self: center;
+}
+
+.highlight-banner > *span {
+    color: white;
+    font-size: large;
+}
+
+.centered-spans {
+    text-align: center;
+    align-items: center;
+}
+
+
+
+@media only screen and (max-width: 800px) {
+    .banner-grid {
+        grid-template-columns: 1fr !important;
+        
+    }
+    
+    .divider {
+        display: none;
+    }
+
+    .highlight-banner > *span {
+        text-align: center;
+        padding: 10px;
+    }
+
+}

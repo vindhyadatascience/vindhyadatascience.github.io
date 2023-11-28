@@ -1,0 +1,23 @@
+
+
+// Vindhya colors
+$vds-primary-1: #232d68;
+$vds-primary-2: #542f83;
+$vds-primary-3: #b53694;
+$vds-secondary-1: #5cb8e6;
+$vds-secondary-2: #007eb0;
+$vds-gradient: linear-gradient(to right, $vds-primary-1, $vds-primary-2, $vds-primary-3);
+$vds-gradient-rev: linear-gradient(to right, $vds-primary-3, $vds-primary-2, $vds-primary-1);
+
+// @use '@picocss/pico/scss/pico' with (
+//     $primary-500: $vds-primary-3,
+//     $primary-600: $vds-primary-3,
+//     $primary-700: $vds-primary-3
+// );
+
+// $primary-500: $vds-primary-3;
+// $primary-600: $vds-primary-3;
+// $primary-700: $vds-primary-3;
+
+
+@import '@picocss/pico/scss/pico';

@@ -1,0 +1,51 @@
+@import '../variables';
+
+.hero {
+    background-color: #1b1d2c; //#394046;
+    // clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    background-image: url('../public/banner_dark.svg');
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0 10px 20px -20px black;
+}
+
+// Overrides for light theme
+.hero-light {
+    background-color: #FFFFFF;
+    background-image: url('../public/banner_light.svg');
+}
+
+#root>div.hero-light>header>hgroup>* {
+    color: #000000;
+}
+
+#root>div.hero-light>nav>ul:nth-child(1)>li>span {
+    color: #000000;
+}
+
+#hero-section>header>hgroup>h2 {
+    font-size: 2em;
+    font-weight: 400;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.gradient-text {
+    background: $vds-gradient;
+    filter: brightness(2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 400;
+    font-size: 3.2em;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.theme-switcher {
+    vertical-align: bottom;
+    font-size: 18 !important;
+}
+
+.nav-title-text {
+    width: 50px;
+    margin-right: 10px;
+}

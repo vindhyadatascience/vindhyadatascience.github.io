@@ -1,0 +1,67 @@
+$cardWidth: 175px;
+
+.profile-div {
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.profile-img {
+    max-width: $cardWidth;
+    border-radius: 50%;
+}
+
+.icon {
+    vertical-align: bottom;
+    font-size: 18 !important;
+}
+
+.container:hover .overlay {
+    opacity: 1;
+}
+
+.member-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax($cardWidth, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.details-img {
+    border-radius: 50%;
+    margin: 5px;
+    max-height: 400px;
+    justify-self: center;
+}
+
+.about {
+    background-color: rgb(0, 0, 0, 0.75);
+    overflow-y: auto;
+}
+
+.about-inner {
+    max-height: 90vh;
+}
+
+.about-back-btn {
+    float: right;
+    max-width: 125px;
+}
+
+.hover-div {
+    position: absolute;
+    width: $cardWidth;
+    height: $cardWidth;
+    opacity: 0.7;
+    background-color: black;
+    border-radius: 50%;
+    top: 0px;
+    left: calc(50% - $cardWidth/2);
+    display: flex;
+    pointer-events: none;
+}
+
+.hover-text {
+    margin: auto;
+}

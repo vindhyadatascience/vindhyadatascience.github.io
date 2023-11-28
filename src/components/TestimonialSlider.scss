@@ -1,0 +1,19 @@
+@import '../variables';
+
+.navigation {
+    height: calc(100% - 57px); //57 is margin on quote
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.navigation:hover {
+    background-color: rgba($vds-secondary-1, 0.2);
+}
+
+.quote {
+    padding-bottom: 10px;
+    transition-duration: 1s;
+    border-radius: 5px;
+}
