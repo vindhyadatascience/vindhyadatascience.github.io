@@ -2,7 +2,7 @@
 import "./Hero.scss"
 
 // Symbols & images
-import symbol from '../../public/VDS-Symbol-Color-CMYK.svg'
+import symbol from '../../public/img/VDS-Symbol-Color-CMYK.svg'
 
 // Components
 import RoundedButton from './RoundedButton'
