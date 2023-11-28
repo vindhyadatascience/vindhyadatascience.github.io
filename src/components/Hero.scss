@@ -3,7 +3,7 @@
 .hero {
     background-color: #1b1d2c; //#394046;
     // clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
-    background-image: url('../public/img/banner_dark.svg');
+    background-image: url('/img/banner_dark.svg');
     background-position: center;
     background-size: cover;
     box-shadow: 0 10px 20px -20px black;
@@ -12,7 +12,7 @@
 // Overrides for light theme
 .hero-light {
     background-color: #FFFFFF;
-    background-image: url('../public/img/banner_light.svg');
+    background-image: url('/img/banner_light.svg');
 }
 
 #root>div.hero-light>header>hgroup>* {

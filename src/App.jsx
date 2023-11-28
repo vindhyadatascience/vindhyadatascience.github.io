@@ -2,7 +2,7 @@
 import './App.scss'
 
 // Symbols & images
-import whiteLogo from '../public/img/VDS-FullLogo-White-CMYK.svg'
+import whiteLogo from '/img/VDS-FullLogo-White-CMYK.svg'
 
 // Components
 import Hero from './components/Hero'
