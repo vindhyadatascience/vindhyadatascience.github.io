@@ -56,6 +56,17 @@
         },
         {
             "id": 5,
+            "name": "Courtney Luterbach",
+            "shortName": "Courtney",
+            "email": "courtney@vindhyadatascience.com",
+            "title": "Data Scientist",
+            "tagline": "",
+            "experience": "",
+            "expertise": "",
+            "bio": ""
+        },
+        {
+            "id": 6,
             "name": "Sarah Dexheimer",
             "shortName": "Sarah",
             "email": "sarah@vindhyadatascience.com",
