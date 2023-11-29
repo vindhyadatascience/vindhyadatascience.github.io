@@ -56,14 +56,14 @@
         },
         {
             "id": 5,
-            "name": "Courtney Luterbach",
+            "name": "Courtney Luterbach, Ph.D., M.S.",
             "shortName": "Courtney",
             "email": "courtney@vindhyadatascience.com",
             "title": "Data Scientist",
-            "tagline": "",
-            "experience": "",
-            "expertise": "",
-            "bio": ""
+            "tagline": "Translational biologist committed to improving the lives of patients through computational research",
+            "experience": "11 years in academic research (University of Michigan; University of North Carolina at Chapel Hill). 1 year at the immuno-oncology cell therapy company 2seventy bio",
+            "expertise": "Genomics, Microbiology, Drug Discovery, Antibiotic Resistance, Clinical Data Analysis, Machine Learning, Interactive Data Visualization",
+            "bio": "Courtney holds a PhD in Microbiology and Immunology and a MS in Epidemiological Sciences from the University of Michigan. She has broad expertise in both laboratory-based research and data analytics that spans across multiple scientific disciplines. At Vindhya, she is passionate about applying creative problem solving to uncover biological insights from complex and diverse datasets."
         },
         {
             "id": 6,
