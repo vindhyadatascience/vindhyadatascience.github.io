@@ -22,7 +22,7 @@
             "bio": ""
         },
         {
-            "id": 2,
+            "id": 4,
             "name": "Jared Brewer, Ph.D.",
             "shortName": "Jared",
             "email": "jared@vindhyadatascience.com",
@@ -30,7 +30,7 @@
             "tagline": "Experienced immunologist applying bioinformatics approaches to oncology",
             "experience": "8+ years of experience studying microbiology and immunology, 5+ years in bioinformatics and computational biology",
             "expertise": "Spatial biology, image analysis, RNA-seq, single-cell technologies, immunoprofiling, database mining",
-            "bio": "Jared comes from an experimental biology background studying the intersection between bacterial pathogenesis, innate immune signaling, and cell biological  responses in tuberculosis infection, having taken a multimodal approach to studying these complex phenomena; at Vindhya, he has applied the computational skills developed during these studies to immuno-oncology, helping to identify biomarkers both from RNA-seq and scRNA-seq approaches as well as spatial profiling, including spatial proteomics."
+            "bio": "Jared comes from an experimental biology background studying the intersection between bacterial pathogenesis, innate immune signaling, and cell biological  responses in tuberculosis infection using multimodal approaches during his Ph.D. in Molecular Genetics and Microbiology at Duke University. At Vindhya, he has applied the computational skills developed during these studies to immuno-oncology, helping to identify biomarkers both from RNA-seq and scRNA-seq approaches as well as spatial profiling, including spatial proteomics and developing neural networks to study cell-cell interactions."
         },
         {
             "id": 3,
@@ -67,13 +67,13 @@
         },
         {
             "id": 6,
-            "name": "Sarah Dexheimer",
+            "name": "Sarah Dexheimer, M.S.",
             "shortName": "Sarah",
             "email": "sarah@vindhyadatascience.com",
             "title": "Data Engineer",
-            "tagline": "",
-            "experience": "",
-            "expertise": "",
-            "bio": ""
+            "tagline": "Bioinformatics Scientist and Developer",
+            "experience": "7 years of bioinformatics experience in academic research and private industry",
+            "expertise": "Bioinformatics, Pipeline Engineering, Operational Support, Data Visualization, Workflow Automation, Reproducible Research, Cancer Biology, Microbiology",
+            "bio": "Sarah earned a Master of Science at Northern Illinois University utilizing computational approaches to better understand diverse microbial species. From there, she moved into the oncology space working in a research lab at the University of North Carolina - Chapel Hill. Here she was able to gain a better understanding of cancer biology while maintaining and growing various pipelines. She also helped develop & maintain R packages for wider use, both within the lab & by collaborators. After 3 years, Sarah shifted again into private industry. Here she provided operational support for large-scale pipelines. She also automated solutions to commonly seen issues to improve clinical efficiency. Throughout all these positions, Sarah has maintained a commitment to sharing ideas and fostering collaborative environments. At Vindhya, Sarah focuses on reproducible research efforts and pipeline development for both external clients as well as internal infrastructure."
         }
 ]
