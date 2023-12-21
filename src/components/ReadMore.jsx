@@ -15,7 +15,7 @@ export default ({ children, maxCharacterCount = 100 }) => {
     }
 
     return (
-        <p>
+        <p className="read-more-text">
             {resultString}
 
             {isTruncated ? (

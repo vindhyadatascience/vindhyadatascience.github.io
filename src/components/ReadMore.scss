@@ -1,5 +1,9 @@
 @import '../variables';
 
+.read-more-text {
+    text-align: justify;
+}
+
 .expand-link {
     color: $vds-primary-3;
     cursor: pointer;
