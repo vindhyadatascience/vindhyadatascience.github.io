@@ -1,6 +1,7 @@
-// Import componenets
+// Import components
 import { useState, useEffect } from 'react';
 import { getGravatarUrl } from '../utils';
+import ReadMore from './ReadMore';
 
 // Import styles
 import "./ListMembers.scss"
@@ -27,7 +28,7 @@ export default ({data}) => {
                         <h3>{x.name}</h3>
                         <h4>{x.title}</h4>
                     </hgroup>
-                    <p>{x.bio}</p>
+                    <ReadMore maxCharacterCount={425}>{x.bio}</ReadMore>
                 </div>
             </div>
         )

@@ -1,0 +1,14 @@
+@import '../variables';
+
+.expand-link {
+    color: $vds-primary-3;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.15s ease-in-out;
+}
