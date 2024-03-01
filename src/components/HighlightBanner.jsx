@@ -8,15 +8,14 @@ export default () => {
                 <div className='container-fluid'>
                     <div className='banner-grid'>
                         <span>
-                            Vindhya is a US-based Data Science company with headquarters in MA & NC.
-                            Together, our team has...
+                            Vindhya is a US Data Science company based in MA & NC
                         </span>
                         <div className='grid centered-spans'>
                             <span>
-                                Over 100 years of experience
+                                100+ years of experience
                             </span>
                             <span>
-                                Over 100 combined publications
+                                100+ combined publications
                             </span>
                             <span>
                                 Diverse scientific backgrounds

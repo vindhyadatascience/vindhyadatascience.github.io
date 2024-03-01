@@ -15,7 +15,7 @@ export default () => {
                     
                     <h1>Bring your research to the next level</h1>
                     <h2>
-                        Our team loves big data and solving challening problems.
+                        Our team loves big data and solving challenging problems.
                         We engage in a wide range of projects, from small-scale
                         analysis to large-scale, multi-year
                         collaborations.
