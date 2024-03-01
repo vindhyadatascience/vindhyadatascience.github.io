@@ -5,8 +5,8 @@
             "shortName": "Adnan",
             "email": "adnan@vindhyadatascience.com",
             "title": "Senior Data Scientist",
-            "tagline": "Computational biologist devoted to oncology",
-            "experience": "15 years at Novartis, Merck, Gritstone",
+            "tagline": "A computational biologist with a profound dedication to advancing oncology through innovative computational approaches.",
+            "experience": "15 years at leading pharmaceutical and biotechnology companies including Novartis, Merck, and Gritstone Oncology, driving forward the boundaries of drug discovery and biomarker identification. Expertise",
             "expertise": "Drug Discovery, Genomics, Proteomics, Complex Variants, Cancer Biology, Biomarker Identification",
             "bio": ""
         },
@@ -16,10 +16,10 @@
             "shortName": "Alex",
             "email": "alex@vindhyadatascience.com",
             "title": "Data Scientist",
-            "tagline": "",
-            "experience": "6 years at Univ. Conn, Jackson Lab",
-            "expertise": "Genetics, RNA biology, Cancer Biology, Alternative Splicing, Structural Variation, Neoantigen Discovery",
-            "bio": ""
+            "tagline": "Alex specializes in genetics, RNA biology, and cancer biology, passionately applying biological data analysis for insightful discovery.",
+            "experience": "6 years at The University of Connecticut and The Jackson Laboratory for Genomic Medicine. Prior experience in assay development, quality control, and silane chemistry.",
+            "expertise": "Long-read RNA-seq, RNA biology, spatial omics, cancer biology, alternative splicing, long-read WGS, structural variation, human mutation mechanisms, chromatin accessibility, biomarker ID, and neoantigen discovery.",
+            "bio": "Alex's experience lies at the intersection of experimental and computational biology, with a Ph.D. from the University of Connecticut Health Center, specializing in genetics. During his Ph.D., Alex pioneered research integrating long-read and short-read RNA sequencing data to analyze transposable element-mediated alternative splicing in human breast cancer. He contributed substantially to additional projects spanning structural variation, microsatellite instability, and chromatin accessibility in the context of various human diseases. At Vindhya Data Science, Alex applies his robust expertise in RNA biology and transcriptomics to uncover disease targets and develop therapeutic solutions. His contributions include the development of spatial single-cell analysis methods, the discovery of disease-specific autoimmune biomarkers through single-cell RNA-seq analysis, and the identification of cell-line drug response biomarkers via gene expression and dependency data. Alex is committed to leveraging his deep understanding of RNA biology and cancer biology to advance the field of oncology, aiming to make significant contributions to the discovery of novel therapeutic approaches."
         },
         {
             "id": 4,
@@ -75,5 +75,16 @@
             "experience": "7 years of bioinformatics experience in academic research and private industry",
             "expertise": "Bioinformatics, Pipeline Engineering, Operational Support, Data Visualization, Workflow Automation, Reproducible Research, Cancer Biology, Microbiology",
             "bio": "Sarah earned a Master of Science at Northern Illinois University utilizing computational approaches to better understand diverse microbial species. From there, she moved into the oncology space working in a research lab at the University of North Carolina - Chapel Hill. Here she was able to gain a better understanding of cancer biology while maintaining and growing various pipelines. She also helped develop & maintain R packages for wider use, both within the lab & by collaborators. After 3 years, Sarah shifted again into private industry. Here she provided operational support for large-scale pipelines. She also automated solutions to commonly seen issues to improve clinical efficiency. Throughout all these positions, Sarah has maintained a commitment to sharing ideas and fostering collaborative environments. At Vindhya, Sarah focuses on reproducible research efforts and pipeline development for both external clients as well as internal infrastructure."
+        },
+        {
+            "id": 7,
+            "name": "Christopher Yogodzinski",
+            "shortName": "Chris",
+            "email": "christopher@vindhyadatascience.com",
+            "title": "Data Scientist",
+            "tagline": "",
+            "experience": "7 years of data science experience in life science, sports betting, and Ad-tech Industries",
+            "expertise": "Machine Learning, Deep Learning, Statistical Modeling, Algorithm and Pipeline development, Genomics, Gene Editing Bioinformatics",
+            "bio": "Chris Yogodzinski is a highly skilled Data Scientist specializing in Applied Machine and Deep Learning. He brings a wealth of experience from institutions like Genentech, UCSF, and UNC. His expertise extends from predictive modeling in ad recommendation systems to uncovering clinically relevant insights in cancer research."
         }
 ]
