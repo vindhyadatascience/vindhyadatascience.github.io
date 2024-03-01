@@ -4,6 +4,7 @@
 [data-theme=light],
 :root:not([data-theme=dark]) {
     --background-color: #{$white};
+    border-width: 0px;
 }
 
 html {
