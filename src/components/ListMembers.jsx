@@ -28,7 +28,7 @@ export default ({data}) => {
                         <h3>{x.name}</h3>
                         <h4>{x.title}</h4>
                     </hgroup>
-                    <ReadMore maxCharacterCount={425}>{x.bio}</ReadMore>
+                    <ReadMore maxCharacterCount={425} textClass={"founder-text"}>{x.bio}</ReadMore>
                 </div>
             </div>
         )

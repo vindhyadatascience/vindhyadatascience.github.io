@@ -21,6 +21,7 @@ export default () => {
                 <ul>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#team">Team</a></li>
+                    <li><a href="#news">News</a></li>
                     <li><a href="mailto:info@vindhyadatascience.com">Contact</a></li>
                     <li><ThemeSwitcher /></li>
                 </ul>

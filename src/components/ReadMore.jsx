@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 // Import styles
 import "./ReadMore.scss"
 
-export default ({ children, maxCharacterCount = 100 }) => {
+export default ({ children, maxCharacterCount = 100, textClass }) => {
     const text = children;
     const [isTruncated, setIsTruncated] = useState(true);
 
@@ -14,19 +14,26 @@ export default ({ children, maxCharacterCount = 100 }) => {
         setIsTruncated(!isTruncated);
     }
 
-    return (
-        <p className="read-more-text">
-            {resultString}
-
-            {isTruncated ? (
+    function showReadMoreLink() {
+        if (isTruncated) {
+            return (
                 <span onClick={toggleIsTruncated} className="expand-link">
                     &nbsp; ...Read more
                 </span>
-            ) : (
-                    <p onClick={toggleIsTruncated} className="expand-link">
+            );
+        } else {
+            return (
+                <p onClick={toggleIsTruncated} className="expand-link">
                     Show less
                 </p>
-            )}
+            );
+        }
+    }
+    
+    return (
+        <p className={textClass} style={{whiteSpace: "pre-line"}}>
+            {resultString}
+            {text.length < maxCharacterCount ? null : showReadMoreLink()}
         </p>
     );
 }

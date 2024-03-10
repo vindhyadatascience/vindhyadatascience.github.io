@@ -11,6 +11,10 @@
     border-radius: 50%;
 }
 
+.founder-text {
+    text-align: justify;
+}
+
 @media only screen and (max-width: 800px) {
     .founder-card {
         grid-template-columns: 1fr;

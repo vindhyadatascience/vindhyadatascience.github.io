@@ -1,6 +1,7 @@
 // Import componenets
 import { useState, useEffect } from 'react';
 import { getGravatarUrl } from '../utils';
+import ReadMore from './ReadMore';
 
 // Import styles
 import "./ListMembersCondensed.scss";
@@ -74,7 +75,7 @@ export default ({data}) => {
                                 {x.bio != "" ? (
                                     <hgroup>
                                         <h6>Bio</h6>
-                                        <p>{x.bio}</p>
+                                        <ReadMore maxCharacterCount={425}>{x.bio}</ReadMore>
                                     </hgroup>
                                 ) : null}
                                 

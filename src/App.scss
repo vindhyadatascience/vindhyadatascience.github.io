@@ -89,7 +89,14 @@ footer>div>small>a {
     // background-color: #1a1c2c;
     background-color: $vds-primary-1;
     padding: 40px 0px 40px 0px;
-    margin-bottom: 40px;
+}
+.container-fluid {
+    padding: 40px;
+    margin-bottom: 0px;
+}
+
+.container {
+    margin-bottom: 0px;
 }
 
 .alt-section * {
@@ -102,8 +109,3 @@ footer>div>small>a {
 .alt-section > .container {
     margin-bottom: 0px;
 }
-
-.alt-section > .container > hgroup {
-    margin-top: 38px
-}
-

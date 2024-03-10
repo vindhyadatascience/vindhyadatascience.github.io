@@ -11,6 +11,7 @@ import Services from './components/Services'
 import SmallHeading from './components/SmallHeading'
 import TeamContent from './components/TeamContent'
 import HighlightBanner from './components/HighlightBanner'
+import News from './components/News'
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
       <HighlightBanner />
 
       {/* Services */}
-      <section id="services" className="container" style={{ paddingTop: "50px" }}>
+      <section id="services" className="container">
         <Services />
       </section>
 
@@ -55,6 +56,22 @@ function App() {
           <TestimonialSlider />
         </div>
       </section>
+
+      {/* News */}
+      <div id="news" className='alt-section'>
+        <section className='container'>
+          <hgroup>
+            <SmallHeading symbol="news" text="News" />
+            <h2>Stay up to date with the latest news</h2>
+            <h3>
+              We are always working on something new.
+              Click below to see what we are up to.
+            </h3>
+          </hgroup>
+          <News data="data/news.json" />
+        </section>
+      </div>
+      
 
       {/* Footer */}
       <div className='border-bar-reverse'></div>

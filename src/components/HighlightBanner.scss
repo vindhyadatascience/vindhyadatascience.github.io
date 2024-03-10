@@ -5,6 +5,10 @@
     padding: 20px 40px;
 }
 
+.highlight-banner > .container-fluid {
+    padding: 0px;
+}
+
 .banner-grid {
     display: grid;
     grid-template-columns: 3fr 5fr 0.5fr 1fr !important;
