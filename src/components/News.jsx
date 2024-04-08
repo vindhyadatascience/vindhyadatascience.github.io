@@ -75,17 +75,23 @@ export default ({data}) => {
     const handleBefore = () => { 
         if (currentPage > 1) {
             setCurrentPage(currentPage - 1);
+            // necessary to trigger hash change
+            window.location.hash = "#news" + currentPage; 
+            window.location.hash = "#news";
         }
     }
     const handleNext = () => {
         if (currentPage < totalPages) {
             setCurrentPage(currentPage + 1);
+            // necessary to trigger hash change
+            window.location.hash = "#news" + currentPage;
+            window.location.hash = "#news";
         }
     }
 
     return (
         <>
-            <div id="news" className="container">
+            <div id="news-content" className="container">
                 <div className="layout-news-grid">
                     {currentItems}
                 </div>

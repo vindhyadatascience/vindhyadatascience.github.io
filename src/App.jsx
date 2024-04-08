@@ -23,7 +23,7 @@ function App() {
       <HighlightBanner />
 
       {/* Services */}
-      <section id="services" className="container">
+      <section id="services" className="container container-section">
         <Services />
       </section>
 
