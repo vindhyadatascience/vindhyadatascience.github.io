@@ -30,7 +30,8 @@
 }
 
 .gradient-text {
-    background: $vds-gradient;
+    --bg-size: 200%;
+    background: $vds-gradient-full 0 0 / var(--bg-size) 100%;
     filter: brightness(2);
     -webkit-background-clip: text;
     background-clip: text;
@@ -38,6 +39,13 @@
     font-weight: 400;
     font-size: 3.2em;
     font-family: 'Source Sans Pro', sans-serif;
+    animation: move-bg 10s infinite linear;
+}
+
+@keyframes move-bg {
+    to {
+        background-position: var(--bg-size) 0;
+    } 
 }
 
 .theme-switcher {
