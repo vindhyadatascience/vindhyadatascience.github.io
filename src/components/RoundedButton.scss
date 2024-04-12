@@ -1,0 +1,23 @@
+@import '../variables';
+
+.rounded-button {
+    border-radius: 5px;
+    padding: 5px 15px !important;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    background: #232d68 !important;
+    color: white !important;
+    border-color: #232d68 !important;
+}
+
+.rounded-button:hover {
+    filter: brightness(150%);
+}
+
+@media (max-width: 625px) {
+    .rounded-button {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}
