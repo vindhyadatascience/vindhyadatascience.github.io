@@ -1,5 +1,16 @@
 [
     {
+        "title": "Vindhya presents BIOSuite at BioIT World 2024",
+        "description": "Join Vindhya Data Science at BioIT World 2024 for our talk \"Digital Solutions for Biomarker Trials\" on Monday, April 15 at 3 pm! 📅 \n\nOur Data Scientist Dr. Alex V. Nesta, PhD and Co-Founder & COO Dr. Anupama Reddy will introduce BIOSuite, our end-to-end solution for accelerating biomarker discovery and translation. BIOSuite integrates two powerful platforms: BIOCLIN, a secure clinical trial platform that streamlines biomarker deployment, and BIORES, a research platform leveraging multi-omic datasets, ML/AI tools, and knowledge graphs to drive biomarker innovation.\n\nWe'll present a case study showcasing BIOSuite's impact in the ongoing OPTIC RCC trial for kidney cancer, where our multivariate ML model is being validated to guide precision treatment decisions.\n\nJoin us to explore how BIOSuite is revolutionizing biomarker-driven clinical trials and advancing precision medicine! 🚀",
+        "imageUrl": "https://media.licdn.com/dms/image/D4E22AQGDoYs4LeEKLQ/feedshare-shrink_2048_1536/0/1713099606576?e=1715817600&v=beta&t=Ggo0SiABSkA5g_XHuTKizt9cf4qd8GjvEGiIXsiaIBo",
+        "links": [
+            {
+                "text": "LinkedIn Post",
+                "url": "https://www.linkedin.com/posts/vindhyadatascience_bioitworld2024-biomarkers-clinicaltrials-activity-7185260537142767616-uYWh?utm_source=share&utm_medium=member_desktop"
+            }
+        ]
+    },
+    {
         "title": "Vindhya presents our spatial biology research at AACR 2024",
         "description": "Dr. Jared Brewer and Dr. Anupama Reddy will be presenting a poster at the upcoming #AACR2024. Visit our poster to learn about our exciting research collaboration with Dr. Scott Haake, Dr. Joseph Vento, and Dr. Katy Beckermann at #Vanderbilt University using AI-powered spatial biomarker prediction in kidney cancer. Discover how spatial imaging and our advanced analytics are uncovering novel insights into the tumor microenvironment and patient outcomes. We would love to discuss potential opportunities to collaborate with you on spatial projects. \n\nSchedule a meeting with us at AACR to discuss your data science and computational biology projects. Link to set up a meeting: https: //lnkd.in/dWUxYY39",
         "imageUrl": "https://media.licdn.com/dms/image/D4D22AQHvop4n4kespw/feedshare-shrink_2048_1536/0/1712328817761?e=1715212800&v=beta&t=booLT_gbRzGisUKUUWboeelj6cUI8K5e03Mej-b-ww8",
@@ -17,7 +28,7 @@
     {
         "title": "Happy New Year 2024 from Vindhya",
         "description": "Cheers to new beginnings and innovative discoveries in 2024! Happy New Year from all of us at Vindhya Data Science.",
-        "imageUrl": "https://media.licdn.com/dms/image/D4E22AQHqRedNfAGjjg/feedshare-shrink_800/0/1703271494532?e=1712793600&v=beta&t=kNyoDVirtRE5pZPv4cKw2IAQzvJP_BfnXFuZUUST3t4",
+        "imageUrl": "https://media.licdn.com/dms/image/D4E22AQHqRedNfAGjjg/feedshare-shrink_2048_1536/0/1703271494554?e=1715817600&v=beta&t=ccJ_obQRh2Xt0HCPVlgOcSbS6yUvzXUFt4j-fPiylxo",
         "links": [
             {
                 "text": "LinkedIn Post",
@@ -28,7 +39,7 @@
     {
         "title": "Anupama shares our work on spatial biology at SLAS 2024",
         "description": "We are thrilled to announce that Anupama has been invited to speak at the #SLASDataAI symposium in Basel. She will be presenting our collaborative project on #spatialbiology and the development of #AI-based #biomarkers for kidney cancer patients. \n\nThis project is a joint effort with Jared Brewer from our team, and our colleagues at Vanderbilt, Scott Haake and Joseph Vento. We extend our gratitude to the organizers, particularly Kalyani Gampa, for chairing this biomarker session. \n\nThe exploration of spatial 'omics is paving the way to a deeper understanding of the heterogeneity in cancer progression and therapy response. For those interested in discussing #spatialbiology technologies, analyses, or specific questions, we welcome your engagement.",
-        "imageUrl": "https://media.licdn.com/dms/image/D4E22AQFzUj-aXXk08w/feedshare-shrink_800/0/1699893214710?e=1712793600&v=beta&t=eJ_3dtfPNyDr-ieGKJ_5npNLcMtUPHlvA_pQCu9CUfM",
+        "imageUrl": "https://media.licdn.com/dms/image/D4E22AQFzUj-aXXk08w/feedshare-shrink_1280/0/1699893214710?e=1715817600&v=beta&t=Y9W2Gj4pxObCYSmrkpEB-GUFOjnFurjmYdw-XMuFsqA",
         "links": [
             {
                 "text": "LinkedIn Post",
@@ -39,7 +50,7 @@
     {
         "title": "Vindhya Journal Club Spotlight: Long non-coding RNA-derived peptides are immunogenic and drive a potent anti-tumour response",
         "description": "Is non-coding RNA truly “non-coding”? This month, the Vindhya Data Science journal club reviewed a paper by Barczak et al., titled \"Long non-coding RNA-derived peptides are immunogenic and drive a potent anti-tumour response\" from Nature Communications. This paper explores long non-coding RNA (lncRNA) genes as a source of immunogenic peptides that can be harnessed for cancer vaccines.\n\nThe study first investigated two genes deregulated in cancer - protein arginine methyltransferase PRMT5 and the master transcription regulator E2F1 and their role in lncRNA regulation. After inhibiting PRMT5 and searching for differentially expressed lncRNAs with E2F1 binding sites, the authors found evidence of MHC class I protein-associated peptides encoded by small open reading frames in lncRNA genes. When these lncRNA-derived peptides were introduced to the immune system, the team observed a CD8 T lymphocyte response and delay in tumor growth.\n\nThe implications of this research are vast. GENCODE catalogs > 16,000 lncRNA genes in the hg38 reference. While some connections between certain lncRNAs and cancer have been established, the broader role of lncRNAs in malignancy remains unclear. This paper explains how some lncRNA genes may harbor a novel source of immunogenic tumor antigens. It is exciting to imagine potential applications of lncRNA-encoded peptides in engineering patient-specific cancer vaccines.",
-        "imageUrl": "https://media.licdn.com/dms/image/D4E22AQGgCjBHAmUVHg/feedshare-shrink_800/0/1693508778432?e=1712793600&v=beta&t=QnU3EWNE4wLLbAhz-mWavRBvHzE6R9IX2kgCZzPc1j8",
+        "imageUrl": "https://media.licdn.com/dms/image/D4E22AQGgCjBHAmUVHg/feedshare-shrink_2048_1536/0/1693508776848?e=1715817600&v=beta&t=e6w5jn5Vl_htBwEsNBe2ppujJCOPaXR0tb7gTZVp7pw",
         "links": [
             {
                 "text": "LinkedIn Post",
@@ -52,9 +63,9 @@
         ]
     },
     {
-        "title": "Vindhya Journal Club Spotlight: Context-aware transcript quantification from long-read RNA-seq data with Bambu.",
+        "title": "Vindhya Journal Club Spotlight: Context-aware transcript quantification from long-read RNA-seq data with Bambu",
         "description": "This month's Vindhya Data Science Journal Club focused on a paper by Chen et al., \"Context-aware transcript quantification from long-read RNA-seq data with Bambu.\" The paper presents Bambu, a tool that leverages machine learning for context-aware quantification of long-read RNA sequencing data. Bambu addresses challenges in long-read RNA sequencing, such as uninformative transcripts from transcriptional noise and other factors. Bambu works by using an ML model that assigns a single transcript probability score to each read after considering multiple alignment features. This approach simplifies novel isoform catalog curation and enhances the accuracy of transcript quantification. In the image below, it is clear that their metrics are superior to read-count-based filtering alone.\n\nThe advancements in long-read RNA sequencing have important implications for cancer research, where the method has identified cancer-specific pro-tumorigenic isoforms. Tools like Bambu aid in uncovering new drug targets and deepening our understanding of potential therapeutic compounds' mechanisms. In biotechnology and drug discovery, such progress is vital, paving the way for a more thorough understanding of complex biological systems and the development of novel therapies. We're excited to incorporate these insights into our work. Stay tuned for more Journal Club updates.",
-        "imageUrl": "https://media.licdn.com/dms/image/D4E22AQHqsL36PX1mOg/feedshare-shrink_800/0/1690484016510?e=1712793600&v=beta&t=wAUx2oL7-2_wmFBGTtMaK3n-8BChEQKymAx1gBohiKw",
+        "imageUrl": "https://media.licdn.com/dms/image/D4E22AQHqsL36PX1mOg/feedshare-shrink_1280/0/1690484016510?e=1715817600&v=beta&t=-3hS7nk7bUy-ZXjPl6DFsKSxXIc9q906DDiGJHO4fIc",
         "links": [
             {
                 "text": "LinkedIn Post",
@@ -67,9 +78,9 @@
         ]
     },
     {
-        "title": "Vindhya Journal Club Spotlight: The Effect of Neural Network Architecture on Virtual H&E Staining: Systematic Assessment of Histological Feasibility.",
+        "title": "Vindhya Journal Club Spotlight: The Effect of Neural Network Architecture on Virtual H&E Staining: Systematic Assessment of Histological Feasibility",
         "description": "In our monthly Journal Club at Vindhya Data Science, we turned our attention to an insightful paper by Khan et al., titled \"The Effect of Neural Network Architecture on Virtual H&E Staining: Systematic Assessment of Histological Feasibility.\" The paper describes the process of creating a virtual Hematoxylin and Eosin (H&E) stained image from an unstained slide, using the power of neural networks. By adjusting the network architecture, they remarkably improved the accuracy of image translation in virtual H&E staining.\n\nThe applications of these findings for our work in spatial profiling are particularly compelling. With these advanced neural network techniques, we can identify signatures of pathogenic cell neighborhoods using just unstained slides. This opens up a whole new avenue for understanding the spatial organization of cells and their interactions. Additionally, these techniques may maximize our insights from single probe immunohistochemistry (IHC), potentially requiring minimal further high-plex analysis, conserving resources, and saving time in the clinic. As we integrate these exciting advancements into our work, we're set to redefine the boundaries of what's possible in tumor imaging and spatial analysis. Stay tuned for more updates!",
-        "imageUrl": "https://media.licdn.com/dms/image/D5622AQFtlc2WfkGjCw/feedshare-shrink_800/0/1687382946866?e=1712793600&v=beta&t=h070_xrdXRQ5-nYPGMtvi8gT-V7SqAsz1LqRDBbVf20",
+        "imageUrl": "https://media.licdn.com/dms/image/D5622AQFtlc2WfkGjCw/feedshare-shrink_2048_1536/0/1687382945463?e=1715817600&v=beta&t=Hi3vlSCuwoAACRR4-tZdFjVuSPAISFh5KZBTY3Lbd6o",
         "links": [
             {
                 "text": "LinkedIn Post",
@@ -84,7 +95,7 @@
     {
         "title": "Nirmala and Anupama present at ASCO 2023",
         "description": "NR Nirmala and Anupama Reddy from Vindhya are presenting a poster at #asco2023 on a ML model used in a biomarker-driven clinical trial in RCC. This project is in collaboration with Scott Haake, Katy Beckermann and Brian Rini at Vanderbilt University School of Medicine.",
-        "imageUrl": "https://media.licdn.com/dms/image/D4E22AQFwsVOb01ps7Q/feedshare-shrink_800/0/1685588583872?e=1712793600&v=beta&t=wjPN3xsI2KQ0_IqdeDBN0LjUqfuOGO1lRlcmZMxsGbc",
+        "imageUrl": "https://media.licdn.com/dms/image/D4E22AQFwsVOb01ps7Q/feedshare-shrink_1280/0/1685588583872?e=1715817600&v=beta&t=grpih30a7B1oYd2i134eNw_D5songoEXF2AflLaWJ1E",
         "links": [
             {
                 "text": "LinkedIn Post",
@@ -95,7 +106,7 @@
     {
         "title": "Vindhya Journal Club Spotlight: A draft human pangenome reference",
         "description": "At Vindhya Data Science, we're committed to continuous learning and keeping pace with the latest scientific breakthroughs. This week, our journal club discussion covered the first draft of the human pangenome article by Liao et al., a major leap forward in understanding human genetic diversity. This draft, encompassing 47 genetically diverse individuals, reveals new euchromatic regions, new alleles, and new gene duplications, and offers a more comprehensive view of the human genome, which could be instrumental in identifying and validating drug targets while considering patient variability. One clinically-relevant discovery was the characterization of five novel haplotypes for the Rh blood group C, D, and E antigens.\n\nIt's exciting to imagine what additional clinically-relevant differences we will identify with these valuable data. We're thrilled to incorporate these insights into our bioinformatics consulting work to help biotech companies leverage genetic diversity in their drug discovery processes, paving the way for improved personalized medicine.",
-        "imageUrl": "https://media.licdn.com/dms/image/D4E22AQGXXcQfEXG8ew/feedshare-shrink_800/0/1684440533765?e=1712793600&v=beta&t=ym-sDD0zlZMJHDW49-uE3C7U3ItdaM2jtMxN1gXlifM",
+        "imageUrl": "https://media.licdn.com/dms/image/D4E22AQGXXcQfEXG8ew/feedshare-shrink_1280/0/1684440533765?e=1715817600&v=beta&t=hObLM0nw_0GIlWsAtO1m6voZEx3-vIHCP2uFrfAS9i4",
         "links": [
             {
                 "text": "LinkedIn Post",
@@ -110,7 +121,7 @@
     {
         "title": "Vindhya Data Science and the Cascadia Drug Development Group Announce Strategic Partnership",
         "description": "Vindhya Data Science (Vindhya) and the Cascadia Drug Development Group (CDDG) are excited to announce that they've entered a strategic partnership. CDDG provides drug development consulting services, including strategic guidance for immunologic disease and expert support of translational science. Vindhya has deep expertise in bioinformatics, data science, machine learning and AI and can help biopharmaceutical companies answer complex questions in drug discovery and development.\n\nPharma and biotech companies are increasingly relying on these computational tools to accelerate and de-risk their programs, and this unique CDDG-Vindhya partnership that combines deep drug development knowledge and computational biology will empower our clients to make smart drug development decisions. Both companies share the same high standards of quality, extensive industry experience and take a personalized approach with their clients.  Learn more at thecddg.com",
-        "imageUrl": "https://media.licdn.com/dms/image/D4E22AQEoqCUazm-VPA/feedshare-shrink_800/0/1683224831480?e=1712793600&v=beta&t=6OkKgaxuFzPT5t92LiP6IciuWO3bxTjWnP98jJ7c41U",
+        "imageUrl": "https://media.licdn.com/dms/image/D4E22AQEoqCUazm-VPA/feedshare-shrink_2048_1536/0/1683224831493?e=1715817600&v=beta&t=0CpgNzSLlqa2E_RDd8xEZ-J1H5UxBR3wp79F6HkHvbM",
         "links": [
             {
                 "text": "LinkedIn Post",
@@ -125,7 +136,7 @@
     {
         "title": "Vindhya team attends AACR 2023",
         "description": "AACR here we come! Anupama, Adnan, and Alex will be attending #aacr23.\n\nWe are excited to be presenting a poster on spatial biology at single cell resolution (#6153 April 19, 9am to noon). Come by our poster or ping us to schedule a meeting. We'd love to discuss bioinformatics and datascience with you!",
-        "imageUrl": "https://media.licdn.com/dms/image/D4E22AQGrMxcVMhqaVA/feedshare-shrink_800/0/1681096610490?e=1712793600&v=beta&t=Dw_ySJe0x9C1KTflTskEnn9uZDAs5XdWJ7EJjReWxFA",
+        "imageUrl": "https://media.licdn.com/dms/image/D4E22AQGrMxcVMhqaVA/feedshare-shrink_1280/0/1681096610490?e=1715817600&v=beta&t=RbIfUEsCwXQ-kbKgWGZCU6efr9zMWIPxh5twdBjmfzw",
         "links": [
             {
                 "text": "LinkedIn Post",
@@ -136,7 +147,7 @@
     {
         "title": "Vindhya recieves DoD grant for spatial biology project",
         "description": "Vindhya Data Science is happy to share that we have started work on a spatial biology project for which we received a grant from DoD!\n\nOur goal is to generate AI models from histology images of tumor biopsies to characterize features in the tumors – the spatial arrangement of the various cell types and the presence of other features in the tumor - using deep learning methodologies. We are thrilled and honored to be collaborating with Scott Haake and Katy Beckermann, kidney cancer researchers from Vanderbilt University Medical Center, on this exciting project!",
-        "imageUrl": "https://media.licdn.com/dms/image/C4D22AQGHmXvjHpmNbw/feedshare-shrink_800/0/1678754478905?e=1712793600&v=beta&t=pwzqJ2vtjqT3A7dzNCfZv4sSVwQpBxEwJRqBzmCUvWY",
+        "imageUrl": "https://media.licdn.com/dms/image/C4D22AQGHmXvjHpmNbw/feedshare-shrink_800/0/1678754478905?e=1715817600&v=beta&t=9cx2mgUn2tjLFma5Tv0k-2MZdwh4r29AMUdC9HsSifM",
         "links": [
             {
                 "text": "LinkedIn Post",
