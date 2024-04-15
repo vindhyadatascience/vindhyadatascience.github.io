@@ -6,7 +6,6 @@ import 'swiper/css';
 import { useState, useEffect } from 'react';
 import { getRandomGradient } from "../utils";
 import ReadMore from './ReadMore';
-// import Markdown from 'react-markdown';
 
 export default ({data}) => {
     const [cards, setCards] = useState([]);
@@ -55,7 +54,7 @@ export default ({data}) => {
                         <img src={card.imageUrl} alt={card.title} />
                     ) : <span className="material-symbols-outlined icon">news</span>}
                 </div>
-                <hgroup>
+                <hgroup>        
                     {card.title ? <h3>{card.title}</h3> : null}
                     {card.description ? <ReadMore maxCharacterCount={247}>{card.description}</ReadMore> : null }
                     {/* {card.link ? <a href={card.link}>Learn more</a> : null} */}

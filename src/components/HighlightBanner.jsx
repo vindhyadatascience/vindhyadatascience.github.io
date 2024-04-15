@@ -8,17 +8,17 @@ export default () => {
                 <div className='container-fluid'>
                     <div className='banner-grid'>
                         <span>
-                            Vindhya is a US Data Science company based in MA & NC
+                            Vindhya is a US Data Science company based in <a href="https://www.rtp.org/">RTP</a> and Boston
                         </span>
                         <div className='grid centered-spans'>
                             <span>
-                                100+ years of experience
+                                <span className='large-text'>100+</span><br /><span className='small-text'>years of experience</span>
                             </span>
                             <span>
-                                100+ combined publications
+                                <span className='large-text'>150+</span><br /><span className='small-text'>combined publications</span>
                             </span>
                             <span>
-                                Diverse scientific backgrounds
+                                <span className='large-text'>73+</span><br /><span className='small-text'>successful projects</span>
                             </span>
                         </div>
                         <div className='divider'>&nbsp;</div>

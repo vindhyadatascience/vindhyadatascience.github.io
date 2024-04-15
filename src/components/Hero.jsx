@@ -27,7 +27,7 @@ export default () => {
                 </ul>
             </nav>
             <header className="container">
-                <hgroup style={{ maxWidth: "625px" }}>
+                <hgroup style={{ maxWidth: "650px" }}>
                     <h1 className='gradient-text'>Vindhya Data Science</h1>
                     <h2>Transform your data into decisions</h2>
                     <h3>

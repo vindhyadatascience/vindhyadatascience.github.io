@@ -37,7 +37,16 @@
     font-size: smaller;
 }
 
+span > .large-text {
+    font-size: 40pt;
+    color: $vds-secondary-1;
+    font-weight: 800;
+    line-height: 1em;
+}
 
+span > .small-text {
+    font-size: small;
+}
 
 @media only screen and (max-width: 800px) {
     .banner-grid {

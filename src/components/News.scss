@@ -1,5 +1,5 @@
 $imgWidth: 250px; //350px;
-$imgHeight: 150px; //250px;
+// $imgHeight: 150px; //250px;
 @import '../variables';
 
 .layout-news-grid {
@@ -22,17 +22,22 @@ $imgHeight: 150px; //250px;
 
 .news-item-image {
     width: 100%;
-    height: $imgHeight;
+    // height: $imgHeight;
     // height: auto;
-    max-width: 600px;
+    // max-width: 600px;
     display: flex;
     align-items: center;
     border-radius: 10px;
+    padding-top: 56.25%; // 16:9 asp ratio
+    position: relative;
 }
 
 .news-item-image span {
-    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
     font-size: 10vh;
+    transform: translate(-50%, -50%);
 }
 
 .news-item-image img {
@@ -40,6 +45,9 @@ $imgHeight: 150px; //250px;
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .news-item > hgroup > h3 {
