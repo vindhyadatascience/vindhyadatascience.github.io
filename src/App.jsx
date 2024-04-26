@@ -12,6 +12,7 @@ import SmallHeading from './components/SmallHeading'
 import TeamContent from './components/TeamContent'
 import HighlightBanner from './components/HighlightBanner'
 import News from './components/News'
+import Publications from './components/Publications'
 
 function App() {
   return (
@@ -71,7 +72,21 @@ function App() {
           <News data="data/news.json" />
         </section>
       </div>
-      
+
+      {/* Publications */}
+      <section id="pubs" className='container-fluid'>
+        <div className='container'>
+          <hgroup>
+            <SmallHeading symbol="book" text="Publications" />
+            <h2>Featured Works</h2>
+            <h3>
+              Check out our recently published articles,
+              posters, and talks.
+            </h3>
+          </hgroup>
+          <Publications data="data/publications.json" />
+        </div>
+      </section>
 
       {/* Footer */}
       <div className='border-bar-reverse'></div>

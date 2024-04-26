@@ -62,3 +62,30 @@ nav {
     padding-top: 0px !important;
     padding-bottom: 0px !important;
 }
+
+#hero-section>nav>ul:nth-child(2) {
+    margin-right: 20px;
+}
+
+#hero-section>nav>ul:nth-child(2)>ul {
+    flex-direction: column;
+    display: flex;
+    position: absolute;
+    top: 55px;
+    right: 40px;
+    align-items: flex-end;
+    margin-top: 4px;
+    z-index: 999;
+}
+
+#hero-section>nav>ul:nth-child(2)>ul>li {
+    padding: 5px;
+    justify-content: flex-start;
+    border-radius: 5px;
+}
+
+#hero-section>nav>ul:nth-child(2)>ul>li:hover {
+    background-color: var(--primary-focus)
+}
+    
+

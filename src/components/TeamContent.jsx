@@ -64,7 +64,7 @@ export default () => {
 
     return (
         <>
-            <div style={{display: "flex"}}>
+            <div className="team-toggle-btns">
                 {button("Leadership", leadershipHandler)}
                 {button("Data Scientists", dataScientistsHandler)}
                 {button("Business Development", businessDevHandler)}

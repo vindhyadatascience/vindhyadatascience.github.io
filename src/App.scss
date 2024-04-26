@@ -5,6 +5,7 @@
 :root:not([data-theme=dark]) {
     --background-color: #{$white};
     border-width: 0px;
+    --text-color: #{$black};
 }
 
 html {

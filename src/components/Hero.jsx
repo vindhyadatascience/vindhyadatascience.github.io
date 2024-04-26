@@ -7,8 +7,11 @@ import symbol from '/img/VDS-Symbol-Color-CMYK.svg'
 // Components
 import RoundedButton from './RoundedButton'
 import ThemeSwitcher from './ThemeSwitcher'
+import { useState } from "react"
 
-export default () => {
+export default () => {    
+    const [isOpen, setIsOpen] = useState(false);
+
     return (
         <div className='hero' id='hero-section'>
             <nav className='container-fluid'>
@@ -19,11 +22,22 @@ export default () => {
                     </li>
                 </ul>
                 <ul>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#team">Team</a></li>
-                    <li><a href="#news">News</a></li>
-                    <li><a href="mailto:info@vindhyadatascience.com">Contact</a></li>
                     <li><ThemeSwitcher /></li>
+                    <div href="#" className="menu-toggle" onClick={() => setIsOpen(!isOpen)}>
+                        <span className="material-symbols-outlined icon">
+                            {/* {isOpen ? "expand_more" : "chevron_right"} */}
+                            {isOpen ? "close" : "menu"}
+                        </span>
+                    </div>
+                    {(isOpen && (
+                        <ul className="menu-items">
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#team">Team</a></li>
+                            <li><a href="#news">News</a></li>
+                            <li><a href="#pubs">Publications</a></li>
+                            <li><a href="mailto:info@vindhyadatascience.com">Contact</a></li>
+                        </ul>
+                    ))}
                 </ul>
             </nav>
             <header className="container">

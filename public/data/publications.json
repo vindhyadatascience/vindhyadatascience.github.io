@@ -1,0 +1,56 @@
+[
+    {
+        "title": "Developing spatial molecular correlates of response to immunotherapy in kidney cancer",
+        "year": 2023,
+        "imageUrl": "https://storage.googleapis.com/vds-website-public/public/img/american-association-for-cancer-research-aacr-logo-vector-bg.svg",
+        "link": "https://www.linkedin.com/posts/vindhyadatascience_aacr-activity-7183922646693117953-evdw?utm_source=share&utm_medium=member_desktop"
+    },
+    {
+        "title": "Combining ulixertinib (ERK1/2 inhibitor) with EGFR and BRAF inhibition yields significant efficacy in preclinical BRAFV600E mutant colorectal cancer models",
+        "year": 2023,
+        "imageUrl": "https://storage.googleapis.com/vds-website-public/public/img/american-association-for-cancer-research-aacr-logo-vector-bg.svg",
+        "link": "https://www.aacr.org/"
+    },
+    {
+        "title": "The combination of ulixertinib (ERK1/2 inhibitor) and KRASG12C inhibition demonstrates significant efficacy in preclinical models",
+        "year": 2023,
+        "imageUrl": "https://storage.googleapis.com/vds-website-public/public/img/american-association-for-cancer-research-aacr-logo-vector-bg.svg",
+        "link": "https://www.aacr.org/"
+    },
+    {
+        "title": "Machine learning modeling to assign patients to biologically driven RNA sequencing-based subtypes for the OPTIC prospective phase II clinical trial in renal cell carcinoma",
+        "year": 2022,
+        "imageUrl": "https://storage.googleapis.com/vds-website-public/public/img/KCRS-generic-logo-wide.png",
+        "link": "https://kcrs.kidneycan.org/"
+    },
+    {
+        "title": "Ligand-independent integrin β1 signaling supports lung adenocarcinoma development",
+        "year": 2022,
+        "imageUrl": "https://storage.googleapis.com/vds-website-public/public/img/jci.jpg",
+        "link": "https://doi.org/10.1172/jci.insight.154098"
+    },
+    {
+        "title": "cfDNA workshop: advances in research, technology and analytics",
+        "year": 2022,
+        "imageUrl": "https://storage.googleapis.com/vds-website-public/public/img/dna-icon.svg",
+        "link": "https://www.linkedin.com/feed/update/urn:li:activity:6938490889556156416?utm_source=share&utm_medium=member_desktop"
+    },
+    {
+        "title": "Identification of combination partners to combat acquired resistance to ulixertinib (ERK1/2 inhibitor) using transcriptomics",
+        "year": 2022,
+        "imageUrl": "https://storage.googleapis.com/vds-website-public/public/img/american-association-for-cancer-research-aacr-logo-vector-bg.svg",
+        "link": "https://aacrjournals.org/cancerres/article/82/12_Supplement/404/702056"
+    },
+    {
+        "title": "ERK1/2 inhibitor ulixertinib demonstrates activity in atypical (non-V600) BRAF mutant models",
+        "year": 2022,
+        "imageUrl": "https://storage.googleapis.com/vds-website-public/public/img/american-association-for-cancer-research-aacr-logo-vector-bg.svg",
+        "link": "https://aacrjournals.org/cancerres/article/82/12_Supplement/4022/699835"
+    },
+    {
+        "title": "The characterization of in vitro models demonstrating a significant delay of acquired resistance to ulixertinib (ERK1/2)",
+        "year": 2022,
+        "imageUrl": "https://storage.googleapis.com/vds-website-public/public/img/american-association-for-cancer-research-aacr-logo-vector-bg.svg",
+        "link": "https://aacrjournals.org/cancerres/article/82/12_Supplement/415/702837"
+    }
+]
