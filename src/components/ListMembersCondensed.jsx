@@ -23,7 +23,7 @@ export default ({data}) => {
 
     const membersList = members.map((x, i) => {
         return (
-            <div key={x.id} className='profile-div'
+            <div key={i} className='profile-div'
                 onClick={() => { setMemberInfo(x) }}
                 onMouseEnter={() => setHover(i)}
                 onMouseLeave={() => setHover(-1)}
