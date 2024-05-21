@@ -1,6 +1,5 @@
 [
         {
-            "id": 0,
             "name": "Adnan Derti, Ph.D.",
             "shortName": "Adnan",
             "email": "adnan@vindhyadatascience.com",
@@ -11,7 +10,6 @@
             "bio": ""
         },
         {
-            "id": 1,
             "name": "Alex Nesta, Ph.D.",
             "shortName": "Alex",
             "email": "alex@vindhyadatascience.com",
@@ -22,7 +20,6 @@
             "bio": "Alex's experience lies at the intersection of experimental and computational biology, with a Ph.D. from the University of Connecticut Health Center, specializing in genetics. During his Ph.D., Alex pioneered research integrating long-read and short-read RNA sequencing data to analyze transposable element-mediated alternative splicing in human breast cancer. He contributed substantially to additional projects spanning structural variation, microsatellite instability, and chromatin accessibility in the context of various human diseases. At Vindhya Data Science, Alex applies his robust expertise in RNA biology and transcriptomics to uncover disease targets and develop therapeutic solutions. His contributions include the development of spatial single-cell analysis methods, the discovery of disease-specific autoimmune biomarkers through single-cell RNA-seq analysis, and the identification of cell-line drug response biomarkers via gene expression and dependency data. Alex is committed to leveraging his deep understanding of RNA biology and cancer biology to advance the field of oncology, aiming to make significant contributions to the discovery of novel therapeutic approaches."
         },
         {
-            "id": 2,
             "name": "Jared Brewer, Ph.D.",
             "shortName": "Jared",
             "email": "jared@vindhyadatascience.com",
@@ -33,18 +30,6 @@
             "bio": "Jared comes from an experimental biology background studying the intersection between bacterial pathogenesis, innate immune signaling, and cell biological  responses in tuberculosis infection using multimodal approaches during his Ph.D. in Molecular Genetics and Microbiology at Duke University. At Vindhya, he has applied the computational skills developed during these studies to immuno-oncology, helping to identify biomarkers both from RNA-seq and scRNA-seq approaches as well as spatial profiling, including spatial proteomics and developing neural networks to study cell-cell interactions."
         },
         {
-            "id": 3,
-            "name": "Cara Abecunas, Ph.D.",
-            "shortName": "Cara",
-            "email": "cara@vindhyadatascience.com",
-            "title": "Data Scientist",
-            "tagline": "Cancer biologist adept in computational methods, systems pharmacology, bioinformatics, and data science, focused on pinpointing effective drugs and targets in oncology.",
-            "experience": "6 years at University of Michigan and University of Virginia",
-            "expertise": "Drug Discovery, Quantitative Pharmacology, Genomics, Cancer Biology, Multiplex IF Microscopy/Quantitative Image Analysis, Machine Learning and Statistical Modeling",
-            "bio": "Cara holds a PhD in computational biology from the University of Michigan, specializing in systems pharmacology for identifying cancer vulnerabilities. With expertise in machine learning, bioinformatics, and quantitative pharmacology, she bridges experimental and computational domains, crafting effective designs and understanding data intricacies. At Vindhya, Cara contributes to diverse projects, utilizing her skills in high-throughput multiplexed imaging, single-cell analysis, and statistical modeling. She has also pioneered a successful machine learning framework, integrating regression, classification, and patient survival models across multiple projects at Vindhya."
-        },
-        {
-            "id": 4,
             "name": "Eric Davis, Ph.D.",
             "shortName": "Eric",
             "email": "eric@vindhyadatascience.com",
@@ -55,7 +40,6 @@
             "bio": "Eric holds a Ph.D. in Bioinformatics and Computational Biology from UNC-Chapel Hill where he studied how DNA loops regulate gene transcription in human development and disease. In addition to his Bioinformatics knowledge, Eric is a full-stack software developer. He has built Bioconductor packages, R Shiny web applications, interactive data visualization dashboards, and consulted as a web developer. Eric is passionate about reproducible research, using technology like Docker/Singularity along with Snakemake/Nextflow to build and execute bioinformatic pipelines on HPC systems and in the cloud. At Vindhya, Eric has helped clients build high-quality software packages and bolster their reproducible research infrastructure."
         },
         {
-            "id": 5,
             "name": "Courtney Luterbach, Ph.D., M.S.",
             "shortName": "Courtney",
             "email": "courtney@vindhyadatascience.com",
@@ -66,7 +50,6 @@
             "bio": "Courtney holds a PhD in Microbiology and Immunology and a MS in Epidemiological Sciences from the University of Michigan. She has broad expertise in both laboratory-based research and data analytics that spans across multiple scientific disciplines. At Vindhya, she is passionate about applying creative problem solving to uncover biological insights from complex and diverse datasets."
         },
         {
-            "id": 6,
             "name": "Sarah Dexheimer, M.S.",
             "shortName": "Sarah",
             "email": "sarah@vindhyadatascience.com",
@@ -77,14 +60,13 @@
             "bio": "Sarah earned a Master of Science at Northern Illinois University utilizing computational approaches to better understand diverse microbial species. From there, she moved into the oncology space working in a research lab at the University of North Carolina - Chapel Hill. Here she was able to gain a better understanding of cancer biology while maintaining and growing various pipelines. She also helped develop & maintain R packages for wider use, both within the lab & by collaborators. After 3 years, Sarah shifted again into private industry. Here she provided operational support for large-scale pipelines. She also automated solutions to commonly seen issues to improve clinical efficiency. Throughout all these positions, Sarah has maintained a commitment to sharing ideas and fostering collaborative environments. At Vindhya, Sarah focuses on reproducible research efforts and pipeline development for both external clients as well as internal infrastructure."
         },
         {
-            "id": 7,
-            "name": "Christopher Yogodzinski",
-            "shortName": "Chris",
-            "email": "christopher@vindhyadatascience.com",
+            "name": "Chinmaya Joisa",
+            "shortName": "Chinmaya",
+            "email": "chinmaya@vindhyadatascience.com",
             "title": "Data Scientist",
-            "tagline": "",
-            "experience": "7 years of data science experience in life science, sports betting, and Ad-tech Industries",
-            "expertise": "Machine Learning, Deep Learning, Statistical Modeling, Algorithm and Pipeline development, Genomics, Gene Editing Bioinformatics",
-            "bio": "Chris Yogodzinski is a highly skilled Data Scientist specializing in Applied Machine and Deep Learning. He brings a wealth of experience from institutions like Genentech, UCSF, and UNC. His expertise extends from predictive modeling in ad recommendation systems to uncovering clinically relevant insights in cancer research."
+            "tagline": "Computational biologist applying bioinformatics and predictive modeling to oncology ",
+            "experience": "7 years of bench and computational experience in pharmacology and biomedical engineering, specialising in applications to systems biology",
+            "expertise": "Machine Learning in Biology, Bioinformatic Pipeline development, Proteomics, Genomics",
+            "bio": "Chinmaya Joisa is a computational biologist coming from a background of kinase biology and cancer cell signalling, where he developed interpretable AI methods to build predictive models of cancer response to kinase inhibitors during his PhD in Biomedical Engineering at UNC-Chapel Hill. At Vindhya he is committed to utilize his expertise at the intersection of computational and experimental biology to meaningfully impact drug development and therapeutics."
         }
 ]
