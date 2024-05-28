@@ -1,5 +1,12 @@
 @import '../variables';
 
+.testimonial-layout {
+    display: grid;
+    grid-template-columns: 0.01fr 1fr 0.01fr;
+    gap: 10px;
+    align-items: center;
+}
+
 .navigation {
     height: calc(100% - 57px); //57 is margin on quote
     display: flex;

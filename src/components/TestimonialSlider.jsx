@@ -30,21 +30,16 @@ export default () => {
         
     }
 
-    const testimonialList = testimonials.map(t => {
+    const testimonialList = testimonials.map((t, i) => {
         return (
             <>
-                <div style={{
-                    display: "grid",
-                    gridTemplateColumns: "0.01fr 1fr 0.01fr",
-                    gap: "10px",
-                    alignItems: "center"
-                }}>
+                <div className="testimonial-layout">
                     <a className="navigation" onClick={handleBefore}>
                         <span className="material-symbols-outlined">
                             navigate_before
                         </span>
                     </a>
-                    <blockquote key={t.id} className="quote">
+                    <blockquote key={i} className="quote">
                         <q>{t.quote}</q>
                         <hgroup style={{ textAlign: "right", marginBottom: "0px" }}>
                             <h6>{t.client},</h6>
