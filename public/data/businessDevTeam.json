@@ -1,24 +1,12 @@
 [
-        {
-            "id": 0,
-            "name": "Neha Patel, Ph.D.",
-            "shortName": "Neha",
-            "email": "neha@vindhyadatascience.com",
-            "title": "Business Development",
-            "tagline": "",
-            "experience": "20 years at Organon, Novartis, GSK",
-            "expertise": "Drug & technology development (all phases), Strategy & Business development, R&D leadership",
-            "bio": ""
-        },
-        {
-            "id": 1,
-            "name": "Booma Yandava",
-            "shortName": "Booma",
-            "email": "booma@vindhyadatascience.com",
-            "title": "Business Development",
-            "tagline": "",
-            "experience": "15 years at Samyang, Sanofi, Ultragenyx",
-            "expertise": "Drug development, Early-stage discovery, Transaction services, Licensing, Alliance management, Corporate strategy",
-            "bio": ""
-        }
+    {
+        "name": "Jay Siddharth, MBA, Ph.D.",
+        "shortName": "Jay",
+        "email": "jay@vindhyadatascience.com",
+        "title": "Business Development Consultant",
+        "tagline": "CXO with focus on business translation",
+        "experience": "15 years experience in Innovation across Fortune 500 companies life science sector spanning early R&D, production, clinical trials and corporate ventures",
+        "expertise": "Strategy, Business Development, R&D, Microbiome, Drug development, GMP",
+        "bio": "Jay has a PhD in Biotechnology and MBA in Innovation management, he has held leadership roles as CSO, CIO and Director at various organisations and business sectors including pharmaceutical and nutrition . At Vindhya, Jay has helped connect with clients and extend the reach of solutions available at Vindhya data science."
+    }
 ]

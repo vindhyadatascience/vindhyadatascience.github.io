@@ -9,7 +9,7 @@ export default () => {
     const [team, setTeam] = useState("leadership");
 
     const leadershipHandler = () => {
-        document.querySelector("[id='Data Scientists']").classList.add("outline")
+        document.querySelector("[id='Science Team']").classList.add("outline")
         document.querySelector("[id='Business Development'").classList.add("outline")
         document.querySelector("#Leadership").classList.remove("outline")
         setTeam("leadership")
@@ -17,12 +17,12 @@ export default () => {
     const dataScientistsHandler = () => {
         document.querySelector("[id='Leadership']").classList.add("outline")
         document.querySelector("[id='Business Development'").classList.add("outline")
-        document.querySelector("[id='Data Scientists']").classList.remove("outline")
-        setTeam("data scientists")
+        document.querySelector("[id='Science Team']").classList.remove("outline")
+        setTeam("science team")
     }
     const businessDevHandler = () => {
         document.querySelector("[id='Leadership'").classList.add("outline")
-        document.querySelector("[id='Data Scientists']").classList.add("outline")
+        document.querySelector("[id='Science Team']").classList.add("outline")
         document.querySelector("[id='Business Development'").classList.remove("outline")
         setTeam("business development")
     }
@@ -66,12 +66,12 @@ export default () => {
         <>
             <div className="team-toggle-btns">
                 {button("Leadership", leadershipHandler)}
-                {button("Data Scientists", dataScientistsHandler)}
+                {button("Science Team", dataScientistsHandler)}
                 {button("Business Development", businessDevHandler)}
             </div>
             <div>
                 {team === "leadership" ? leadershipContent() : null}
-                {team === "data scientists" ? dataScientistsContent() : null}
+                {team === "science team" ? dataScientistsContent() : null}
                 {team === "business development" ? businessDevContent() : null}
             </div>            
         </>
