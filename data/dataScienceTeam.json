@@ -1,15 +1,5 @@
 [
         {
-            "name": "Adnan Derti, Ph.D.",
-            "shortName": "Adnan",
-            "email": "adnan@vindhyadatascience.com",
-            "title": "Senior Data Scientist",
-            "tagline": "A computational biologist with a profound dedication to advancing oncology through innovative computational approaches.",
-            "experience": "15 years at leading pharmaceutical and biotechnology companies including Novartis, Merck, and Gritstone Oncology, driving forward the boundaries of drug discovery and biomarker identification. Expertise",
-            "expertise": "Drug Discovery, Genomics, Proteomics, Complex Variants, Cancer Biology, Biomarker Identification",
-            "bio": ""
-        },
-        {
             "name": "Alex Nesta, Ph.D.",
             "shortName": "Alex",
             "email": "alex@vindhyadatascience.com",
@@ -68,5 +58,15 @@
             "experience": "7 years of bench and computational experience in pharmacology and biomedical engineering, specialising in applications to systems biology",
             "expertise": "Machine Learning in Biology, Bioinformatic Pipeline development, Proteomics, Genomics",
             "bio": "Chinmaya Joisa is a computational biologist coming from a background of kinase biology and cancer cell signalling, where he developed interpretable AI methods to build predictive models of cancer response to kinase inhibitors during his PhD in Biomedical Engineering at UNC-Chapel Hill. At Vindhya he is committed to utilize his expertise at the intersection of computational and experimental biology to meaningfully impact drug development and therapeutics."
+        },
+        {
+            "name": "Winifred Yu, Ph.D. R.D.",
+            "shortName": "Wini",
+            "email": "wini@vindhyadatascience.com",
+            "title": "Principal Epidemiologist",
+            "tagline": "Systematic literature reviewer, Evidence-based methodologist",
+            "experience": "10+ years in medical literature reviews, evidence synthesis, and epidemiology",
+            "expertise": "Classically trained scientist and researcher, with skills for stakeholder communications, project management, project scoping and planning, risk management, and process improvement",
+            "bio": "Wini holds a Ph.D. in Nutritional Epidemiology from Tufts University where she studied the methodological challenges in systematic reviews and evidence synthesis for a wide range of medical research. She has extensive experience in conducting various types of literature reviews, and is proficient in the entire literature review process. In addition to her technical skills, she serves as a lead in stakeholder engagement, project management, and process improvement. Wini is passionate about translating clinical research into quality products that can aid evidence dissemination and clinical applications."
         }
 ]
