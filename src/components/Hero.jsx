@@ -7,11 +7,27 @@ import symbol from '/img/VDS-Symbol-Color-CMYK.svg'
 // Components
 import RoundedButton from './RoundedButton'
 import ThemeSwitcher from './ThemeSwitcher'
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { useLocation } from 'react-router-dom'
+
 
 export default () => {    
     const [isOpen, setIsOpen] = useState(false);
+    const location = useLocation();
 
+    // Scroll to hash on page load
+    useEffect(() => {
+        if (location.hash) {
+            setTimeout(() => {
+                const element = document.getElementById(location.hash.substring(1));
+
+                if (element) {
+                    element.scrollIntoView({ behavior: "smooth" });
+                }
+            }, 500);
+        }
+    }, [location]);
+    
     return (
         <div className='hero' id='hero-section'>
             <nav className='container-fluid'>
@@ -51,8 +67,8 @@ export default () => {
                     </h3>
                 </hgroup>
                 <p>
-                    <RoundedButton text="Why Vindhya?" href="#services" />
-                    <RoundedButton text="Meet the team" href="#team" />
+                    <RoundedButton text="Why Vindhya?" href="/#services" />
+                    <RoundedButton text="Meet the team" href="/#team" />
                     <RoundedButton text="Contact us" href="mailto:info@vindhyadatascience.com" />
                 </p>
             </header>

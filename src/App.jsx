@@ -84,7 +84,14 @@ function App() {
               posters, and talks.
             </h3>
           </hgroup>
-          <Publications data="data/publications.json" />
+          <div className='ahrq-reports'>
+            <h2 id="ahrq-reports">AHRQ Reports</h2>
+            <Publications data="data/ahrq-reports.json" />
+          </div>
+          <div>
+            <h2>Other recent publications</h2>
+            <Publications data="data/publications.json" />
+          </div>
         </div>
       </section>
 
