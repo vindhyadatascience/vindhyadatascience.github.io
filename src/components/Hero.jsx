@@ -61,9 +61,10 @@ export default () => {
                     <h1 className='gradient-text'>Vindhya Data Science</h1>
                     <h2>Transform your data into decisions</h2>
                     <h3>
-                        At Vindhya, we specialize in bioinformatics, genomics, machine learning,
-                        artificial intelligence, structural biology, and the full spectrum
-                        of computational biology.
+                        Vindhya Data Science is a women-owned small business
+                        with headquarters in North Carolina, USA. Vindhya 
+                        specializes in evidence-based medicine, epidemiology, 
+                        bioinformatics, genomics, artificial intelligence and data engineering. The Company has ongoing partnerships with the federal government, leading academic medical centers and pharma/biotech. Vindhya works towards transforming large data sets into informed decisions using state of the art data science technologies.
                     </h3>
                 </hgroup>
                 <p>

@@ -1,5 +1,24 @@
 [
     {
+        "title": "Vindhya publishes three articles on dental care",
+        "description": "Nov 19, 2024 - Vindhya announced publication of three research reports pertaining to associations between dental/oral health services and autoimmune disease, diabetes and chronic kidney disease - conditions affecting millions within the United States and worldwide. The research was conducted under contracts with the Agency for Healthcare Research and Quality (AHRQ), Rockville, MD. Information contained in the reports will enable patients, providers and payers to make informed decisions, potentially improving the quality of healthcare services and outcomes. \n\n Knowledge gaps bridged by these reports include the impact of non-surgical periodontal procedures on outcomes in patients undergoing treatment for rheumatoid arthritis (an autoimmune disease), the impact of dental/oral health services on glycemic control in patients with diabetes and in patients with end stage renal disease. Each of these diseases is characterized by a systemic inflammatory state. A common finding across these studies is that non-surgical periodontal treatments appear to reduce circulating levels of inflammatory markers in patients. \n\n Information within these reports follows from a rigorous rapid literature review accompanied by input from subject matter experts. “I am proud of our data scientists who incorporated quality metrics, including risk of bias, into extracting data from both primary studies and systematic reviews, enabling determination of the strength of evidence for the various outcomes of interest. Evidence tables have been mapped to key question responses” said Anupama Reddy, PhD, co-founder and Chief Operating Officer. \n\n \"It is truly rewarding to learn that these findings are influencing policy\" added Nanguneri Nirmala, PhD, co-founder and Chief Executive Officer. The Center for Medicare and Medicaid Services (CMS) is amending regulations to include reimbursement for certain dental diagnostics and services linked to Medicare-covered dialysis services. CMS also solicited comment on the potential connection between dental services and covered services used for treatment of diabetes, and covered services for individuals with autoimmune diseases receiving immunosuppressive therapies.",
+        "imageUrl": "https://storage.googleapis.com/vds-website-public/public/news_img/ahrq-publications.jpg",
+        "links": [
+            {
+                "text": "Autoimmune Disease",
+                "url": "https://effectivehealthcare.ahrq.gov/products/autoimmune-disease/rapid-research"
+            },
+            {
+                "text": "Diabetes",
+                "url": "https://effectivehealthcare.ahrq.gov/products/treatment-outcomes-diabetes/rapid-research"
+            },
+            {
+                "text": "Chronic Kidney Disease",
+                "url": "https://effectivehealthcare.ahrq.gov/products/treatment-outcomes-chronic-kidney/rapid-research"
+            }
+        ]
+    },
+    {
         "title": "Vindhya presents BIOSuite at BioIT World 2024",
         "description": "Join Vindhya Data Science at BioIT World 2024 for our talk \"Digital Solutions for Biomarker Trials\" on Monday, April 15 at 3 pm! 📅 \n\nOur Data Scientist Dr. Alex V. Nesta, PhD and Co-Founder & COO Dr. Anupama Reddy will introduce BIOSuite, our end-to-end solution for accelerating biomarker discovery and translation. BIOSuite integrates two powerful platforms: BIOCLIN, a secure clinical trial platform that streamlines biomarker deployment, and BIORES, a research platform leveraging multi-omic datasets, ML/AI tools, and knowledge graphs to drive biomarker innovation.\n\nWe'll present a case study showcasing BIOSuite's impact in the ongoing OPTIC RCC trial for kidney cancer, where our multivariate ML model is being validated to guide precision treatment decisions.\n\nJoin us to explore how BIOSuite is revolutionizing biomarker-driven clinical trials and advancing precision medicine! 🚀",
         "imageUrl": "https://storage.googleapis.com/vds-website-public/public/news_img/bioitworld2024.jpeg",
