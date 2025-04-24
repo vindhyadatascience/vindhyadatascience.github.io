@@ -1,5 +1,24 @@
 [
     {
+        "title": "Vindhya contributes to groundbreaking ALS therapy research published in NEJM Evidence",
+        "description": "Apr 23, 2025 - Vindhya Data Science is honored to announce our contributions to an important publication in NEJM Evidence: \"Clinical Safety and Preliminary Efficacy of Regulatory T Cells for ALS,\" appearing in today's issue. This groundbreaking study explores a novel therapeutic approach using allogeneic umbilical cord blood-derived regulatory T cells to treat ALS, a devastating neurodegenerative disease. Led by Dr. Simrit Parmar of Cellenkos, Inc. and Dr. Neil Shneider of Columbia University, the research demonstrated no dose-limiting toxicity in treated patients and a notable reduction in disease progression rate. Vindhya supported the complex biomarker and efficacy analyses that demonstrated both the safety of this therapy and promising signals of reduced functional decline. Key findings include a reduction in ALSFRS-R decline rate during treatment from -1.66 to -0.41 points/month and identification of potential inflammatory biomarkers related to disease progression. Vindhya is grateful to collaborators at Cellenkos, Columbia University, MD Anderson Cancer Center, and Texas A&M University for this opportunity to contribute to such meaningful research.",
+        "imageUrl": "https://storage.googleapis.com/vds-website-public/public/news_img/2025_Apr_23_NEJM_Figure.png",
+        "links": [
+            {
+                "text": "Publication",
+                "url": "https://evidence.nejm.org/stoken/default+domain/ZUBXKXM3WG4WWHD4HYKJ/full?redirectUri=/doi/full/10.1056/EVIDoa2400249"
+            },
+            {
+                "text": "Editorial",
+                "url": "https://evidence.nejm.org/stoken/default+domain/H3SQA53SQNWNUIYKMYUQ/full?redirectUri=/doi/full/10.1056/EVIDe2500078"
+            },
+            {
+                "text": "LinkedIn",
+                "url": "https://www.linkedin.com/posts/vindhyadatascience_als-clinicalresearch-regulatorytcells-activity-7320808866814849024-rTfT?utm_source=share&utm_medium=member_desktop&rcm=ACoAABZTw_cB90m_gFnC2g6V1jby9nlas0ddq6o"
+            }
+        ]
+    },
+    {
         "title": "Vindhya publishes three articles on dental care",
         "description": "Nov 19, 2024 - Vindhya announced publication of three research reports pertaining to associations between dental/oral health services and autoimmune disease, diabetes and chronic kidney disease - conditions affecting millions within the United States and worldwide. The research was conducted under contracts with the Agency for Healthcare Research and Quality (AHRQ), Rockville, MD. Information contained in the reports will enable patients, providers and payers to make informed decisions, potentially improving the quality of healthcare services and outcomes. \n\n Knowledge gaps bridged by these reports include the impact of non-surgical periodontal procedures on outcomes in patients undergoing treatment for rheumatoid arthritis (an autoimmune disease), the impact of dental/oral health services on glycemic control in patients with diabetes and in patients with end stage renal disease. Each of these diseases is characterized by a systemic inflammatory state. A common finding across these studies is that non-surgical periodontal treatments appear to reduce circulating levels of inflammatory markers in patients. \n\n Information within these reports follows from a rigorous rapid literature review accompanied by input from subject matter experts. “I am proud of our data scientists who incorporated quality metrics, including risk of bias, into extracting data from both primary studies and systematic reviews, enabling determination of the strength of evidence for the various outcomes of interest. Evidence tables have been mapped to key question responses” said Anupama Reddy, PhD, co-founder and Chief Operating Officer. \n\n \"It is truly rewarding to learn that these findings are influencing policy\" added Nanguneri Nirmala, PhD, co-founder and Chief Executive Officer. The Center for Medicare and Medicaid Services (CMS) is amending regulations to include reimbursement for certain dental diagnostics and services linked to Medicare-covered dialysis services. CMS also solicited comment on the potential connection between dental services and covered services used for treatment of diabetes, and covered services for individuals with autoimmune diseases receiving immunosuppressive therapies.",
         "imageUrl": "https://storage.googleapis.com/vds-website-public/public/news_img/ahrq-publications.jpg",
