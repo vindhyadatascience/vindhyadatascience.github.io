@@ -24,8 +24,8 @@ export default ({data}) => {
     const pubItems = cards.map((card, index) => {
 
         return (
-            <a className="pubs-article-link" href={card.link}>
-                <article key={index} className="pubs-article">
+            <a key={index} className="pubs-article-link" href={card.link}>
+                <article className="pubs-article">
                     <div className="grid">
                         <div className="pub-image-container">
                             <img src={card.imageUrl}></img>
