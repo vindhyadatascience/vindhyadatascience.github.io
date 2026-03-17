@@ -40,13 +40,13 @@
     "bio": "After obtaining his PhD at Umass medical school in 2014 in the evolution of noncoding RNA networks, Alfred completed postdoctoral training at Cornell in 2016 simulating neutrally evolving 3'UTRs. Alfred then took a tenure track teaching position at Elon University where he taught genetics until 2021. This was followed by work in a bioinformatics core as a research professor at Umass medical school, then industry work at IDEXX as a staff scientist, and then a research professor position at Brown University developing software and training materials to visualize the spread of malaria drug resistance mutations, where he still holds a part-time position. Alfred loves teaching bioinformatics and programming, automating and scaling pipelines, debugging, and learning new skills."
   },
   {
-    "name": "Abdull J. Massri, Ph.D.",
-    "shortName": "A.J.",
-    "email": "aj@vindhyadatascience.com",
+    "name": "Joseph Bundy, Ph.D.",
+    "shortName": "Joe",
+    "email": "joseph@vindhyadatascience.com",
     "title": "Data Scientist",
-    "tagline": "Experienced developmental and evolutionary biologist applying bioinformatics and computational biology approaches to study gene regulation, embryogenesis, and pathogenesis",
-    "experience": "6+ years of experience at Duke University, 3+ years of experience at the NIEHS Biostatistics & Computational Biology Branch",
-    "expertise": "Single cell Genomics, Spatial Transcriptomics, Chromatin interactions (scRNA-seq, Bulk RNA-seq, CITE-seq, Multi-omics, microArray, ATAC-seq,ChIP-seq,Cut&Run) Pipeline Development, Data visualization, and Database mining",
-    "bio": "AJ holds a Ph.D. in Biology with an emphasis in Bioinformatics from Duke University where he implemented novel strategies utilizing single cell RNA sequencing to study gene regulation, embryogenesis, and cell fate determination in sea urchin embryos. After completing his Ph.D, he joined the National Institute of Environmental Health as a Bioinformatics Scientist in the Biostatistics and Computational Biology Branch. While there, he studied the pathogenic effects of various compounds on environmental health, by applying Next Generation Sequencing techniques such as Bulk RNA-seq, CITE-seq, microArray, ATAC-seq, Cut&Run and more. "
+    "tagline": "Experienced computational biologist and R programmer",
+    "experience": "10+ years of experience analyzing transcriptomics data with R, 6+ years in machine learning and analysis of chemical bioactivity data",
+    "expertise": "RNA-seq, Proteomics, Machine learning, High-throughput screening, Molecular biology, Neuroscience",
+    "bio": "Joe holds a Ph.D. in Biomedical Sciences from Florida State University and has a background in bioinformatics and computational toxicology.  Joe has extensive experience analyzing "omics" data from a variety of model systems including mouse, zebrafish, and human cancer cell lines. Before joining Vindhya, Joe was part of the Center for Computational Toxicology and Exposure at the U.S. EPA where he developed expertise in predicting chemical mechanism of action from High Throughput Transcriptomics datasets."
   }
 ]
