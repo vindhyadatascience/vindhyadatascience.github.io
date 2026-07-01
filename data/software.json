@@ -1,0 +1,11 @@
+[
+    {
+        "id": 1,
+        "title": "vmup",
+        "subtitle": "GCP Instance Manager",
+        "logo": "https://storage.googleapis.com/vds-website-public/public/img/vmup-logo-dark.svg",
+        "description": "A single-binary TUI for launching and managing Google Cloud compute instances. vmup provisions VMs with Terraform, opens SSH tunnels over IAP, and wraps it all in an interactive terminal UI — no manual setup required.",
+        "website": "https://vindhyadatascience.com/vmup",
+        "github": "https://github.com/vindhyadatascience/vmup"
+    }
+]
