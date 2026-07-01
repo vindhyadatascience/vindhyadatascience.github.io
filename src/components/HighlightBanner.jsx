@@ -3,34 +3,32 @@ import './HighlightBanner.scss';
 
 export default () => {
     return (
-        <>
-            <div className='highlight-banner'>
-                <div className='container-fluid'>
-                    <div className='banner-grid'>
-                        <span>
-                            Vindhya is a US Data Science company based in <a href="https://www.rtp.org/">RTP</a> and Boston
-                        </span>
-                        <div className='grid centered-spans'>
-                            <span>
-                                <span className='large-text'>100+</span><br /><span className='small-text'>years of experience</span>
-                            </span>
-                            <span>
-                                <span className='large-text'>150+</span><br /><span className='small-text'>combined publications</span>
-                            </span>
-                            <span>
-                                <span className='large-text'>73+</span><br /><span className='small-text'>successful projects</span>
-                            </span>
+        <div className='highlight-banner'>
+            <div className='container-fluid'>
+                <div className='banner-grid'>
+                    <p className='banner-intro'>
+                        Vindhya is a US Data Science company based in <a href="https://www.rtp.org/">RTP</a> and Boston
+                    </p>
+                    <div className='banner-stats'>
+                        <div className='stat'>
+                            <span className='stat-number'>100+</span>
+                            <span className='stat-label'>years of experience</span>
                         </div>
-                        <div className='divider'>&nbsp;</div>
-                        <span>
-                            Contact us today at {" "}
-                            <a href="mailto:info@vindhyadatascience">
-                                info@vindhyadatascience.com
-                            </a>
-                        </span>
+                        <div className='stat'>
+                            <span className='stat-number'>150+</span>
+                            <span className='stat-label'>combined publications</span>
+                        </div>
+                        <div className='stat'>
+                            <span className='stat-number'>73+</span>
+                            <span className='stat-label'>successful projects</span>
+                        </div>
                     </div>
+                    <p className='banner-contact'>
+                        Contact us today at{" "}
+                        <a href="mailto:info@vindhyadatascience.com">info@vindhyadatascience.com</a>
+                    </p>
                 </div>
             </div>
-        </>
+        </div>
     );
 };

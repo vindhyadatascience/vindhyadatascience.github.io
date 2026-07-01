@@ -11,6 +11,7 @@ import Services from './components/Services'
 import SmallHeading from './components/SmallHeading'
 import TeamContent from './components/TeamContent'
 import HighlightBanner from './components/HighlightBanner'
+import Software from './components/Software'
 import News from './components/News'
 import Publications from './components/Publications'
 
@@ -24,13 +25,15 @@ function App() {
       <HighlightBanner />
 
       {/* Services */}
-      <section id="services" className="container container-section">
-        <Services />
+      <section id="services" className="section">
+        <div className="container">
+          <Services />
+        </div>
       </section>
 
       {/* Team */}
-      <div id="team" className='alt-section'>
-        <section className='container'>
+      <section id="team" className="section">
+        <div className="container">
           <hgroup>
             <SmallHeading symbol="people" text="Team" />
             <h2>Meet our team of talented data scientists</h2>
@@ -40,12 +43,12 @@ function App() {
             </h3>
           </hgroup>
           <TeamContent />
-        </section>
-      </div>
-      
+        </div>
+      </section>
+
       {/* Testimonials */}
-      <section className='container-fluid'>
-        <div className='container'>
+      <section className="section">
+        <div className="container">
           <hgroup>
             <SmallHeading symbol="chat" text="Testimonials" />
             <h2>From our clients</h2>
@@ -58,9 +61,24 @@ function App() {
         </div>
       </section>
 
+      {/* Software */}
+      <section id="software" className="section">
+        <div className="container">
+          <hgroup>
+            <SmallHeading symbol="code" text="Software" />
+            <h2>Tools we build</h2>
+            <h3>
+              We develop platforms and applications that put
+              data science to work for our clients.
+            </h3>
+          </hgroup>
+          <Software data="data/software.json" />
+        </div>
+      </section>
+
       {/* News */}
-      <div id="news" className='alt-section'>
-        <section className='container'>
+      <section id="news" className="section">
+        <div className="container">
           <hgroup>
             <SmallHeading symbol="news" text="News" />
             <h2>Stay up to date with the latest news</h2>
@@ -70,12 +88,12 @@ function App() {
             </h3>
           </hgroup>
           <News data="data/news.json" />
-        </section>
-      </div>
+        </div>
+      </section>
 
       {/* Publications */}
-      <section id="pubs" className='container-fluid'>
-        <div className='container'>
+      <section id="pubs" className="section">
+        <div className="container">
           <hgroup>
             <SmallHeading symbol="book" text="Publications" />
             <h2>Featured Works</h2>

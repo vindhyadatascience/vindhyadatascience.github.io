@@ -13,20 +13,11 @@
 
 .card {
     cursor: grab;
-    border-radius: 10px;
-    box-shadow: rgba(0,0,0,0.1) 0px 12px 24px;  
-    padding: 20px;
-} 
-
-[data-theme=dark],
-.card {  
-    border: none;
-}
-
-[data-theme=light],
-:root:not([data-theme=dark])
-.card {
-    border: 1px solid #ccc;
+    border: 1px solid var(--card-border-color);
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+    background-color: var(--card-background-color);
+    padding: 24px;
 }
 
 .card > h3 {

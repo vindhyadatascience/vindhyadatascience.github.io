@@ -33,16 +33,18 @@
 }
 
 .pubs-article {
-    // display: flex;
     padding: 20px;
-    border-radius: 10px;
+    border: 1px solid var(--card-border-color);
+    border-radius: var(--card-radius);
+    background-color: var(--card-background-color);
     transition: all 0.3s;
     margin: 0px;
 }
 
 .pubs-article:hover {
     cursor: pointer;
-    box-shadow: 0 0 50px 0 $vds-primary-2;
+    border-color: transparent;
+    box-shadow: 0 0 40px 0 rgba($vds-primary-2, 0.35);
 }
 
 .pub-content-container {
@@ -63,7 +65,7 @@
 }
 
 .pubs-pagination * {
-    color: rgb(196, 195, 195);
+    color: var(--muted-color);
 }
 
 .pubs-pagination > div {
@@ -87,7 +89,7 @@
 }
 
 .pubs-pagination > div > button > span {
-    color: var(--text-color)
+    color: var(--text-color);
 }
 
 .pubs-pagination>div>button:hover > span {

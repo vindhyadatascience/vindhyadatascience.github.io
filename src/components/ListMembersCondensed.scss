@@ -1,3 +1,5 @@
+@import '../variables';
+
 $cardWidth: 175px;
 
 .profile-div {
@@ -36,12 +38,34 @@ $cardWidth: 175px;
 }
 
 .about {
-    background-color: rgb(0, 0, 0, 0.75);
+    // Full-screen dimmed backdrop.
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 1rem;
     overflow-y: auto;
 }
 
+// Solid, themed panel so the bio text is readable instead of sitting on the
+// translucent backdrop.
 .about-inner {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border-radius: var(--card-radius);
+    padding: 2rem;
+    max-width: 900px;
+    width: 100%;
     max-height: 90vh;
+    margin: auto;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.about-inner h6 {
+    color: $vds-secondary-2;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
 }
 
 .about-back-btn {
@@ -53,15 +77,25 @@ $cardWidth: 175px;
     position: absolute;
     width: $cardWidth;
     height: $cardWidth;
-    opacity: 0.7;
-    background-color: black;
-    border-radius: 50%;
-    top: 0px;
-    left: calc(50% - $cardWidth/2);
+    top: 0;
+    left: calc(50% - #{$cardWidth} / 2);
     display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.55);
+    opacity: 0;
     pointer-events: none;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.hover-div.show {
+    opacity: 1;
 }
 
 .hover-text {
-    margin: auto;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
 }

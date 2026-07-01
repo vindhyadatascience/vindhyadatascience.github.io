@@ -1,0 +1,88 @@
+@import '../variables';
+
+.layout-software-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.software-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.software-item-image {
+    flex-shrink: 0;
+    width: 140px;
+}
+
+.software-item-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.software-item > hgroup {
+    flex: 1;
+}
+
+.software-item > hgroup > h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: normal;
+    margin: 0 0 10px 0;
+}
+
+.software-item > hgroup > h3 strong {
+    font-weight: 700;
+}
+
+.software-item > hgroup > p {
+    font-size: 0.9rem;
+    color: var(--muted-color);
+}
+
+.software-item > hgroup > :nth-last-child(2) {
+    margin-bottom: 10px;
+}
+
+.software-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+}
+
+.software-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.85rem;
+    color: $vds-secondary-2 !important;
+    text-decoration: none;
+}
+
+.software-link:hover {
+    color: $vds-secondary-1 !important;
+}
+
+// Underline only the label on hover, never the icon.
+.software-link:hover .software-link-label {
+    text-decoration: underline;
+}
+
+// Both icons are SVGs on a 24-unit grid, so a single size rule keeps them
+// identical.
+.software-link-icon {
+    flex-shrink: 0;
+    width: 1.1em;
+    height: 1.1em;
+}
+
+// Collapse to a stacked layout on smaller screens.
+@media only screen and (max-width: 800px) {
+    .software-item {
+        flex-direction: column;
+    }
+}

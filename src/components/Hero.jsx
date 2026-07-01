@@ -39,16 +39,17 @@ export default () => {
                 </ul>
                 <ul>
                     <li><ThemeSwitcher /></li>
-                    <div href="#" className="menu-toggle" onClick={() => setIsOpen(!isOpen)}>
+                    <li className="menu-toggle" onClick={() => setIsOpen(!isOpen)}>
                         <span className="material-symbols-outlined icon">
                             {/* {isOpen ? "expand_more" : "chevron_right"} */}
                             {isOpen ? "close" : "menu"}
                         </span>
-                    </div>
+                    </li>
                     {(isOpen && (
                         <ul className="menu-items">
                             <li><a href="#services">Services</a></li>
                             <li><a href="#team">Team</a></li>
+                            <li><a href="#software">Software</a></li>
                             <li><a href="#news">News</a></li>
                             <li><a href="#pubs">Publications</a></li>
                             <li><a href="mailto:info@vindhyadatascience.com">Contact</a></li>
