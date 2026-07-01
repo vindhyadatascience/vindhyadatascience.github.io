@@ -7,6 +7,7 @@ import Sitemap from 'vite-plugin-sitemap'
 const pages = [
   'services',
   'team',
+  'software',
   'news',
   'pubs',
   'ahrq-reports'

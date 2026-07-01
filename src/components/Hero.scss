@@ -3,16 +3,20 @@
 .hero {
     background-color: #1b1d2c; //#394046;
     // clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
-    background-image: url('/img/banner_dark.svg');
-    background-position: center;
-    background-size: cover;
+    background-image: url('/img/mountains-range-dark.svg');
+    background-position: bottom center;
+    // Height is pinned to a fraction of the hero height (not the width), so the
+    // range stays ~50% of the hero at any window width. preserveAspectRatio="none"
+    // on the SVG lets it stretch to fill that band.
+    background-size: 100% 50%;
+    background-repeat: no-repeat;
     box-shadow: 0 10px 20px -20px black;
 }
 
 // Overrides for light theme
 .hero-light {
     background-color: #FFFFFF;
-    background-image: url('/img/banner_light.svg');
+    background-image: url('/img/mountains-range-light.svg');
 }
 
 #root>div.hero-light>header>hgroup>* {
@@ -51,6 +55,10 @@
 .theme-switcher {
     vertical-align: bottom;
     font-size: 18 !important;
+}
+
+.menu-toggle {
+    cursor: pointer;
 }
 
 .nav-title-text {

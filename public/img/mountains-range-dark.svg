@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 560" width="1440" height="560" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="m3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a3060"/>
+      <stop offset="100%" stop-color="#2f2856"/>
+    </linearGradient>
+    <linearGradient id="m2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#272144"/>
+      <stop offset="100%" stop-color="#221c3a"/>
+    </linearGradient>
+    <linearGradient id="m1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1c1730"/>
+      <stop offset="100%" stop-color="#171223"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#m3)" d="M0,240 L300.0,127.5 Q400,90 481.2,125.0 L643.8,195.0 Q725,230 806.2,188.0 L968.8,104.0 Q1050,62 1147.5,99.0 L1440,210 L1440,560 L0,560 Z"/>
+  <path fill="url(#m2)" d="M0,380 L525.0,286.2 Q700,255 775.0,286.2 L925.0,348.8 Q1000,380 1075.0,352.5 L1225.0,297.5 Q1300,270 1335.0,287.5 L1440,340 L1440,560 L0,560 Z"/>
+  <path fill="url(#m1)" d="M0,470 L150.0,440.0 Q200,430 287.5,447.5 L462.5,482.5 Q550,500 637.5,481.2 L812.5,443.8 Q900,425 1035.0,441.2 L1440,490 L1440,560 L0,560 Z"/>
+</svg>

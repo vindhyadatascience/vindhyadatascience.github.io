@@ -43,15 +43,40 @@ h6 {
     --font-weight: 400;
     --border-radius: 10px;
     --font-family: 'Source Sans Pro', sans-serif !important;
+
+    /* Redesign design tokens */
+    --section-spacing: 6rem;
+    --divider-color: var(--muted-border-color);
+    --card-radius: 12px;
+    --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
 }
 
 /* Typography */
 h2,
-h3,
-hgroup> :last-child {
-    font-size: 2em;
+h3 {
     font-weight: 400;
     color: var(--h5-color);
+}
+
+/* Section header block: accent label -> title -> muted subtitle.
+   Scoped to .section so the hero header keeps its own larger styling. */
+.section hgroup {
+    margin-bottom: 3rem;
+}
+
+.section hgroup > h1,
+.section hgroup > h2 {
+    font-size: 2.25em;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    margin-bottom: 0.5rem;
+}
+
+.section hgroup > :last-child {
+    max-width: 46rem;
+    font-size: 1.15em;
+    font-weight: 400;
+    color: var(--muted-color);
 }
 
 
@@ -86,14 +111,15 @@ footer>div>small>a {
     text-decoration: underline;
 }
 
-.alt-section {
-    // background-color: #1a1c2c;
-    background-color: $vds-primary-1;
-    padding: 40px 0px 40px 0px;
+/* Section rhythm — every content section shares the same theme background.
+   Separation comes from generous spacing and a hairline divider, never from
+   colored bands, so sections can be added or reordered without breaking. */
+.section {
+    padding: var(--section-spacing) 0;
 }
 
-.container-section {
-    padding: 40px 0px 40px 0px;
+.section + .section {
+    border-top: 1px solid var(--divider-color);
 }
 
 .container-fluid {
@@ -102,17 +128,6 @@ footer>div>small>a {
 }
 
 .container {
-    margin-bottom: 0px;
-}
-
-.alt-section * {
-    color: white;
-}
-.alt-section * hgroup *:last-child {
-    color: rgb(196, 195, 195);
-}
-
-.alt-section > .container {
     margin-bottom: 0px;
 }
 

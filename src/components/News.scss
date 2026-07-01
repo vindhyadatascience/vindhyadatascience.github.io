@@ -59,7 +59,7 @@ $imgWidth: 250px; //350px;
 
 .news-item > hgroup > p {
     font-size: 0.8rem;
-    color: #ccc;
+    color: var(--muted-color);
 }
 
 .news-item > hgroup > :nth-last-child(2) {
@@ -90,7 +90,7 @@ $imgWidth: 250px; //350px;
 }
 
 .news-pagination * {
-    color: rgb(196, 195, 195);
+    color: var(--muted-color);
 }
 
 .news-pagination > div {

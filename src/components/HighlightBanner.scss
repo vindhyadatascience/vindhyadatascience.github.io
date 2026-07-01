@@ -1,66 +1,97 @@
 @import '../variables';
 
 .highlight-banner {
-    background-color: $vds-primary-1;
-    padding: 20px 40px;
+    padding: 3rem 40px;
+    // Subtle brand-tinted band so the banner reads as a distinct section on
+    // both light and dark themes.
+    background: rgba($vds-primary-2, 0.05);
+    border-top: 1px solid var(--divider-color);
+    border-bottom: 1px solid var(--divider-color);
+    color: var(--text-color);
 }
 
 .highlight-banner > .container-fluid {
-    padding: 0px;
+    padding: 0;
 }
 
 .banner-grid {
-    display: grid;
-    grid-template-columns: 3fr 5fr 0.5fr 1fr !important;
-    column-gap: 0.25rem;
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
+    gap: 2rem 3rem;
 }
 
-.divider {
-    border-right: 1px solid $vds-secondary-2;
-    height: 100%;
-    max-width: 10px;
-    justify-self: center;
-}
-
-.highlight-banner > *span {
-    color: white;
-    font-size: large;
-}
-
-.centered-spans {
+.banner-intro,
+.banner-contact {
+    flex: 1 1 220px;
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.5;
     text-align: center;
+    color: var(--muted-color);
+}
+
+// The stats block keeps its three columns until the whole banner stacks,
+// so it never collapses independently mid-resize.
+.banner-stats {
+    flex: 2 1 440px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
+    gap: 0.35rem;
+    padding: 0 0.5rem;
 }
 
-.centered-spans > span {
-    font-size: smaller;
+.stat + .stat {
+    border-left: 1px solid var(--divider-color);
 }
 
-span > .large-text {
-    font-size: 40pt;
-    color: $vds-secondary-1;
+.stat-number {
+    font-size: clamp(2.25rem, 5vw, 3.25rem);
     font-weight: 800;
-    line-height: 1em;
+    line-height: 1;
+    white-space: nowrap; // keep "100+" together, never wrap the number
+    color: $vds-primary-2;
 }
 
-span > .small-text {
-    font-size: small;
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--muted-color);
+}
+
+// Lighter number color for legibility on the dark theme.
+[data-theme=dark] .stat-number {
+    color: $vds-secondary-1;
 }
 
 @media only screen and (max-width: 800px) {
+    .highlight-banner {
+        padding: 2.5rem 20px;
+    }
+
     .banner-grid {
-        grid-template-columns: 1fr !important;
-        
-    }
-    
-    .divider {
-        display: none;
+        gap: 2rem;
     }
 
-    .highlight-banner > *span {
-        text-align: center;
-        padding: 10px;
+    .banner-stats {
+        flex-basis: 100%;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .stat {
+        padding: 0 0.25rem;
     }
 
+    .stat-label {
+        font-size: 0.8rem;
+    }
 }

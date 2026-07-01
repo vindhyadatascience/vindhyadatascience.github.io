@@ -31,7 +31,7 @@ export default ({data}) => {
                 <img className="profile-img"
                     src={getGravatarUrl(x.email)}
                     alt={x.name} />
-                <div className='hover-div' style={hover === i ? {display: "flex"} : {display: "none"}}>
+                <div className={`hover-div${hover === i ? ' show' : ''}`}>
                     <span className='hover-text'>
                         Read <br />{x.shortName}'s Bio
                     </span>

@@ -1,23 +1,59 @@
 @import '../variables';
 
-.nav-button {
-    border-radius: 25px;
-    padding: 5px 20px;
-    width: fit-content;
-    margin: 0px;
-    border: 0px;
+// Underline-style tabs: readable in both light and dark themes, with a
+// brand-gradient indicator under the active tab.
+.team-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 2rem;
+    border-bottom: 1px solid var(--divider-color);
+    margin-bottom: 2.5rem;
 }
 
-.nav-button:not(:last-of-type) {
-    margin-right: 5px;
+.team-tab {
+    position: relative;
+    appearance: none;
+    width: auto;
+    margin: 0;
+    padding: 0.75rem 0.25rem;
+    background: none;
+    border: none;
+    border-radius: 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--muted-color);
+    cursor: pointer;
+    transition: color 0.15s ease-in-out;
 }
 
-.team-toggle-btns {
-    display: inline-flex;
-    background-color: darken($vds-secondary-2, 10);
-    border-radius: 25px;
+.team-tab:hover,
+.team-tab:focus-visible {
+    background: none;
+    color: var(--text-color);
 }
 
-.nav-button:hover {
-    background-color: lighten($vds-secondary-2, 2);
+.team-tab.active {
+    color: var(--text-color);
+}
+
+// Gradient indicator sits on top of the shared bottom border.
+.team-tab.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 3px;
+    border-radius: 3px 3px 0 0;
+    background: $vds-gradient;
+}
+
+@media only screen and (max-width: 560px) {
+    .team-tabs {
+        gap: 0 1.25rem;
+    }
+
+    .team-tab {
+        font-size: 0.95rem;
+    }
 }
