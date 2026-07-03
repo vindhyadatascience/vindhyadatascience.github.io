@@ -37,10 +37,10 @@ function App() {
           <hgroup>
             <SmallHeading symbol="people" text="Team" />
             <h2>Meet our team of talented data scientists</h2>
-            <h3>
+            <p>
               People are what make Vindhya great.
               Click below to meet our "Vindhyaneers".
-            </h3>
+            </p>
           </hgroup>
           <TeamContent />
         </div>
@@ -52,10 +52,10 @@ function App() {
           <hgroup>
             <SmallHeading symbol="chat" text="Testimonials" />
             <h2>From our clients</h2>
-            <h3>
+            <p>
               We strive to foster the best relationships
               with our clients.
-            </h3>
+            </p>
           </hgroup>
           <TestimonialSlider />
         </div>
@@ -67,10 +67,10 @@ function App() {
           <hgroup>
             <SmallHeading symbol="code" text="Software" />
             <h2>Tools we build</h2>
-            <h3>
+            <p>
               We develop platforms and applications that put
               data science to work for our clients.
-            </h3>
+            </p>
           </hgroup>
           <Software data="data/software.json" />
         </div>
@@ -82,10 +82,10 @@ function App() {
           <hgroup>
             <SmallHeading symbol="news" text="News" />
             <h2>Stay up to date with the latest news</h2>
-            <h3>
+            <p>
               We are always working on something new.
               Click below to see what we are up to.
-            </h3>
+            </p>
           </hgroup>
           <News data="data/news.json" />
         </div>
@@ -97,10 +97,10 @@ function App() {
           <hgroup>
             <SmallHeading symbol="book" text="Publications" />
             <h2>Featured Works</h2>
-            <h3>
+            <p>
               Check out our recently published articles,
               posters, and talks.
-            </h3>
+            </p>
           </hgroup>
           <div className='ahrq-reports'>
             <h2 id="ahrq-reports">AHRQ Reports</h2>

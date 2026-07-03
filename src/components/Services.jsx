@@ -13,13 +13,13 @@ export default () => {
                 <hgroup>
                     <SmallHeading symbol="biotech" text="Services" />
                     
-                    <h1>Bring your research to the next level</h1>
-                    <h2>
+                    <h2>Bring your research to the next level</h2>
+                    <p>
                         Our team loves big data and solving challenging problems.
                         We engage in a wide range of projects, from small-scale
                         analysis to large-scale, multi-year
                         collaborations.
-                    </h2>
+                    </p>
                 </hgroup>
                 <div>
                     <CardCarousel data="data/services.json" />

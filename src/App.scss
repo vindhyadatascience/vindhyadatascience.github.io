@@ -77,6 +77,8 @@ h3 {
     font-size: 1.15em;
     font-weight: 400;
     color: var(--muted-color);
+    /* Subtitles are <p> for a clean heading outline; keep hgroup spacing */
+    margin-bottom: 0;
 }
 
 
@@ -91,6 +93,7 @@ footer {
 
 header hgroup> :last-child {
     color: var(--h3-color);
+    margin-bottom: 0;
 }
 
 header hgroup {

@@ -61,12 +61,12 @@ export default () => {
                 <hgroup style={{ maxWidth: "650px" }}>
                     <h1 className='gradient-text'>Vindhya Data Science</h1>
                     <h2>Transform your data into decisions</h2>
-                    <h3>
+                    <p>
                         Vindhya Data Science is a women-owned small business
-                        with headquarters in North Carolina, USA. Vindhya 
-                        specializes in evidence-based medicine, epidemiology, 
+                        with headquarters in North Carolina, USA. Vindhya
+                        specializes in evidence-based medicine, epidemiology,
                         bioinformatics, genomics, artificial intelligence and data engineering. The Company has ongoing partnerships with the federal government, leading academic medical centers and pharma/biotech. Vindhya works towards transforming large data sets into informed decisions using state of the art data science technologies.
-                    </h3>
+                    </p>
                 </hgroup>
                 <p>
                     <RoundedButton text="Why Vindhya?" href="/#services" />
