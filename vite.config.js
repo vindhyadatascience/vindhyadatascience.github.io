@@ -12,7 +12,11 @@ const pages = [
   'pubs',
   'ahrq-reports'
 ]
-const dynamicRoutes = pages.map(page => `/#${page}`)
+const dynamicRoutes = [
+  ...pages.map(page => `/#${page}`),
+  // Static pages served directly from public/
+  '/genefox/privacy/',
+]
 
 // https://vitejs.dev/config/
 export default defineConfig({
