@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GeneFox Privacy Policy</title>
+<meta name="description" content="Privacy Policy for the GeneFox app by Vindhya Data Science.">
+<link rel="icon" type="image/svg+xml" href="/img/VDS-Symbol-Color-CMYK.svg">
+<link rel="canonical" href="https://vindhyadatascience.com/genefox/privacy/">
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    max-width: 46rem; margin: 0 auto; padding: 2rem 1.25rem 4rem; color: #1a1a1a; background: #fff;
+  }
+  @media (prefers-color-scheme: dark) { body { color: #e6e6e6; background: #161616; } a { color: #5cb8e6; } }
+  h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 .25rem; }
+  h2 { font-size: 1.25rem; margin: 2rem 0 .5rem; padding-top: .5rem; border-top: 1px solid rgba(128,128,128,.25); }
+  h3 { font-size: 1.05rem; margin: 1.25rem 0 .35rem; }
+  .meta { color: #6b7280; font-size: .9rem; margin: 0 0 1.5rem; }
+  .callout { background: rgba(120,140,200,.10); border: 1px solid rgba(120,140,200,.30); border-radius: 10px; padding: .75rem 1rem; margin: 1.25rem 0; }
+  ul { padding-left: 1.25rem; }
+  li { margin: .25rem 0; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .9em; background: rgba(128,128,128,.15); padding: .1em .35em; border-radius: 5px; }
+  a { color: #007eb0; overflow-wrap: anywhere; }
+  footer { margin-top: 2.5rem; color: #6b7280; font-size: .85rem; }
+</style>
+</head>
+<body>
+
+<h1>Privacy Policy for GeneFox</h1>
+<p class="meta"><strong>Effective date:</strong> July 3, 2026 &middot; <strong>Last updated:</strong> July 3, 2026</p>
+
+<p>This Privacy Policy explains how the <strong>GeneFox</strong> app (&ldquo;GeneFox,&rdquo; the &ldquo;app&rdquo;) handles information. GeneFox is developed and published by <strong>Vindhya Data Science</strong> (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;). It applies to the GeneFox apps for iPhone, iPad, Mac, and Android.</p>
+
+<div class="callout">
+<strong>The short version.</strong> GeneFox is a tool for exploring publicly available cancer-genomics and gene-expression data, built to be privacy-respecting by design:
+<ul>
+  <li><strong>No account required</strong> — no sign-up, login, or user profile.</li>
+  <li><strong>We do not collect personal information about you</strong>, and we have no servers that receive or store your personal data.</li>
+  <li><strong>No analytics, no advertising, no third-party tracking, and no crash-reporting SDKs</strong> are included in the app.</li>
+  <li>The app connects to public scientific databases and, only if you opt in, to a Google AI service, to answer your genomics questions.</li>
+  <li>Your bookmarks and saved cohorts stay <strong>on your device</strong> and, on Apple devices, sync through <strong>your own private iCloud account</strong> — we cannot see them.</li>
+</ul>
+</div>
+
+<h2>1. What GeneFox does</h2>
+<p>GeneFox lets you browse and visualize gene-expression and related genomic data from public research repositories — for example TCGA cohorts through the NIH Genomic Data Commons, and public datasets from NCBI&rsquo;s Gene Expression Omnibus (GEO). To do this, the app sends <strong>scientific identifiers and search terms</strong> (such as gene symbols and dataset accession numbers) to those public services and displays the results. These requests are made directly from your device to the data providers.</p>
+
+<h2>2. Information we do not collect</h2>
+<p>GeneFox does <strong>not</strong> collect, request, or transmit:</p>
+<ul>
+  <li>Your name, email address, phone number, or mailing address;</li>
+  <li>Account credentials (there are no accounts);</li>
+  <li>Your precise or approximate location;</li>
+  <li>Contacts, photos, calendar, health data, or files outside the app;</li>
+  <li>Advertising identifiers (e.g., IDFA/AAID) — the app contains no advertising or tracking technology;</li>
+  <li>Usage analytics or crash telemetry.</li>
+</ul>
+<p>The app also does not use Firebase Analytics, Crashlytics, Firebase Cloud Messaging, or any comparable analytics/tracking service. GeneFox does not display ads.</p>
+
+<h2>3. Information sent to third parties when you use the app</h2>
+<p>To function, GeneFox sends a limited amount of information from your device to the services below. Except where you type free text (search boxes and the AI assistant), this is limited to <strong>scientific identifiers</strong> (gene symbols, dataset accession numbers, and public sample identifiers) that are not tied to your identity. All connections use encrypted HTTPS.</p>
+
+<h3>3a. Public biomedical data providers</h3>
+<p>When you search, browse, or open a dataset, the app queries public research resources operated by third parties, including:</p>
+<ul>
+  <li><strong>NIH Genomic Data Commons (GDC) / TCGA</strong> — <code>api.gdc.cancer.gov</code></li>
+  <li><strong>NCBI Entrez / Gene Expression Omnibus (GEO)</strong> — <code>eutils.ncbi.nlm.nih.gov</code>, <code>www.ncbi.nlm.nih.gov</code>, <code>ftp.ncbi.nlm.nih.gov</code> (U.S. National Institutes of Health)</li>
+  <li><strong>UCSC Xena</strong> — <code>*.xenahubs.net</code>, <code>xena.treehouse.gi.ucsc.edu</code></li>
+  <li><strong>EMBL-EBI Expression Atlas</strong> — <code>www.ebi.ac.uk</code>, <code>ftp.ebi.ac.uk</code></li>
+  <li><strong>ARCHS4 (Ma&rsquo;ayan Lab, Mount Sinai)</strong> — <code>maayanlab.cloud</code></li>
+  <li><strong>Amazon Web Services (S3)</strong> — static reference files hosted for the GDC Xena hub</li>
+</ul>
+<p>What is sent to these services is limited to the scientific query itself — for example a gene symbol, a dataset accession, a sample barcode, or, in the GEO search box, <strong>the text you type as a search term</strong>. No account identifier, device identifier, or personal information is attached to these requests.</p>
+<p>Because a free-text search term is transmitted to NCBI, please do not enter personal or confidential information into search fields.</p>
+
+<h3>3b. &ldquo;Ask GeneFox&rdquo; AI assistant (optional, opt-in)</h3>
+<p>GeneFox includes an optional natural-language assistant, &ldquo;Ask GeneFox.&rdquo; It first tries to interpret your question <strong>on your device</strong>. For harder questions it can, <strong>only with your explicit consent</strong>, send the question to Google&rsquo;s <strong>Gemini</strong> model through <strong>Firebase AI Logic</strong> (a Google service) to interpret it.</p>
+<ul>
+  <li><strong>This cloud step is opt-in.</strong> The first time it would be used, GeneFox asks for your consent. If you decline, your questions are handled by an on-device parser and <strong>nothing is sent</strong> to Google for interpretation.</li>
+  <li><strong>What is sent when you consent:</strong> the text of your question, plus a small set of generic, non-identifying labels describing which analysis options the current dataset supports.</li>
+  <li><strong>What is deliberately not sent:</strong> dataset titles, sample values, your bookmarks or saved cohorts, and prior conversation history.</li>
+  <li>Your question is used to interpret that request and is handled by Google under Google&rsquo;s terms and privacy policy (see Section 6). Please avoid entering personal or confidential information into the assistant, since the text you type is transmitted to Google.</li>
+</ul>
+
+<h3>3c. App integrity verification</h3>
+<p>To ensure that only the genuine, unmodified GeneFox app can use the AI service above, the app uses <strong>Firebase App Check</strong> with Apple&rsquo;s <strong>App Attest</strong> (on iPhone, iPad, and Mac) and <strong>Google Play Integrity</strong> (on Android). These send a cryptographic <strong>app-and-device integrity token</strong> to Google to confirm the request comes from a legitimate copy of the app. These tokens verify the app, not you; they do not contain personal information and are not used to identify or track you.</p>
+
+<h2>4. Information stored on your device and in your own cloud</h2>
+<ul>
+  <li><strong>On your device:</strong> GeneFox stores your bookmarks and pinned cohorts, a short list of recently viewed items, your AI-assistant consent choice, and cached data files that make the app faster. This information stays on your device. You can clear cached data from within the app, and uninstalling the app removes it.</li>
+  <li><strong>In your own iCloud (Apple devices only):</strong> On iPhone, iPad, and Mac, your bookmarks and pinned cohorts sync through your <strong>private iCloud (CloudKit) database</strong> so they are available across your Apple devices. This data lives in <strong>your</strong> iCloud account under Apple&rsquo;s control; <strong>we cannot access it</strong>. Its handling is governed by Apple&rsquo;s iCloud terms and privacy policy. On Android, this data is stored locally only; you can move it between devices by exporting and importing a file yourself.</li>
+</ul>
+
+<h2>5. Notifications</h2>
+<p>GeneFox does not send you marketing or push notifications and does not register your device for a push-notification token.</p>
+
+<h2>6. Third-party services and their privacy policies</h2>
+<p>The third parties GeneFox connects to process information under their own privacy policies:</p>
+<ul>
+  <li><strong>Google / Firebase</strong> (AI assistant and app-integrity checks): <a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a> and <a href="https://policies.google.com/privacy">policies.google.com/privacy</a></li>
+  <li><strong>Apple iCloud</strong> (bookmark sync on Apple devices): <a href="https://www.apple.com/legal/privacy/">apple.com/legal/privacy</a></li>
+  <li><strong>U.S. National Institutes of Health — NCBI / GEO and the Genomic Data Commons:</strong> <a href="https://www.ncbi.nlm.nih.gov/home/about/policies/">ncbi.nlm.nih.gov/home/about/policies</a> and <a href="https://www.cancer.gov/policies">cancer.gov/policies</a></li>
+  <li><strong>UCSC Xena:</strong> <a href="https://xenabrowser.net/">xenabrowser.net</a></li>
+  <li><strong>EMBL-EBI:</strong> <a href="https://www.ebi.ac.uk/data-protection/privacy-notice/">ebi.ac.uk/data-protection/privacy-notice</a></li>
+  <li><strong>ARCHS4 / Ma&rsquo;ayan Lab (Icahn School of Medicine at Mount Sinai):</strong> <a href="https://maayanlab.cloud/">maayanlab.cloud</a></li>
+</ul>
+<p>We are not responsible for the privacy practices of these independent services.</p>
+
+<h2>7. Data security</h2>
+<p>All network connections made by GeneFox use encrypted HTTPS/TLS. Because GeneFox does not operate a backend that stores your data, there is no central store of personal information to be breached.</p>
+
+<h2>8. Children&rsquo;s privacy</h2>
+<p>GeneFox is a scientific reference tool intended for researchers, clinicians, students, and other adults. It is not directed to children, and we do not knowingly collect personal information from children. Because the app collects no personal information from any user, it does not knowingly collect any from children under 13 (or the equivalent age in your jurisdiction).</p>
+
+<h2>9. International users</h2>
+<p>The public data providers and Google services described above are operated primarily in the United States, so information sent to them (scientific identifiers and, if applicable, your typed query) is processed in the United States and other countries where those providers operate.</p>
+
+<h2>10. Your rights</h2>
+<p>Depending on where you live, you may have rights under laws such as the EU/UK GDPR or the California Consumer Privacy Act (CCPA). Because GeneFox does not collect personal information and we hold no personal data about you, there is generally no personal data for us to access, correct, delete, or export. Data stored on your device is under your control (clear it in-app or uninstall the app); iCloud-synced bookmarks are managed through your Apple account. If you have questions about your rights, contact us using the details below.</p>
+
+<h2>11. Changes to this policy</h2>
+<p>We may update this Privacy Policy from time to time. When we do, we will revise the &ldquo;Last updated&rdquo; date above and post the new version at the same location. Material changes will also be reflected in the app&rsquo;s store listing.</p>
+
+<h2>12. Contact us</h2>
+<p>If you have any questions about this Privacy Policy or GeneFox&rsquo;s privacy practices, contact:</p>
+<p>
+  <strong>Vindhya Data Science</strong><br>
+  Email: <a href="mailto:info@vindhyadatascience.com">info@vindhyadatascience.com</a><br>
+  Website: <a href="https://vindhyadatascience.com">vindhyadatascience.com</a>
+</p>
+
+<footer>&copy; 2026 Vindhya Data Science. GeneFox and this Privacy Policy.</footer>
+
+</body>
+</html>
