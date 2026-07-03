@@ -10,10 +10,6 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     errorElement: <NotFoundPage />
-  },
-  {
-    path: "/#ahrq-reports",
-    element: "/#ahrq-reports",
   }
 ]);
 
