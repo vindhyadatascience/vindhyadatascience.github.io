@@ -22,7 +22,7 @@ export default ({data}) => {
     const membersList = members.map(x => {
         return (
             <div key={x.id} className='founder-card'>
-                <img src={`${getGravatarUrl(x.email)}`} alt={`${x.shortName}'s profile image`}/>
+                <img src={`${getGravatarUrl(x.email)}`} alt={`${x.shortName}'s profile image`} loading="lazy"/>
                 <div>
                     <hgroup>
                         <h3>{x.name}</h3>

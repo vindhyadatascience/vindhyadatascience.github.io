@@ -7,7 +7,7 @@ export default () => {
             <div className='container-fluid'>
                 <div className='banner-grid'>
                     <p className='banner-intro'>
-                        Vindhya is a US Data Science company based in <a href="https://www.rtp.org/">RTP</a> and Boston
+                        Vindhya is a US Data Science company based in <a href="https://www.rtp.org/" target="_blank" rel="noopener noreferrer">RTP</a> and Boston
                     </p>
                     <div className='banner-stats'>
                         <div className='stat'>

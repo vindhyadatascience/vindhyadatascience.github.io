@@ -130,7 +130,7 @@ function App() {
               All Rights Reserved
             </small>
           </p>
-          <img src={whiteLogo} style={{ maxWidth: "125px" }} alt="Vindhya logo"></img>
+          <img src={whiteLogo} style={{ maxWidth: "125px" }} alt="Vindhya logo" loading="lazy"></img>
         </div>
       </footer>
 

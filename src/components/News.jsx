@@ -41,7 +41,7 @@ export default ({data}) => {
         const links = card.links.map((link, idx) => {
             return (
                 <span key={idx}>
-                    <a key={idx} href={link.url} className="news-links">{link.text}</a>
+                    <a key={idx} href={link.url} className="news-links" target="_blank" rel="noopener noreferrer">{link.text}</a>
                     {idx < card.links.length - 1 ? <span className="news-link-separator">&nbsp;•&nbsp;</span> : null}
                 </span>
             )
@@ -51,7 +51,7 @@ export default ({data}) => {
             <div key={index} className="news-item">
                 <div className="news-item-image" style={cardStyles[index]}>
                     {card.imageUrl != "" ? (
-                        <img src={card.imageUrl} alt={card.title} />
+                        <img src={card.imageUrl} alt={card.title} loading="lazy" />
                     ) : <span className="material-symbols-outlined icon">news</span>}
                 </div>
                 <hgroup>        
