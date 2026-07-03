@@ -2,29 +2,19 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import Sitemap from 'vite-plugin-sitemap'
 
-// Define dynamic routes for SEO (sitemap.xml generation)
-// Add new sections here
-const pages = [
-  'services',
-  'team',
-  'software',
-  'news',
-  'pubs',
-  'ahrq-reports'
-]
-const dynamicRoutes = [
-  ...pages.map(page => `/#${page}`),
-  // Static pages served directly from public/
-  '/genefox/privacy/',
-]
-
+// Sitemap: hash-fragment section anchors (/#services) are treated by
+// crawlers as duplicates of /, so only real URLs are listed here.
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
     Sitemap({
       hostname: 'https://vindhyadatascience.com',
-      dynamicRoutes
+      // Static pages under public/ (e.g. /genefox/privacy) are
+      // auto-discovered from dist/, so no dynamicRoutes needed.
+      exclude: ['/404'],
+      changefreq: { '/': 'monthly', '/genefox/privacy': 'yearly' },
+      priority: { '/': 1.0, '/genefox/privacy': 0.3 },
     }),
   ],
   server: {

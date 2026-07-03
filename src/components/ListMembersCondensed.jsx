@@ -30,7 +30,7 @@ export default ({data}) => {
                 >
                 <img className="profile-img"
                     src={getGravatarUrl(x.email)}
-                    alt={x.name} />
+                    alt={x.name} loading="lazy" />
                 <div className={`hover-div${hover === i ? ' show' : ''}`}>
                     <span className='hover-text'>
                         Read <br />{x.shortName}'s Bio
@@ -51,7 +51,7 @@ export default ({data}) => {
                     <div className='about-inner'>
                         <div className='grid container'>
                             <img src={getGravatarUrl(x.email)}
-                                className='details-img'/>
+                                className='details-img' alt={x.name}/>
                             <div>
                                 <hgroup>
                                     <h3>{x.name}</h3>

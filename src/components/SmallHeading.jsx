@@ -7,9 +7,9 @@ export default ({symbol, text}) => {
             <span className="material-symbols-outlined icon">
                 {symbol}
             </span>
-            <h6 className="small-heading">
+            <p className="small-heading">
                 {text}
-            </h6>
+            </p>
         </div>
     )
 }

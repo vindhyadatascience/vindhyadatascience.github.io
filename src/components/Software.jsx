@@ -45,6 +45,7 @@ export default ({ data }) => {
                                 className="software-logo"
                                 src={product.logo}
                                 alt={`${product.title} logo`}
+                                loading="lazy"
                             />
                         )}
                     </div>
