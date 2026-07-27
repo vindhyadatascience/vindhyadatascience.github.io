@@ -8,7 +8,7 @@
     --text-color: #{$black};
 }
 
-html {
+html.smooth-scroll {
     scroll-behavior: smooth;
 }
 

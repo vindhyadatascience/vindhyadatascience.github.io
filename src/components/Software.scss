@@ -33,6 +33,9 @@
     font-weight: 500;
     line-height: normal;
     margin: 0 0 10px 0;
+    // Each heading is a permalink target (#software-<slug>); leave room above
+    // it so a deep link doesn't land flush against the top of the viewport.
+    scroll-margin-top: 30px;
 }
 
 .software-item > hgroup > h3 strong {

@@ -64,7 +64,7 @@ export default ({ data }) => {
                     </div>
                     <hgroup>
                         {product.title && (
-                            <h3>
+                            <h3 id={product.slug ? `software-${product.slug}` : undefined}>
                                 <strong>{product.title}</strong>
                                 {product.subtitle ? `: ${product.subtitle}` : ''}
                             </h3>
