@@ -2,6 +2,7 @@
     {
         "id": 1,
         "title": "vmup",
+        "slug": "vmup",
         "subtitle": "GCP Instance Manager",
         "logo": "https://storage.googleapis.com/vds-website-public/public/img/vmup-logo-dark.svg",
         "description": "A single-binary TUI for launching and managing Google Cloud compute instances. vmup provisions VMs with Terraform, opens SSH tunnels over IAP, and wraps it all in an interactive terminal UI — no manual setup required.",
@@ -11,6 +12,7 @@
     {
         "id": 2,
         "title": "IRIS-RCC Portal",
+        "slug": "iris-rcc-portal",
         "subtitle": "Renal Cell Carcinoma Subtyping",
         "logo": "https://storage.googleapis.com/vds-website-public/public/img/iris-rcc-logo.svg",
         "description": "A web portal for the IRIS-RCC predictor. Researchers upload a TPM gene-expression matrix and get renal cell carcinoma transcriptional cluster assignments back. A companion Nextflow pipeline handles the upstream half, taking RNA-seq reads from raw FASTQ files to the TPM matrix the portal expects.",
@@ -21,6 +23,7 @@
     {
         "id": 3,
         "title": "GeneFox",
+        "slug": "genefox",
         "subtitle": "Cancer Genomics Browser",
         "logo": "https://storage.googleapis.com/vds-website-public/public/img/genefox-logo.png",
         "description": "A native mobile and desktop browser for public cancer-genomics data. Explore 60+ GDC cohorts, 40,000+ NCBI GEO datasets, GTEx, UCSC Xena, and CCLE — or your own expression matrices — with stratified expression plots, Kaplan–Meier survival, volcano plots, clustered heatmaps, and signature scoring. Statistics and figures are computed on your device, with no ads, accounts, or tracking.",
