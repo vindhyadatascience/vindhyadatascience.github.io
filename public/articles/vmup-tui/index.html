@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What Claude Code Taught Us About Building Tools for the Terminal | Vindhya Data Science</title>
+<meta name="description" content="How the Claude Code TUI inspired vmup, our single-binary Go terminal app for launching secure, IAP-only GCP data science environments with embedded Terraform.">
+<link rel="icon" type="image/svg+xml" href="/img/VDS-Symbol-Color-CMYK.svg">
+<link rel="canonical" href="https://vindhyadatascience.com/articles/vmup-tui/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Vindhya Data Science, Inc.">
+<meta property="og:title" content="What Claude Code Taught Us About Building Tools for the Terminal">
+<meta property="og:description" content="How the Claude Code TUI inspired vmup, our single-binary Go terminal app for launching secure, IAP-only GCP data science environments with embedded Terraform.">
+<meta property="og:url" content="https://vindhyadatascience.com/articles/vmup-tui/">
+<meta property="article:published_time" content="2026-08-26">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What Claude Code Taught Us About Building Tools for the Terminal">
+<meta name="twitter:description" content="How the Claude Code TUI inspired vmup, our single-binary Go terminal app for launching secure, IAP-only GCP data science environments with embedded Terraform.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "What Claude Code Taught Us About Building Tools for the Terminal",
+  "description": "How the Claude Code TUI inspired vmup, our single-binary Go terminal app for launching secure, IAP-only GCP data science environments with embedded Terraform.",
+  "datePublished": "2026-08-26",
+  "mainEntityOfPage": "https://vindhyadatascience.com/articles/vmup-tui/",
+  "author": { "@type": "Organization", "name": "Vindhya Data Science" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Vindhya Data Science",
+    "logo": { "@type": "ImageObject", "url": "https://vindhyadatascience.com/img/VDS-FullLogo-Color-CMYK.svg" }
+  }
+}
+</script>
+<style>
+  :root {
+    --bg: #f4f3ee;
+    --surface: #fdfcf8;
+    --ink: #28242f;
+    --muted: #6b6478;
+    --accent: #542f83;
+    --accent2: #b53694;
+    --lav: #6f6fd6;
+    --rule: #ddd8cf;
+    --code-bg: #ebe8df;
+    --code-ink: #3c3648;
+    --link: #6a3fa5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1b1922;
+      --surface: #232030;
+      --ink: #eceade;
+      --muted: #a29bb4;
+      --accent: #b39ae0;
+      --accent2: #d67ab8;
+      --lav: #8a8ae0;
+      --rule: #37323f;
+      --code-bg: #2a2735;
+      --code-ink: #d8d4e4;
+      --link: #b39ae0;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1b1922;
+    --surface: #232030;
+    --ink: #eceade;
+    --muted: #a29bb4;
+    --accent: #b39ae0;
+    --accent2: #d67ab8;
+    --lav: #8a8ae0;
+    --rule: #37323f;
+    --code-bg: #2a2735;
+    --code-ink: #d8d4e4;
+    --link: #b39ae0;
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f3ee;
+    --surface: #fdfcf8;
+    --ink: #28242f;
+    --muted: #6b6478;
+    --accent: #542f83;
+    --accent2: #b53694;
+    --lav: #6f6fd6;
+    --rule: #ddd8cf;
+    --code-bg: #ebe8df;
+    --code-ink: #3c3648;
+    --link: #6a3fa5;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: Charter, 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+    font-size: 1.1rem;
+    line-height: 1.65;
+    margin: 0;
+  }
+  .mono { font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; }
+
+  .wrap {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 0;
+  }
+  .banner {
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--rule);
+    line-height: 0;
+  }
+  .banner svg { width: 100%; height: auto; }
+
+  article {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 3rem 1.25rem 5rem;
+  }
+  h1 {
+    font-size: 2.35rem;
+    line-height: 1.18;
+    margin: 0 0 0.9rem;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  .byline {
+    font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 0.85rem;
+    color: var(--muted);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.4rem;
+    padding-bottom: 1.9rem;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 2.3rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+    line-height: 1.25;
+    margin: 2.8rem 0 0.9rem;
+    text-wrap: balance;
+  }
+  h2::after {
+    content: "";
+    display: block;
+    width: 2.6rem;
+    height: 3px;
+    margin-top: 0.5rem;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+  }
+  p { margin: 0 0 1.15rem; }
+  a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:focus-visible { outline: 2px solid var(--lav); outline-offset: 2px; border-radius: 2px; }
+  strong { color: var(--ink); }
+  em { color: inherit; }
+
+  code {
+    font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 0.86em;
+    background: var(--code-bg);
+    color: var(--code-ink);
+    padding: 0.12em 0.38em;
+    border-radius: 4px;
+  }
+  pre.code {
+    background: var(--code-bg);
+    color: var(--code-ink);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 0.95rem 1.15rem;
+    overflow-x: auto;
+    font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 0.88rem;
+    line-height: 1.55;
+    margin: 0 0 1.15rem;
+  }
+  pre.code code { background: none; padding: 0; font-size: inherit; color: inherit; }
+
+  blockquote {
+    margin: 1.8rem 0;
+    padding: 0.2rem 0 0.2rem 1.3rem;
+    border-left: 3px solid;
+    border-image: linear-gradient(180deg, var(--accent), var(--accent2)) 1;
+    font-size: 1.18rem;
+    line-height: 1.55;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  ul { margin: 0 0 1.15rem; padding-left: 1.3rem; }
+  li { margin-bottom: 0.45rem; }
+
+  /* terminal mockup — deliberately dark in both themes */
+  .term {
+    background: #262633;
+    border: 1px solid #3a3a4a;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 1.8rem 0;
+    box-shadow: 0 12px 32px rgba(20, 12, 40, 0.18);
+  }
+  .term-bar {
+    background: #2f2f3e;
+    padding: 0.55rem 0.9rem;
+    display: flex;
+    gap: 0.45rem;
+  }
+  .term-bar span {
+    width: 11px; height: 11px; border-radius: 50%;
+    display: inline-block;
+  }
+  .term-bar span:nth-child(1) { background: #8a8ae0; }
+  .term-bar span:nth-child(2) { background: #6f6fd6; }
+  .term-bar span:nth-child(3) { background: #5cb8e6; }
+  .term pre {
+    margin: 0;
+    padding: 1rem 1.15rem 1.2rem;
+    overflow-x: auto;
+    font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 0.83rem;
+    line-height: 1.6;
+    color: #ecebe3;
+  }
+  .t-title { color: #b8a6e8; }
+  .t-dim { color: #6d6a80; }
+  .t-header { color: #9d9ab2; }
+  .t-run { color: #5ec98e; }
+  .t-stop { color: #e0708a; }
+  .t-sel { background: #35304a; display: inline-block; width: 100%; }
+  .t-key { color: #b8a6e8; }
+  .t-info { color: #5cb8e6; }
+
+  .footer-plug {
+    margin-top: 3.5rem;
+    padding: 1.6rem 1.7rem;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    font-size: 1rem;
+  }
+  .footer-plug p:last-child { margin-bottom: 0; }
+
+  @media (max-width: 640px) {
+    h1 { font-size: 1.75rem; }
+    body { font-size: 1.02rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+</style>
+<style>
+  /* Site chrome for a standalone article living under vindhyadatascience.com */
+  .site-nav {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 1.1rem 1.25rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 0.82rem;
+  }
+  .site-nav a { color: var(--muted); text-decoration: none; }
+  .site-nav a:hover { color: var(--link); text-decoration: underline; }
+  .site-nav .home { display: flex; align-items: center; gap: 0.55rem; }
+  .site-nav img { width: 26px; height: 26px; }
+
+  .refs { font-size: 0.92rem; color: var(--muted); }
+  .refs li { overflow-wrap: anywhere; }
+
+  .article-end {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 0 1.25rem 4rem;
+    font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 0.8rem;
+    color: var(--muted);
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+  }
+  .article-end a { color: var(--muted); }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a class="home" href="/"><img src="/img/VDS-Symbol-Color-CMYK.svg" alt="Vindhya Data Science"><span>&larr; Vindhya Data Science</span></a>
+  <a href="https://github.com/vindhyadatascience/vmup">vmup on GitHub</a>
+</nav>
+<div class="wrap">
+  <div class="banner" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 560">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#161028"/>
+          <stop offset="55%" stop-color="#221a38"/>
+          <stop offset="100%" stop-color="#2c1f42"/>
+        </linearGradient>
+        <linearGradient id="horizon" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#b53694" stop-opacity="0"/>
+          <stop offset="100%" stop-color="#b53694" stop-opacity="0.18"/>
+        </linearGradient>
+        <linearGradient id="rocket" gradientUnits="userSpaceOnUse" x1="60" y1="14" x2="60" y2="128">
+          <stop offset="0%" stop-color="#8a8ae0"/>
+          <stop offset="100%" stop-color="#b53694"/>
+        </linearGradient>
+        <linearGradient id="trail" x1="1" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#5cb8e6" stop-opacity="0.85"/>
+          <stop offset="60%" stop-color="#8a8ae0" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="#8a8ae0" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="wordmark" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#a9a0f0"/>
+          <stop offset="100%" stop-color="#e06bbf"/>
+        </linearGradient>
+        <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="0%" stop-color="#8a8ae0" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="#8a8ae0" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <rect width="1600" height="560" fill="url(#sky)"/>
+      <rect y="380" width="1600" height="180" fill="url(#horizon)"/>
+      <g fill="#cfd0ff">
+        <circle cx="120" cy="80" r="1.6" opacity="0.7"/><circle cx="240" cy="150" r="1.1" opacity="0.45"/>
+        <circle cx="380" cy="60" r="2" opacity="0.8"/><circle cx="520" cy="120" r="1.2" opacity="0.5"/>
+        <circle cx="660" cy="50" r="1.5" opacity="0.65"/><circle cx="760" cy="160" r="1" opacity="0.4"/>
+        <circle cx="905" cy="75" r="1.7" opacity="0.75"/><circle cx="1010" cy="140" r="1.1" opacity="0.5"/>
+        <circle cx="1330" cy="60" r="1.4" opacity="0.6"/><circle cx="1445" cy="130" r="1.9" opacity="0.8"/>
+        <circle cx="1520" cy="250" r="1.2" opacity="0.5"/><circle cx="1400" cy="330" r="1.5" opacity="0.6"/>
+        <circle cx="80" cy="300" r="1.3" opacity="0.5"/><circle cx="200" cy="430" r="1.6" opacity="0.55"/>
+        <circle cx="620" cy="470" r="1.2" opacity="0.45"/><circle cx="1550" cy="440" r="1.4" opacity="0.6"/>
+      </g>
+      <g>
+        <text x="112" y="196" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="21" letter-spacing="6" fill="#8a8ae0">VINDHYA DATA SCIENCE</text>
+        <text x="104" y="318" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-weight="700" font-size="132" fill="url(#wordmark)">vmup</text>
+        <text x="112" y="380" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="31" fill="#dcd9ea">Secure cloud data science environments, from your terminal.</text>
+        <text x="112" y="424" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="18" fill="#9a94b8">powered by Terraform · secured by IAP · inspired by Claude Code</text>
+      </g>
+      <ellipse cx="1395" cy="150" rx="230" ry="170" fill="url(#glow)"/>
+      <polygon points="1303,223 1327,247 1200,378 1172,352" fill="url(#trail)"/>
+      <g fill="#5cb8e6">
+        <circle cx="1252" cy="300" r="3.4" opacity="0.7"/><circle cx="1226" cy="330" r="2.4" opacity="0.5"/>
+      </g>
+      <g transform="translate(1400,148) rotate(45) scale(2.1) translate(-60,-71)">
+        <polygon points="60,14 40,46 80,46" fill="url(#rocket)"/>
+        <polygon points="40,48 40,90 60,90" fill="url(#rocket)"/>
+        <polygon points="80,48 80,90 60,90" fill="url(#rocket)"/>
+        <polygon points="50,98 70,98 60,128" fill="url(#rocket)"/>
+      </g>
+      <g>
+        <rect x="1100" y="300" width="470" height="216" rx="12" fill="#262633" stroke="#3a3a4a" stroke-width="1.5"/>
+        <rect x="1100" y="300" width="470" height="34" rx="12" fill="#2f2f3e"/>
+        <rect x="1100" y="320" width="470" height="14" fill="#2f2f3e"/>
+        <circle cx="1124" cy="317" r="5.5" fill="#8a8ae0" opacity="0.9"/>
+        <circle cx="1144" cy="317" r="5.5" fill="#6f6fd6" opacity="0.7"/>
+        <circle cx="1164" cy="317" r="5.5" fill="#5cb8e6" opacity="0.7"/>
+        <g font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="16.5">
+          <text x="1122" y="364" fill="#5ec98e">$ vmup</text>
+          <text x="1122" y="392" fill="#e0a458">◐ Launching rstudio-demo <tspan fill="#8d8aa0">(~$0.12/hr)</tspan></text>
+          <text x="1122" y="420" fill="#8d8aa0">vpc <tspan fill="#5ec98e">✓</tspan> · nat <tspan fill="#5ec98e">✓</tspan> · iap-only firewall <tspan fill="#5ec98e">✓</tspan></text>
+          <text x="1122" y="448" fill="#6d6a80">instance.main: Creation complete</text>
+          <text x="1122" y="482" fill="#5cb8e6"><tspan fill="#5ec98e">✓</tspan> tunnel → http://localhost:8787</text>
+        </g>
+      </g>
+    </svg>
+  </div>
+</div>
+
+<article>
+  <h1>What Claude Code Taught Us About Building Tools for the Terminal</h1>
+  <div class="byline">
+    <span>Vindhya Data Science</span>
+    <span>August 2026</span>
+    <span>~8 min read</span>
+  </div>
+
+  <p>The most talked-about tool in software development is not a web app, IDE, or SaaS dashboard. It's <a href="https://www.anthropic.com/claude-code">Claude Code</a>, and it runs in a terminal. You launch it from a shell prompt, you talk to it in monospace text, and it does its work inside the same little rectangle developers have been staring at since the 1970s. The most advanced AI coding agent on the market initially shipped as a TUI, a text user interface, and it works surprisingly well.</p>
+
+  <p>The popularity of Claude Code is reviving TUIs in general, and for good reason. They start instantly. They run anywhere &mdash; over SSH, inside a container, on old, underpowered laptops. They're primarily keyboard-driven, so your hands never need to reach for a mouse. And they are fast to develop. The modern generation of TUI frameworks like Go's <a href="https://github.com/charmbracelet/bubbletea">Bubble Tea</a> ecosystem make terminal apps feel new, with real layout, color, and interactivity giving a unique modern retro feel.</p>
+
+  <p>We're <a href="https://vindhyadatascience.com">Vindhya Data Science</a> &mdash; a team of data scientists, bioinformaticians, and engineers who spend most of our days analyzing sensitive data or engineering scientific software tools for clients. For us, having a secure, easy-to-deploy development environment is essential for getting our job done. Seeing the revival of TUI apps, we saw an opportunity to streamline our workflows using the latest technologies. So we developed our own tool: <code>vmup</code>.</p>
+
+  <h2>The problem: secure sandboxes, on demand</h2>
+
+  <p>A lot of our work follows the same shape. A scientist needs a containerized development environment running RStudio or Jupyter, with access to data, inside a Google Cloud project, behind a security boundary a client's compliance team will sign off on. It needs to be quick to create, easy to resize, and simple to destroy when the job is done.</p>
+
+  <p>Before vmup, "spinning up a VM" meant one of two things: twenty minutes of clicking through the GCP console, or a folder of copy-pasted <code>gcloud</code> commands and Terraform snippets that were subtly different on everyone's laptop. Both paths had the same failure modes. The risk of incorrectly configuring the infrastructure and exposing security vulnerabilities. Instances left running over the weekend because stopping them was a chore. And every new team member re-learning the same ritual from outdated documentation.</p>
+
+  <p>The fix wasn't more documentation. It was building a tool to make the infrastructure deployment easy. Inspired by the success and speed of the Claude Code TUI, we knew exactly what we wanted: type a command, get a full-screen terminal app, press a few keys, done.</p>
+
+  <h2>What vmup does</h2>
+
+  <p><a href="https://github.com/vindhyadatascience/vmup">vmup</a> is a single-binary terminal application for launching and managing GCP compute instances. Under the hood it's Go and Bubble Tea; the Terraform configuration is embedded in the binary via <code>go:embed</code>, and Terraform itself is auto-downloaded on first run. The only prerequisite is the <code>gcloud</code> CLI. There is no server, no agent, no YAML to maintain &mdash; you install one file and run it.</p>
+
+  <p>Run <code>vmup</code>, and you get a live table of every instance in your project:</p>
+  <div class="term">
+    <div class="term-bar"><span></span><span></span><span></span></div>
+    <pre><span class="t-title">vmup - GCP Instance Manager</span>
+
+ <span class="t-key">1 Instances</span> <span class="t-dim">2 Data Disks</span>                          <span class="t-dim">refreshed 3:04 PM</span>
+
+  <span class="t-header">VM Name        Project          Machine         Status</span>
+  <span class="t-dim">──────────────────────────────────────────────────────────────</span>
+<span class="t-sel">&gt; rstudio-demo   my-gcp-project   e2-highmem-2    <span class="t-run">RUNNING (1 tunnel)</span></span>
+  analysis-vm    my-gcp-project   e2-highmem-4    <span class="t-stop">STOPPED</span>
+  <span class="t-dim">──────────────────────────────────────────────────────────────</span>
+
+  <span class="t-key">Image:</span>         my-rstudio-image
+  <span class="t-key">Port Mapping:</span>  8787:8787
+  <span class="t-info">Tunnel active: http://localhost:8787</span>
+
+  <span class="t-dim">↑/↓ navigate • : command • / filter • r refresh • ? help</span></pre>
+  </div>
+
+  <p>Press <code>n</code> and you get a launch form with sensible defaults: the project ID is auto-detected from your gcloud config, regions and zones are fetched live from the Compute API, and machine types are filtered to your image's CPU architecture with a <strong>live hourly cost estimate</strong> next to each one, pulled from the Cloud Billing API. You see what a machine costs before it exists, which helps our team pick the right resources for the task at hand.</p>
+
+  <p>Submit, and vmup shows a review screen then runs <code>terraform init</code> and <code>apply</code> with the output streaming into the TUI. A few minutes later you have a running instance, SSH tunnels already established (nothing exposed to the public internet), and RStudio waiting at <code>localhost:8787</code>. The whole lifecycle is managed with single keystrokes: <code>s</code> to start, <code>x</code> to stop, <code>c</code> to connect to an interactive SSH session, <code>Shift+D</code> to destroy everything. Like Claude Code or vim, a <code>:</code> command palette makes every action discoverable and fuzzy-searchable, and <code>/</code> filters the list with queries like <code>status:running</code>.</p>
+
+  <h2>Security by construction</h2>
+
+  <p>The beauty of infrastructure as code (IaC): every vmup launch provisions a small, fully isolated stack. A dedicated VPC per deployment. Cloud NAT for outbound traffic. And firewall rules that accept inbound connections only from Google's Identity-Aware Proxy range. Easy to create, easy to destroy.</p>
+
+  <blockquote>Instances get no public-facing open ports. Port scans find nothing &mdash; there is no path from the public internet to the VM. The only way in is an IAP tunnel authenticated with an authorized Google account.</blockquote>
+
+  <p>All access &mdash; interactive SSH and forwarded services like RStudio &mdash; goes through IAP tunnels tied to your Google identity, and vmup's Terraform grants the required IAM role automatically at launch. Access control becomes identity and IAM rather than passwords and IP allowlists: remove someone's IAP role and their access is gone, instantly. Nobody on the team has to remember to configure any of this, because it's baked into the tool itself. Consistent, secure stacks.</p>
+
+  <h2>Disposable VMs, persistent data</h2>
+
+  <p>vmup VMs are designed to be disposable. Yet, we didn't want any precious data destroyed in the process. So vmup has a second tab for data disks &mdash; persistent disks that live independently of any VM. Since data and infrastructure have different lifecycles, vmup respects that they should exist independently. The stack can come down, but the same disk can easily be reattached later. Disks can be created, resized, attached, and mounted from the TUI, and a disk can be attached to multiple VMs read-only which is handy for sharing a reference dataset across projects. Deleting a disk requires a two-step confirmation to prevent a stray keystroke from wiping your precious data.</p>
+
+  <h2>Why Go?</h2>
+
+  <p>The Go language choice comes with a lot of advantages. vmup is written in Go, and the first reason for choosing this language is how we work: our scientists run macOS (Intel and Apple silicon), Linux, and Windows &mdash; sometimes all three on the same project. Go cross-compiles to every one of them from a single codebase, so each release ships native binaries for five platform-architecture combinations with no porting effort. And because Go builds a fully static executable, a data scientist doesn't need a toolchain to use an infrastructure tool &mdash; no Python environment to manage, no dependency drift between laptops, less computational overhead than containers. One <code>curl | sh</code>, and it runs.</p>
+
+  <p>The single-binary provides more than convenience. <code>go:embed</code> lets us ship the entire Terraform configuration inside the executable, so the infrastructure definition can't drift out of sync with the app that applies it. Everything vmup needs is either in the binary or auto-installed on first run. Since vmup's state is just files on disk, the portability extends across machines too. The settings screen lets you point the data directory anywhere, and pointing it at a synced or network drive means the same VMs and disks can be configured and managed from any machine you work on. Launch an instance from the Mac at the office, stop it from the Linux box at home. The binary behaves identically everywhere, so the state doesn't care where you're sitting. IaaC + single binary management tool creates portability.</p>
+
+  <p>Finally, the ecosystem is incredible. Bubble Tea and the rest of the Charm libraries live in Go, and goroutines are a natural fit for a tool that's simultaneously streaming Terraform output, polling GCP, and managing SSH tunnels. For a cross-platform terminal app that manages infrastructure, Go is a perfect fit.</p>
+
+  <h2>With great speed comes great responsibility</h2>
+
+  <p>There's a pleasant circularity here: a tool inspired by Claude Code's interface was, in large part, built with Claude Code's assistance. We had already built a working prototype of this tool that cobbled together bash, Terraform, and Python, but it lacked a polished user experience and the convenience of an executable. Claude was able to help us transform our collection of scripts into a stand-alone program. The Bubble Tea plumbing and the docs site came out of pair-writing sessions with the agent &mdash; grounded in context from the codebase and steered by our choices. Because of its self-contained toolchain, readability, and reliability, <a href="https://developers.googleblog.com/why-go-is-an-ideal-language-for-ai-assisted-software-engineering/">Go makes an ideal language for AI-assisted software engineering</a>. Features we'd have previously budgeted a week for completed in an afternoon; well documented, highly structured components like forms and table views mostly wrote themselves.</p>
+
+  <p>Once you've felt the speed of developing with Claude, it's hard to go back. It's also exactly where responsibility matters. Our experience matches everyone else's. Claude is remarkably good at pattern-shaped work, and it will also confidently hand you a subpar solution or a plausible-looking Terraform attribute that doesn't exist. Learning to architect systems, to speak the same language as these agents, makes the end product that much better. Perhaps this take will be outdated in a few months or years, as tools like <a href="https://beads.gascity.com/">Beads</a> equip agents with the infrastructure to systematically coordinate complex architecture and accelerate development loops. At least for now, the responsibility rests with us. Our decisions, the ones that make vmup <em>vmup</em> &mdash; the IAP-only security model, the disposable-VM philosophy, the choice that destroying anything requires typing its name &mdash; were made by humans, sometimes overriding Claude's tendencies.</p>
+
+  <h2>Where it goes from here</h2>
+
+  <p>vmup works well for our company, but there are plenty of future directions. Please give it a try and let us know what features should be added next. Here are a few on our minds:</p>
+
+  <ul>
+    <li><strong>Other cloud providers:</strong> vmup is GCP-native today, but nothing about the core model (embedded Terraform, identity-authenticated tunnels, no public ingress) is inherently GCP-specific. Extending it to AWS is the obvious next step.</li>
+    <li><strong>Customizable Terraform templates:</strong> the stack vmup builds today is a good default, but infrastructure is never one-size-fits-all. Teams should be able to make adjustments, customize the resources vmup creates, or add their own infrastructure to the stack as they wish &mdash; GPUs, extra service accounts, project-specific networking &mdash; with the embedded template as a starting point rather than a ceiling.</li>
+    <li><strong>Scheduled auto-stop:</strong> the TUI makes it quick to start and stop instances, but remembering to do so is still on the user. Developing solutions to automate this can help us further protect against unintentional cloud spend.</li>
+    <li><strong>An MCP server and CLI:</strong> the direction we find most interesting. If agents like Claude Code are going to do real analytical work, they'll need to provision their own secure sandboxes. A vmup MCP server would let an agent request an environment and get a tunnel back &mdash; the TUI for humans, the same machinery for agents.</li>
+  </ul>
+
+  <h2>Try it</h2>
+
+  <p>vmup is open source under the Apache 2.0 license. The only prerequisite is the <a href="https://cloud.google.com/sdk/docs/install">Google Cloud SDK</a>; Terraform installs itself on first run.</p>
+
+  <p><strong>macOS / Linux:</strong></p>
+  <pre class="code"><code>curl -fsSL https://raw.githubusercontent.com/vindhyadatascience/vmup/main/install.sh | sh</code></pre>
+
+  <p><strong>Windows (PowerShell):</strong></p>
+  <pre class="code"><code>irm https://raw.githubusercontent.com/vindhyadatascience/vmup/main/install.ps1 | iex</code></pre>
+
+  <p>Then run <code>vmup</code>, press <code>n</code>, and you're a few keystrokes from a secure analysis environment. The source is on <a href="https://github.com/vindhyadatascience/vmup">GitHub</a>, and the full documentation, including a first-VM walkthrough and the complete security model, lives at the <a href="https://vindhyadatascience.github.io/vmup/">vmup docs site</a>. Issues and PRs welcome.</p>
+
+  <div class="footer-plug">
+    <p><strong>Building tools like this &mdash; the infrastructure that makes rigorous, secure data science feel effortless &mdash; is a small part of what we do at <a href="https://vindhyadatascience.com">Vindhya Data Science</a>, both for ourselves and for our clients. If your team is wrestling with reproducible analytics environments, sensitive data, or data science questions, we'd love to talk.</strong></p>
+  </div>
+
+  <h2>References</h2>
+  <ol class="refs">
+    <li>Claude Code: <a href="https://www.anthropic.com/claude-code">anthropic.com/claude-code</a></li>
+    <li>Bubble Tea: <a href="https://github.com/charmbracelet/bubbletea">github.com/charmbracelet/bubbletea</a></li>
+    <li>Vindhya Data Science: <a href="https://vindhyadatascience.com">vindhyadatascience.com</a></li>
+    <li>vmup (GitHub): <a href="https://github.com/vindhyadatascience/vmup">github.com/vindhyadatascience/vmup</a></li>
+    <li>Go makes an ideal language for AI-assisted software engineering: <a href="https://developers.googleblog.com/why-go-is-an-ideal-language-for-ai-assisted-software-engineering/">developers.googleblog.com</a></li>
+    <li>Beads: <a href="https://beads.gascity.com/">beads.gascity.com</a></li>
+    <li>Google Cloud SDK: <a href="https://cloud.google.com/sdk/docs/install">cloud.google.com/sdk/docs/install</a></li>
+    <li>vmup docs site: <a href="https://vindhyadatascience.github.io/vmup/">vindhyadatascience.github.io/vmup</a></li>
+  </ol>
+</article>
+
+<div class="article-end">
+  <p>&copy; 2021&ndash;2026 Vindhya Data Science, Inc. &middot; <a href="https://vindhyadatascience.com/">vindhyadatascience.com</a> &middot; <a href="mailto:info@vindhyadatascience.com">info@vindhyadatascience.com</a></p>
+</div>
+
+</body>
+</html>

@@ -39,9 +39,14 @@ export default ({data}) => {
     const newsItems = cards.map((card, index) => {
 
         const links = card.links.map((link, idx) => {
+            // Site-relative links (e.g. an article page) stay in this tab;
+            // only outbound links open a new one.
+            const external = /^https?:\/\//.test(link.url);
             return (
                 <span key={idx}>
-                    <a key={idx} href={link.url} className="news-links" target="_blank" rel="noopener noreferrer">{link.text}</a>
+                    <a key={idx} href={link.url} className="news-links"
+                       target={external ? "_blank" : undefined}
+                       rel={external ? "noopener noreferrer" : undefined}>{link.text}</a>
                     {idx < card.links.length - 1 ? <span className="news-link-separator">&nbsp;•&nbsp;</span> : null}
                 </span>
             )
