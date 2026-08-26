@@ -1,5 +1,24 @@
 [
     {
+        "title": "What Claude Code Taught Us About Building Tools for the Terminal",
+        "description": "Aug 26, 2026 - Claude Code, the most talked-about tool in software development, runs in a terminal. Its success is reviving the TUI, and it gave us a clear picture of what we wanted when we set out to fix the least glamorous part of our own workflow: spinning up secure compute. The result is vmup, a single-binary Go terminal application for launching and managing GCP instances, with the Terraform configuration embedded in the executable via go:embed.\n\n This article covers what we learned building it: why a terminal UI is the right shape for this problem, how every launch provisions an isolated stack with no public ingress and IAP-authenticated tunnels as the only way in, why disposable VMs need persistent data disks to be useful, and what Go buys you for a cross-platform infrastructure tool. It also covers the part that matters most to us - a tool inspired by Claude Code was in large part built with Claude Code, and the decisions that make vmup what it is were still ours to make.",
+        "imageUrl": "/articles/vmup-tui/card.svg",
+        "links": [
+            {
+                "text": "Read the article",
+                "url": "/articles/vmup-tui/"
+            },
+            {
+                "text": "GitHub",
+                "url": "https://github.com/vindhyadatascience/vmup"
+            },
+            {
+                "text": "Docs",
+                "url": "https://vindhyadatascience.github.io/vmup/"
+            }
+        ]
+    },
+    {
         "title": "Vindhya contributes to groundbreaking ALS therapy research published in NEJM Evidence",
         "description": "Apr 23, 2025 - Vindhya Data Science is honored to announce our contributions to an important publication in NEJM Evidence: \"Clinical Safety and Preliminary Efficacy of Regulatory T Cells for ALS,\" appearing in today's issue. This groundbreaking study explores a novel therapeutic approach using allogeneic umbilical cord blood-derived regulatory T cells to treat ALS, a devastating neurodegenerative disease. Led by Dr. Simrit Parmar of Cellenkos, Inc. and Dr. Neil Shneider of Columbia University, the research demonstrated no dose-limiting toxicity in treated patients and a notable reduction in disease progression rate. Vindhya supported the complex biomarker and efficacy analyses that demonstrated both the safety of this therapy and promising signals of reduced functional decline. Key findings include a reduction in ALSFRS-R decline rate during treatment from -1.66 to -0.41 points/month and identification of potential inflammatory biomarkers related to disease progression. Vindhya is grateful to collaborators at Cellenkos, Columbia University, MD Anderson Cancer Center, and Texas A&M University for this opportunity to contribute to such meaningful research.",
         "imageUrl": "https://storage.googleapis.com/vds-website-public/public/news_img/2025_Apr_23_NEJM_Figure.png",
