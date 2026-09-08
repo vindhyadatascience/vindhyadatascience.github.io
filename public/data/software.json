@@ -28,8 +28,8 @@
         "logo": "https://storage.googleapis.com/vds-website-public/public/img/genefox-logo.png",
         "description": "A native mobile and desktop browser for public cancer-genomics data. Explore 60+ GDC cohorts, 40,000+ NCBI GEO datasets, GTEx, UCSC Xena, and CCLE — or your own expression matrices — with stratified expression plots, Kaplan–Meier survival, volcano plots, clustered heatmaps, and signature scoring. Statistics and figures are computed on your device, with no ads, accounts, or tracking.",
         "website": "https://genefox.app/",
-        "ios": "https://testflight.apple.com/join/saB6CXhQ",
-        "iosLabel": "iPhone (TestFlight)",
+        "ios": "https://apps.apple.com/app/genefox/id6778824242",
+        "iosLabel": "App Store",
         "android": "https://play.google.com/store/apps/details?id=com.vds.GeneFox"
     }
 ]
