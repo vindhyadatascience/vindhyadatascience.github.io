@@ -73,6 +73,29 @@ $cardWidth: 175px;
     max-width: 125px;
 }
 
+// Pinned to the viewport rather than the scrolling panel, so leaving never
+// requires scrolling down to the Back button.
+.about-close-btn {
+    position: fixed;
+    top: 1.25rem;
+    right: 1.25rem;
+    width: auto;
+    padding: 0.4rem;
+    line-height: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    opacity: 0.85;
+}
+
+.about-close-btn:hover,
+.about-close-btn:focus {
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    opacity: 1;
+}
+
 .hover-div {
     position: absolute;
     width: $cardWidth;

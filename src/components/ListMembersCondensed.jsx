@@ -1,5 +1,5 @@
 // Import componenets
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { getGravatarUrl } from '../utils';
 import ReadMore from './ReadMore';
 
@@ -10,6 +10,15 @@ export default ({data}) => {
     const [members, setMembers] = useState([]);
     const [memberInfo, setMemberInfo] = useState(null);
     const [hover, setHover] = useState(-1);
+    const dialogRef = useRef(null);
+    const pressedBackdrop = useRef(false);
+
+    // Rendered only while a profile is selected, so attaching the ref is the
+    // moment to open it. showModal() gets Escape and a focus trap for free.
+    const attachDialog = (el) => {
+        dialogRef.current = el;
+        if (el && !el.open) el.showModal();
+    };
 
     async function fetchMembers() {
         const response = await fetch(data);
@@ -47,8 +56,27 @@ export default ({data}) => {
     const memberDetails = (x) => {
         return (
             <>
-                <dialog open className='about'>
+                <dialog ref={attachDialog} className='about'
+                    onClose={() => { setMemberInfo(null) }}
+                    // An event on the dialog rather than the panel is a backdrop
+                    // hit. Press and release are checked separately because a
+                    // click reports their common ancestor, so dragging a text
+                    // selection past the panel edge would close the profile.
+                    onMouseDown={(e) => {
+                        pressedBackdrop.current = e.target === e.currentTarget;
+                    }}
+                    onMouseUp={(e) => {
+                        if (pressedBackdrop.current && e.target === e.currentTarget) {
+                            e.currentTarget.close();
+                        }
+                    }}>
                     <div className='about-inner'>
+                        <button onClick={() => { dialogRef.current.close() }}
+                            className='about-close-btn' aria-label='Close'>
+                            <span className="material-symbols-outlined icon">
+                                close
+                            </span>
+                        </button>
                         <div className='grid container'>
                             <img src={getGravatarUrl(x.email)}
                                 className='details-img' alt={x.name}/>
@@ -81,7 +109,7 @@ export default ({data}) => {
                                 
                             </div>
                         </div>
-                        <button onClick={() => { setMemberInfo(null) }}
+                        <button onClick={() => { dialogRef.current.close() }}
                             className='about-back-btn'>
                             <span>
                                 <span className="material-symbols-outlined icon">
