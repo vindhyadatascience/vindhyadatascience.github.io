@@ -1,5 +1,29 @@
 [
     {
+        "title": "GeneFox is on the App Store: gene expression in your hands",
+        "description": "Sep 8, 2026 - Introducing GeneFox, the first mobile transcriptomics discovery app. GeneFox helps researchers explore gene expression, survival, and biomarker evidence across curated public databases. Built for biological researchers both with and without a bioinformatics background, it turns a practical biological question into an approachable, visual analysis workflow.\n\nGeneFox reduces research risk, not merely effort. It is designed to help researchers choose a dataset, run relevant exploratory analyses, and interpret the result before committing scarce time and resources to deeper work. It complements, rather than replaces, specialist portals, AI tools, reproducible R/Python pipelines, and expert bioinformatics support. For the full gamut of bioinformatics analyses, contact Vindhya Data Science.\n\nDownload GeneFox now on Apple or Android devices. GeneFox is for research exploration and hypothesis generation. It is not intended for clinical decision making.",
+        "imageUrl": "https://storage.googleapis.com/vds-website-public/public/news_img/genefox-launch-film-poster.jpg",
+        "videoUrl": "https://storage.googleapis.com/vds-website-public/public/video/genefox-launch-film.mp4",
+        "links": [
+            {
+                "text": "App Store",
+                "url": "https://apps.apple.com/app/genefox/id6778824242"
+            },
+            {
+                "text": "Google Play",
+                "url": "https://play.google.com/store/apps/details?id=com.vds.GeneFox"
+            },
+            {
+                "text": "genefox.app",
+                "url": "https://genefox.app/"
+            },
+            {
+                "text": "LinkedIn",
+                "url": "https://www.linkedin.com/posts/introducing-genefox-now-on-the-app-store-ugcPost-7503195824412184577-z755/"
+            }
+        ]
+    },
+    {
         "title": "What Claude Code Taught Us About Building Tools for the Terminal",
         "description": "Aug 26, 2026 - Claude Code, the most talked-about tool in software development, runs in a terminal. Its success is reviving the TUI, and it gave us a clear picture of what we wanted when we set out to fix the least glamorous part of our own workflow: spinning up secure compute. The result is vmup, a single-binary Go terminal application for launching and managing GCP instances, with the Terraform configuration embedded in the executable via go:embed.\n\n This article covers what we learned building it: why a terminal UI is the right shape for this problem, how every launch provisions an isolated stack with no public ingress and IAP-authenticated tunnels as the only way in, why disposable VMs need persistent data disks to be useful, and what Go buys you for a cross-platform infrastructure tool. It also covers the part that matters most to us - a tool inspired by Claude Code was in large part built with Claude Code, and the decisions that make vmup what it is were still ours to make.",
         "imageUrl": "/articles/vmup-tui/card.svg",

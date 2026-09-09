@@ -55,7 +55,13 @@ export default ({data}) => {
         return (
             <div key={index} className="news-item">
                 <div className="news-item-image" style={cardStyles[index]}>
-                    {card.imageUrl != "" ? (
+                    {/* A card with a videoUrl plays it in place, using imageUrl as
+                        the poster. preload="none" keeps the file off the wire
+                        until someone presses play. */}
+                    {card.videoUrl ? (
+                        <video src={card.videoUrl} poster={card.imageUrl}
+                            controls preload="none" playsInline />
+                    ) : card.imageUrl != "" ? (
                         <img src={card.imageUrl} alt={card.title} loading="lazy" />
                     ) : <span className="material-symbols-outlined icon">news</span>}
                 </div>
