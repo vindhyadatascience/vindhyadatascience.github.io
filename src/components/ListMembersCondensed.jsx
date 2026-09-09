@@ -4,6 +4,7 @@ import { getGravatarUrl } from '../utils';
 import ReadMore from './ReadMore';
 
 // Import styles
+import "./Profile.scss";
 import "./ListMembersCondensed.scss";
 
 export default ({data}) => {
@@ -57,6 +58,7 @@ export default ({data}) => {
         return (
             <>
                 <dialog ref={attachDialog} className='about'
+                    aria-labelledby='profile-name'
                     onClose={() => { setMemberInfo(null) }}
                     // An event on the dialog rather than the panel is a backdrop
                     // hit. Press and release are checked separately because a
@@ -70,54 +72,54 @@ export default ({data}) => {
                             e.currentTarget.close();
                         }
                     }}>
-                    <div className='about-inner'>
+                    {/* Focus starts on the panel, not the close button, so the
+                        dialog opens without a focus ring already sitting in the
+                        corner. Tab still reaches the button first. */}
+                    <div className='about-inner' tabIndex={-1} autoFocus>
                         <button onClick={() => { dialogRef.current.close() }}
                             className='about-close-btn' aria-label='Close'>
                             <span className="material-symbols-outlined icon">
                                 close
                             </span>
                         </button>
-                        <div className='grid container'>
+                        {/* The header stays put while only the body scrolls, so
+                            the face and the name remain attached to the text. */}
+                        <header className='profile-header'>
                             <img src={getGravatarUrl(x.email)}
                                 className='details-img' alt={x.name}/>
-                            <div>
+                            <div className='profile-headings'>
                                 <hgroup>
-                                    <h3>{x.name}</h3>
+                                    <h3 id='profile-name'>{x.name}</h3>
                                     <h4>{x.title}</h4>
                                 </hgroup>
                                 {x.tagline != "" ? (
-                                    <p>{x.tagline}</p>
+                                    <p className='profile-tagline'>{x.tagline}</p>
                                 ) : null}
-                                {x.experience != "" ? (
-                                    <hgroup>
-                                        <h6>Experience</h6>
-                                        <p>{x.experience}</p>
-                                    </hgroup>
-                                ) : null}
-                                {x.expertise != "" ? (
-                                    <hgroup>
-                                        <h6>Expertise</h6>
-                                        <p>{x.expertise}</p>
-                                    </hgroup>
-                                ) : null} 
-                                {x.bio != "" ? (
-                                    <hgroup>
-                                        <h6>Bio</h6>
-                                        <ReadMore maxCharacterCount={425}>{x.bio}</ReadMore>
-                                    </hgroup>
-                                ) : null}
-                                
                             </div>
+                        </header>
+                        <div className='profile-body'>
+                            {/* A section rather than an hgroup: Pico dims an
+                                hgroup's last child as a subtitle, which greyed
+                                out every one of these paragraphs. */}
+                            {x.experience != "" ? (
+                                <section className='profile-section'>
+                                    <h6>Experience</h6>
+                                    <p>{x.experience}</p>
+                                </section>
+                            ) : null}
+                            {x.expertise != "" ? (
+                                <section className='profile-section'>
+                                    <h6>Expertise</h6>
+                                    <p>{x.expertise}</p>
+                                </section>
+                            ) : null}
+                            {x.bio != "" ? (
+                                <section className='profile-section'>
+                                    <h6>Bio</h6>
+                                    <ReadMore maxCharacterCount={425}>{x.bio}</ReadMore>
+                                </section>
+                            ) : null}
                         </div>
-                        <button onClick={() => { dialogRef.current.close() }}
-                            className='about-back-btn'>
-                            <span>
-                                <span className="material-symbols-outlined icon">
-                                    arrow_back
-                                </span>
-                                &nbsp;Back
-                            </span>
-                        </button>
                     </div>
                 </dialog>
             </>

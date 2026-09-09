@@ -1,0 +1,60 @@
+@import '../variables';
+
+// Shared profile presentation for the team dialog and the leadership cards, so
+// the two read as the same object in different frames.
+
+.details-img {
+    flex: none;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-header {
+    flex: none;
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+}
+
+.profile-headings hgroup {
+    margin-bottom: 0.5rem;
+}
+
+.profile-tagline {
+    margin-bottom: 0;
+    color: var(--muted-color);
+}
+
+.profile-section {
+    // Pico gives a section a block-sized bottom margin, which stacked with the
+    // gap below to leave a chasm between each label and the next.
+    margin-bottom: 0;
+}
+
+.profile-section + .profile-section {
+    margin-top: 1.75rem;
+}
+
+.profile-section p {
+    margin-bottom: 0;
+}
+
+.profile-section h6 {
+    color: $vds-secondary-2;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 0.4rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+}

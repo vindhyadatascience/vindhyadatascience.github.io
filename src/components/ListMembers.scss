@@ -1,23 +1,37 @@
+// The leadership entries carry the same header band as the team dialog: face,
+// name, title and tagline, then the bio on its own beneath it. Unlike the team
+// profiles these show no experience or expertise sections and no Bio label.
+// Padding lives on the two bands rather than the card, so the header spans the
+// full width and its divider reaches both edges.
 .founder-card {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    gap: 25px;
-    margin: 25px 0px;
-    max-width: 900px
+    max-width: 900px;
+    margin: 0 0 2.5rem;
+    padding: 0;
 }
 
-.founder-card > img {
-    max-width: 200px;
-    border-radius: 50%;
+// Pico treats an article's header as a card header, bleeding it past the card
+// padding and adding a block-sized bottom margin. Both fight the layout here.
+.founder-card > .profile-header {
+    margin: 0;
+    padding: 2rem;
+    border-bottom: 1px solid var(--muted-border-color);
+    border-radius: 0;
 }
 
-.founder-text {
-    text-align: justify;
+.founder-body {
+    padding: 1.75rem 2rem 2rem;
 }
 
-@media only screen and (max-width: 800px) {
-    .founder-card {
-        grid-template-columns: 1fr;
+.founder-body p:last-child {
+    margin-bottom: 0;
+}
+
+@media only screen and (max-width: 600px) {
+    .founder-card > .profile-header {
+        padding: 2rem 1.25rem 1.25rem;
+    }
+
+    .founder-body {
+        padding: 1.5rem 1.25rem;
     }
 }
-    

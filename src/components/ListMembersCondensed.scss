@@ -18,23 +18,12 @@ $cardWidth: 175px;
     font-size: 18 !important;
 }
 
-.container:hover .overlay {
-    opacity: 1;
-}
-
 .member-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax($cardWidth, 1fr));
     gap: 1rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
-}
-
-.details-img {
-    border-radius: 50%;
-    margin: 5px;
-    max-height: 400px;
-    justify-self: center;
 }
 
 .about {
@@ -47,53 +36,66 @@ $cardWidth: 175px;
 // Solid, themed panel so the bio text is readable instead of sitting on the
 // translucent backdrop.
 .about-inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
     background-color: var(--background-color);
     color: var(--text-color);
     border-radius: var(--card-radius);
-    padding: 2rem;
-    max-width: 900px;
+    max-width: 780px;
     width: 100%;
     max-height: 90vh;
     margin: auto;
-    overflow-y: auto;
+    // The panel itself never scrolls; .profile-body does. That keeps the header
+    // in place without the overlap a sticky child gets inside a padded scroller.
+    overflow: hidden;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
 }
 
-.about-inner h6 {
-    color: $vds-secondary-2;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    font-size: 0.8rem;
-    font-weight: 700;
-    margin-bottom: 0.25rem;
+.about-inner:focus {
+    outline: none;
 }
 
-.about-back-btn {
-    float: right;
-    max-width: 125px;
+.about-inner .profile-header {
+    padding: 2rem 2rem 1.5rem;
+    border-bottom: 1px solid var(--muted-border-color);
 }
 
-// Pinned to the viewport rather than the scrolling panel, so leaving never
-// requires scrolling down to the Back button.
+.profile-body {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    padding: 1.75rem 2rem 2rem;
+}
+
+// Anchored to the panel's own corner. The header does not scroll, so this stays
+// reachable without pinning it out in the viewport away from the dialog.
 .about-close-btn {
-    position: fixed;
-    top: 1.25rem;
-    right: 1.25rem;
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
     width: auto;
-    padding: 0.4rem;
+    padding: 0.35rem;
     line-height: 0;
     border: none;
     border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.55);
-    color: #fff;
-    opacity: 0.85;
+    background: none;
+    color: var(--muted-color);
 }
 
+// focus-visible rather than focus: showModal() moves focus here on open, and a
+// ring sitting on the button from the moment the dialog appears reads as state.
 .about-close-btn:hover,
-.about-close-btn:focus {
-    background-color: rgba(0, 0, 0, 0.75);
-    color: #fff;
-    opacity: 1;
+.about-close-btn:focus-visible {
+    background-color: var(--muted-border-color);
+    color: var(--text-color);
+}
+
+// The shared .icon rule declares a unitless font-size, which is invalid and
+// dropped, so the glyph would inherit the body size. Set it here rather than
+// repair .icon, which News, Hero and SmallHeading also rely on.
+.about-close-btn .icon {
+    font-size: 20px;
+    vertical-align: middle;
 }
 
 .hover-div {
@@ -121,4 +123,14 @@ $cardWidth: 175px;
     font-weight: 600;
     font-size: 1rem;
     text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .about-inner .profile-header {
+        padding: 2rem 1.25rem 1.25rem;
+    }
+
+    .profile-body {
+        padding: 1.5rem 1.25rem 1.5rem;
+    }
 }
