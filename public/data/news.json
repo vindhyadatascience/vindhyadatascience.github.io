@@ -1,5 +1,28 @@
 [
     {
+        "title": "Case study: looking for new indications for a CLDN18.2 antibody with GeneFox",
+        "description": "Sep 25, 2026 - Zolbetuximab, approved in 2024 for gastric cancer, is an antibody that targets CLDN18.2, a protein found on the surface of gastric cancer cells. Could other cancers express enough of it to be worth a closer look? We took the question to GeneFox, our mobile transcriptomics app, and worked through it in about 10 minutes using GTEx, TCGA and GEO data.\n\nPancreatic adenocarcinoma stood out: CLDN18 expression was far higher in pancreatic tumors than in normal pancreas, concentrated in the common adenocarcinoma histologies and the classical subtype, and similar in primary and metastatic samples. The article walks through each step, from normal-tissue expression to genome-wide correlates, KRAS/MAPK signaling and survival. These are exploratory, unadjusted analyses of public data that suggest questions to follow up, not conclusions.",
+        "imageUrl": "/articles/cldn18-genefox/card.svg",
+        "links": [
+            {
+                "text": "Read the article",
+                "url": "/articles/cldn18-genefox/"
+            },
+            {
+                "text": "App Store",
+                "url": "https://apps.apple.com/app/genefox/id6778824242"
+            },
+            {
+                "text": "Google Play",
+                "url": "https://play.google.com/store/apps/details?id=com.vds.GeneFox"
+            },
+            {
+                "text": "Website",
+                "url": "https://genefox.app/"
+            }
+        ]
+    },
+    {
         "title": "GeneFox is on the App Store: gene expression in your hands",
         "description": "Sep 8, 2026 - Introducing GeneFox, the first mobile transcriptomics discovery app. GeneFox helps researchers explore gene expression, survival, and biomarker evidence across curated public databases. Built for biological researchers both with and without a bioinformatics background, it turns a practical biological question into an approachable, visual analysis workflow.\n\nGeneFox reduces research risk, not merely effort. It is designed to help researchers choose a dataset, run relevant exploratory analyses, and interpret the result before committing scarce time and resources to deeper work. It complements, rather than replaces, specialist portals, AI tools, reproducible R/Python pipelines, and expert bioinformatics support. For the full gamut of bioinformatics analyses, contact Vindhya Data Science.\n\nDownload GeneFox now on Apple or Android devices. GeneFox is for research exploration and hypothesis generation. It is not intended for clinical decision making.",
         "imageUrl": "https://storage.googleapis.com/vds-website-public/public/news_img/genefox-launch-film-poster.jpg",

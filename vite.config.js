@@ -43,8 +43,8 @@ export default defineConfig({
       // Static pages under public/ (e.g. /genefox/privacy) are
       // auto-discovered from dist/, so no dynamicRoutes needed.
       exclude: ['/404'],
-      changefreq: { '/': 'monthly', '/articles/vmup-tui': 'yearly', '/genefox/privacy': 'yearly' },
-      priority: { '/': 1.0, '/articles/vmup-tui': 0.8, '/genefox/privacy': 0.3 },
+      changefreq: { '/': 'monthly', '/articles/vmup-tui': 'yearly', '/articles/cldn18-genefox': 'yearly', '/genefox/privacy': 'yearly' },
+      priority: { '/': 1.0, '/articles/vmup-tui': 0.8, '/articles/cldn18-genefox': 0.8, '/genefox/privacy': 0.3 },
     }),
   ],
   server: {
