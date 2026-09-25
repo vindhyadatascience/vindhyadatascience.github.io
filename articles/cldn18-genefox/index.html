@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Repurposing CLDN18.2-Targeting Therapeutics in New Indications | Vindhya Data Science</title>
+<meta name="description" content="A GeneFox case study: using GTEx, TCGA and GEO data on a phone to ask whether pancreatic cancer might be a candidate indication for the CLDN18.2 antibody zolbetuximab.">
+<link rel="icon" type="image/svg+xml" href="/img/VDS-Symbol-Color-CMYK.svg">
+<link rel="canonical" href="https://vindhyadatascience.com/articles/cldn18-genefox/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Vindhya Data Science, Inc.">
+<meta property="og:title" content="Repurposing CLDN18.2-Targeting Therapeutics in New Indications">
+<meta property="og:description" content="A GeneFox case study: using GTEx, TCGA and GEO data on a phone to ask whether pancreatic cancer might be a candidate indication for the CLDN18.2 antibody zolbetuximab.">
+<meta property="og:url" content="https://vindhyadatascience.com/articles/cldn18-genefox/">
+<meta property="article:published_time" content="2026-09-25">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Repurposing CLDN18.2-Targeting Therapeutics in New Indications">
+<meta name="twitter:description" content="A GeneFox case study: using GTEx, TCGA and GEO data on a phone to ask whether pancreatic cancer might be a candidate indication for the CLDN18.2 antibody zolbetuximab.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Repurposing CLDN18.2-Targeting Therapeutics in New Indications",
+  "description": "A GeneFox case study: using GTEx, TCGA and GEO data on a phone to ask whether pancreatic cancer might be a candidate indication for the CLDN18.2 antibody zolbetuximab.",
+  "datePublished": "2026-09-25",
+  "mainEntityOfPage": "https://vindhyadatascience.com/articles/cldn18-genefox/",
+  "author": { "@type": "Organization", "name": "Vindhya Data Science" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Vindhya Data Science",
+    "logo": { "@type": "ImageObject", "url": "https://vindhyadatascience.com/img/VDS-FullLogo-Color-CMYK.svg" }
+  }
+}
+</script>
+<style>
+  :root {
+    --bg: #f4f3ee;
+    --surface: #fdfcf8;
+    --ink: #28242f;
+    --muted: #6b6478;
+    --accent: #542f83;
+    --accent2: #b53694;
+    --lav: #6f6fd6;
+    --rule: #ddd8cf;
+    --code-bg: #ebe8df;
+    --code-ink: #3c3648;
+    --link: #6a3fa5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1b1922;
+      --surface: #232030;
+      --ink: #eceade;
+      --muted: #a29bb4;
+      --accent: #b39ae0;
+      --accent2: #d67ab8;
+      --lav: #8a8ae0;
+      --rule: #37323f;
+      --code-bg: #2a2735;
+      --code-ink: #d8d4e4;
+      --link: #b39ae0;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1b1922;
+    --surface: #232030;
+    --ink: #eceade;
+    --muted: #a29bb4;
+    --accent: #b39ae0;
+    --accent2: #d67ab8;
+    --lav: #8a8ae0;
+    --rule: #37323f;
+    --code-bg: #2a2735;
+    --code-ink: #d8d4e4;
+    --link: #b39ae0;
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f3ee;
+    --surface: #fdfcf8;
+    --ink: #28242f;
+    --muted: #6b6478;
+    --accent: #542f83;
+    --accent2: #b53694;
+    --lav: #6f6fd6;
+    --rule: #ddd8cf;
+    --code-bg: #ebe8df;
+    --code-ink: #3c3648;
+    --link: #6a3fa5;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: Charter, 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+    font-size: 1.1rem;
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  .wrap {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 0;
+  }
+  .banner {
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--rule);
+    line-height: 0;
+  }
+  .banner svg { width: 100%; height: auto; }
+
+  article {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 3rem 1.25rem 5rem;
+  }
+  h1 {
+    font-size: 2.35rem;
+    line-height: 1.18;
+    margin: 0 0 0.9rem;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  .byline {
+    font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 0.85rem;
+    color: var(--muted);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.4rem;
+    padding-bottom: 1.9rem;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 2.3rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+    line-height: 1.25;
+    margin: 2.8rem 0 0.9rem;
+    text-wrap: balance;
+  }
+  h2::after {
+    content: "";
+    display: block;
+    width: 2.6rem;
+    height: 3px;
+    margin-top: 0.5rem;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+  }
+  p { margin: 0 0 1.15rem; }
+  a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:focus-visible { outline: 2px solid var(--lav); outline-offset: 2px; border-radius: 2px; }
+  strong { color: var(--ink); }
+  em { color: inherit; }
+
+  blockquote {
+    margin: 1.8rem 0;
+    padding: 0.2rem 0 0.2rem 1.3rem;
+    border-left: 3px solid;
+    border-image: linear-gradient(180deg, var(--accent), var(--accent2)) 1;
+    font-size: 1.18rem;
+    line-height: 1.55;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  /* GeneFox exports its plots on a light card, so each figure sits on a
+     light panel in both themes rather than being inverted. */
+  figure {
+    margin: 1.9rem 0 2.1rem;
+  }
+  figure .plate {
+    display: block;
+    background: #f6f6f6;
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 0.6rem;
+    line-height: 0;
+  }
+  figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+  }
+  figure.narrow .plate { max-width: 34rem; margin: 0 auto; }
+  figure.wide {
+    width: min(1020px, calc(100vw - 2.5rem));
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+  figcaption {
+    font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-size: 0.86rem;
+    line-height: 1.5;
+    color: var(--muted);
+    margin-top: 0.65rem;
+  }
+  figure.wide figcaption { max-width: 46rem; margin-left: auto; margin-right: auto; padding: 0 1.25rem; }
+  figcaption .label {
+    font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--accent2);
+    margin-right: 0.35rem;
+  }
+
+  /* Where a view lives in GeneFox, e.g. Reference › Normal Tissues */
+  .path {
+    font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 0.8em;
+    color: var(--muted);
+  }
+
+  .note {
+    margin: 2rem 0;
+    padding: 1.1rem 1.3rem;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    font-size: 0.95rem;
+    color: var(--muted);
+  }
+  .note p:last-child { margin-bottom: 0; }
+
+  .footer-plug {
+    margin-top: 3.5rem;
+    padding: 1.6rem 1.7rem;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    font-size: 1rem;
+  }
+  .footer-plug p:last-child { margin-bottom: 0; }
+
+  @media (max-width: 640px) {
+    h1 { font-size: 1.75rem; }
+    body { font-size: 1.02rem; }
+    figure .plate { padding: 0.35rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+</style>
+<style>
+  /* Site chrome for a standalone article living under vindhyadatascience.com */
+  .site-nav {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 1.1rem 1.25rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 0.82rem;
+  }
+  .site-nav a { color: var(--muted); text-decoration: none; }
+  .site-nav a:hover { color: var(--link); text-decoration: underline; }
+  .site-nav .home { display: flex; align-items: center; gap: 0.55rem; }
+  .site-nav img { width: 26px; height: 26px; }
+
+  .refs { font-size: 0.92rem; color: var(--muted); }
+  .refs li { overflow-wrap: anywhere; }
+
+  .article-end {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 0 1.25rem 4rem;
+    font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 0.8rem;
+    color: var(--muted);
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+  }
+  .article-end a { color: var(--muted); }
+</style>
+<script src="/js/analytics.js" defer></script>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a class="home" href="/"><img src="/img/VDS-Symbol-Color-CMYK.svg" alt="Vindhya Data Science"><span>&larr; Vindhya Data Science</span></a>
+  <a href="https://genefox.app/">GeneFox</a>
+</nav>
+<div class="wrap">
+  <div class="banner" aria-hidden="true">
+    <!-- Box geometry is traced from the GeneFox pan-cancer CLDN18 plot
+         (img/pan-cancer-expression.png); only the x scale is changed. -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 560">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#161028"/>
+          <stop offset="55%" stop-color="#221a38"/>
+          <stop offset="100%" stop-color="#2c1f42"/>
+        </linearGradient>
+        <linearGradient id="horizon" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#b53694" stop-opacity="0"/>
+          <stop offset="100%" stop-color="#b53694" stop-opacity="0.18"/>
+        </linearGradient>
+        <linearGradient id="wordmark" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#a9a0f0"/>
+          <stop offset="100%" stop-color="#e06bbf"/>
+        </linearGradient>
+        <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="0%" stop-color="#5cb8e6" stop-opacity="0.22"/>
+          <stop offset="100%" stop-color="#5cb8e6" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <rect width="1600" height="560" fill="url(#sky)"/>
+      <rect y="380" width="1600" height="180" fill="url(#horizon)"/>
+      <g>
+        <text x="112" y="196" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="21" letter-spacing="6" fill="#8a8ae0">VINDHYA DATA SCIENCE</text>
+        <text x="104" y="318" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-weight="700" font-size="120" fill="url(#wordmark)">CLDN18.2</text>
+        <text x="112" y="382" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="31" fill="#dcd9ea">Looking beyond gastric cancer</text>
+        <text x="112" y="422" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="31" fill="#dcd9ea">for a known antibody target</text>
+        <text x="112" y="470" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="18" fill="#9a94b8">GTEx · TCGA · GEO · explored in GeneFox</text>
+      </g>
+      <ellipse cx="1260" cy="390" rx="330" ry="140" fill="url(#glow)"/>
+      <g>
+        <g stroke="#4a4360" stroke-width="1.5" stroke-dasharray="5 7">
+          <line x1="1000" y1="290" x2="1000" y2="490"/>
+          <line x1="1208" y1="290" x2="1208" y2="490"/>
+          <line x1="1417" y1="290" x2="1417" y2="490"/>
+        </g>
+        <g font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="17" text-anchor="end">
+          <text x="982" y="336" fill="#9a94b8">TCGA-STAD</text>
+          <text x="982" y="396" fill="#8fd3f4">TCGA-PAAD</text>
+          <text x="982" y="456" fill="#9a94b8">TCGA-LUAD</text>
+        </g>
+        <line x1="1004" y1="330" x2="1520" y2="330" stroke="#d67ab8" stroke-width="2" opacity="0.6"/>
+        <rect x="1206" y="313" width="186" height="34" rx="6" fill="#6f6fa8" opacity="0.85"/>
+        <rect x="1306" y="321" width="18" height="18" transform="rotate(45 1315 330)" fill="#b53694"/>
+        <line x1="1000" y1="390" x2="1495" y2="390" stroke="#d67ab8" stroke-width="2" opacity="0.6"/>
+        <rect x="1193" y="373" width="175" height="34" rx="6" fill="#5cb8e6"/>
+        <rect x="1293" y="381" width="18" height="18" transform="rotate(45 1302 390)" fill="#b53694"/>
+        <line x1="1000" y1="450" x2="1491" y2="450" stroke="#d67ab8" stroke-width="2" opacity="0.6"/>
+        <rect x="1042" y="433" width="184" height="34" rx="6" fill="#b56fa6" opacity="0.75"/>
+        <rect x="1137" y="441" width="18" height="18" transform="rotate(45 1146 450)" fill="#b53694"/>
+      </g>
+    </svg>
+  </div>
+</div>
+
+<article>
+  <h1>Repurposing CLDN18.2-Targeting Therapeutics in New Indications</h1>
+  <div class="byline">
+    <span>Vindhya Data Science</span>
+    <span>September 2026</span>
+    <span>A GeneFox case study</span>
+    <span>~7 min read</span>
+  </div>
+
+  <p>Many therapeutic agents are designed with a specific disease in mind: an individual cancer, an autoimmune disease, a neurological condition, or a more routine human ailment. Yet these agents can often be lifted from one disease to another on the strength of shared underlying biology. Many cancers in distinct organ systems share oncogenic driver mutations and pathways that can be targeted more generically (<em>e.g.</em> KRAS mutations, MAPK activation), and some fundamental biological features are open to targeting wherever they appear (<em>e.g.</em> accelerated replication, which sensitizes tumor cells to DNA replication inhibitors).</p>
+
+  <p>Other therapies have been enabled by the modern era of transcriptomics and immunology. If a gene expression profile is specific enough to tumor cells compared to normal cells, it can be used to direct the immune system against malignant cells. A notable recent example is the 2024 <a href="https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-zolbetuximab-clzb-chemotherapy-gastric-or-gastroesophageal-junction-adenocarcinoma">FDA approval of zolbetuximab</a> for CLDN18.2-positive gastric and gastroesophageal junction adenocarcinoma. Zolbetuximab does not target a cancer driver or an essential pathway in gastric cancer. Instead, it is a monoclonal antibody against CLDN18.2, a specific isoform of claudin 18 that is commonly overexpressed on the surface of gastric cancer cells. By binding tumor-expressed CLDN18.2, zolbetuximab marks those cells for immune attack, primarily through antibody-dependent cellular cytotoxicity and complement-dependent cytotoxicity.</p>
+
+  <p>Given this intuitive mechanism of action, we wanted to see whether our new mobile transcriptomics app, <a href="https://genefox.app/">GeneFox</a>, could help identify other indications where CLDN18.2 targeting might be worth investigating.</p>
+
+  <h2>Where is CLDN18 expressed normally?</h2>
+
+  <p>We began with the expression profile of <em>CLDN18</em> in normal tissues from the Genotype-Tissue Expression (<a href="https://www.gtexportal.org/home/">GTEx</a>) project (<span class="path">Reference &rsaquo; Normal Tissues</span>), to check the known pattern: <em>CLDN18.2</em> is most highly expressed in normal stomach, and the other major isoform, <em>CLDN18.1</em>, in normal lung. (Worth noting: this means zolbetuximab's targeting in gastric cancer is not inherently tumor-specific.) We saw exactly this pattern. Stomach and lung are the only tissues with meaningful <em>CLDN18</em> expression under normal conditions.</p>
+
+  <figure class="narrow">
+    <span class="plate"><img src="img/gtex-normal-tissues.png" width="1144" height="432" alt="GeneFox box plots of CLDN18 expression in GTEx normal tissues. Stomach and lung sit far to the right of testis, ovary, pituitary and uterus." loading="lazy"></span>
+    <figcaption><span class="label">GTEx</span><em>CLDN18</em> expression in normal tissues, top six shown. Stomach and lung stand well apart from every other tissue.</figcaption>
+  </figure>
+
+  <h2>Which tumors express it?</h2>
+
+  <p>Next we asked whether other cancers show elevated <em>CLDN18</em> expression, using data from The Cancer Genome Atlas (<a href="https://portal.gdc.cancer.gov">TCGA</a>; <span class="path">Reference &rsaquo; Pan-Cancer Atlas</span>). One other indication stood out alongside stomach adenocarcinoma: pancreatic ductal adenocarcinoma (TCGA-PAAD). A separate check found that <em>CLDN18.2</em> is the dominant isoform in the TCGA pancreatic cancer dataset. Taken together, this suggests pancreatic cancer could be an interesting candidate for zolbetuximab.</p>
+
+  <figure>
+    <span class="plate"><img src="img/pan-cancer-expression.png" width="1400" height="515" alt="GeneFox pan-cancer ranking of CLDN18 expression. TCGA-STAD and TCGA-PAAD have the highest medians, followed by APOLLO-LUAD, CDDP_EAGLE-1 and TCGA-LUAD." loading="lazy"></span>
+    <figcaption><span class="label">Pan-cancer</span>The five datasets with the highest <em>CLDN18</em> expression. Pancreatic adenocarcinoma (TCGA-PAAD) sits just behind stomach adenocarcinoma (TCGA-STAD), ahead of the lung cohorts.</figcaption>
+  </figure>
+
+  <p>Pancreas does not appear among the top tissues for normal <em>CLDN18</em> expression. So how does GTEx's "true" normal tissue compare with TCGA's tumor-adjacent "normal" tissue and with tumors? We asked exactly this (<span class="path">Reference &rsaquo; Compare Cohorts</span>). <em>CLDN18</em> expression was much higher in pancreatic tumors than in GTEx normal pancreas, with tumor-adjacent pancreas in between.</p>
+
+  <figure>
+    <span class="plate"><img src="img/compare-cohorts.png" width="1400" height="696" alt="GeneFox Compare Cohorts box plots of CLDN18 on a log2(TPM+0.001) scale. TCGA-PAAD tumors have a median near 5, TCGA-PAAD tissue-normal near -1, and GTEx pancreas near -4. Stomach tumor, stomach tissue-normal and GTEx stomach are all high." loading="lazy"></span>
+    <figcaption><span class="label">Compare Cohorts</span>Pancreatic tumors (TCGA-PAAD) against tumor-adjacent tissue and GTEx normal pancreas, with the matching stomach cohorts for reference.</figcaption>
+  </figure>
+
+  <h2>Which pancreatic cancers?</h2>
+
+  <p>Using the clinical metadata that comes with TCGA, we then asked whether particular subsets of pancreatic cancer express more <em>CLDN18</em> than others (<span class="path">TCGA &rsaquo; TCGA-PAAD &rsaquo; Expression &rsaquo; Expression by Group</span>), and so might be better candidates for zolbetuximab. Several of the common histologies showed high expression, as the overall distribution would lead you to expect. Others showed quite low expression, including the basaloid squamous, undifferentiated and neuroendocrine variants. This suggests that the more typical adenocarcinomas, ductal carcinomas and mucinous carcinomas are the more realistic targets for further investigation.</p>
+
+  <figure class="narrow">
+    <span class="plate"><img src="img/paad-by-diagnosis.png" width="1200" height="1179" alt="GeneFox box plots of CLDN18 in TCGA-PAAD by primary diagnosis on a log2(TPM+1) scale. Adenocarcinoma NOS, infiltrating duct carcinoma and mucinous adenocarcinoma have medians between 6 and 7. Basaloid squamous cell carcinoma, undifferentiated carcinoma and neuroendocrine carcinoma sit near zero." loading="lazy"></span>
+    <figcaption><span class="label">TCGA-PAAD</span><em>CLDN18</em> by primary diagnosis. Many categories contain only one or two tumors, so read the single points as anecdotes rather than trends.</figcaption>
+  </figure>
+
+  <h2>What travels with CLDN18?</h2>
+
+  <p>Another convenient GeneFox feature is the ability to quickly relate one gene of interest to the rest of the genome, by correlating it against the other ~19,000 genes (<span class="path">TCGA &rsaquo; TCGA-PAAD &rsaquo; Expression &rsaquo; Top correlates</span>). This helps researchers find strong correlates of their gene and the pathways it may be associated with. Several of the top 100 correlates are known gastric foveolar genes, including <em>TFF1</em>, <em>CTSE</em>, <em>ANXA10</em> and <em>VSIG1</em>. And nine of the top 39 are Moffitt classical-subtype genes while none are basal, consistent with <em>CLDN18</em> expression leaning toward the classical subtype.</p>
+
+  <figure>
+    <span class="plate"><img src="img/correlation-volcano.png" width="1400" height="864" alt="GeneFox volcano plot of Pearson correlation with CLDN18 against genome-wide FDR in TCGA-PAAD. Positive correlates reach r of about 0.78; negative correlates reach about -0.6." loading="lazy"></span>
+    <figcaption><span class="label">Correlation</span>Genome-wide Pearson correlation with <em>CLDN18</em> in TCGA-PAAD. The positive tail (red) is longer and stronger than the negative tail (blue).</figcaption>
+  </figure>
+
+  <figure class="narrow">
+    <span class="plate"><img src="img/top-correlates.png" width="1064" height="416" alt="GeneFox table of the top ten CLDN18 correlates: ANXA10, CTSE, TFF1, PLA2G10, CYP2S1, VSIG1, CAPN8, SLC9A2, VSIG2 and NR1I2, with r from 0.785 to 0.716 and n of 178." loading="lazy"></span>
+    <figcaption><span class="label">Top correlates</span>The ten strongest positive correlates (n = 178 tumors), led by the gastric foveolar genes <em>ANXA10</em>, <em>CTSE</em> and <em>TFF1</em>.</figcaption>
+  </figure>
+
+  <h2>A link to KRAS signaling?</h2>
+
+  <p>We then asked whether <em>CLDN18</em> expression tracks with the best-known driver of pancreatic cancer: <em>KRAS</em> and the MAPK pathway. We plotted the MAPK Pathway Activity Score (MPAS) genes identified by <a href="https://www.nature.com/articles/s41698-018-0051-4">Wagle et al. 2018</a> alongside <em>CLDN18</em> (<span class="path">TCGA &rsaquo; TCGA-PAAD &rsaquo; DE &amp; Heatmap &rsaquo; Heatmap</span>). Many of the <em>CLDN18</em>-high samples were also high for the MPAS genes, and many carried known <em>KRAS</em> mutations. This could hint at a combination worth exploring with daraxonrasib, the pan-RAS inhibitor from Revolution Medicines that the <a href="https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-daraxonrasib-metastatic-pancreatic-adenocarcinoma">FDA approved in August 2026</a> for previously treated metastatic pancreatic cancer, where it has shown significant benefit for some but not all patients.</p>
+
+  <figure class="wide">
+    <span class="plate"><img src="img/mpas-heatmap.png" width="2400" height="535" alt="GeneFox heatmap of z-scored expression for the MPAS genes PHLDA1, DUSP6, CCND1, EPHA2, SPRY2, SPRY4, EPHA4, DUSP4, ETV4 and ETV5, plus CLDN18, across TCGA-PAAD samples, with annotation tracks for sample type, KRAS mutation and disease type." loading="lazy"></span>
+    <figcaption><span class="label">MPAS heatmap</span>MPAS genes and <em>CLDN18</em> (starred) across TCGA-PAAD samples, with <em>KRAS</em> mutation status in red on the second annotation track. Color shows z-scored expression from −2.5 (blue) to 2.5 (red).</figcaption>
+  </figure>
+
+  <h2>Does it hold up in another cohort?</h2>
+
+  <p>Next we wanted to see whether these results hold in other datasets. TCGA is an outstanding resource, but it is weighted toward primary tumors and earlier-stage disease, while many pancreatic cancer patients are diagnosed only at an advanced stage and much of the disease burden comes from metastatic tumors. <a href="https://pubmed.ncbi.nlm.nih.gov/26343385/">Moffitt et al. 2015</a> (<a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE71729">GSE71729</a>) profiled both primary and metastatic samples by microarray and annotated them as classical or basal subtypes. GeneFox can open GEO series like this one directly (<span class="path">GEO &rsaquo; GSE71729 &rsaquo; Expression</span>).</p>
+
+  <p>In this cohort, <em>CLDN18</em> expression looked similar in primary and metastatic samples, which is encouraging for zolbetuximab repurposing. It was much higher in the classical subtype ("1") than in the basal subtype ("2"). Basal samples had values close to those of normal samples, again pointing to classical-subtype pancreatic adenocarcinoma as the indication of interest.</p>
+
+  <figure>
+    <span class="plate"><img src="img/gse71729-subtype.png" width="1400" height="723" alt="GeneFox box plots of CLDN18 in GSE71729 by tissue type and tumor subtype. Classical (1) samples have medians near 4 in metastatic and 3.2 in primary tissue; basal (2) samples sit near 1.5 to 1.8, close to normal samples." loading="lazy"></span>
+    <figcaption><span class="label">GSE71729</span><em>CLDN18</em> by tissue type, colored by tumor subtype: 0 = normal, 1 = classical, 2 = basal.</figcaption>
+  </figure>
+
+  <h2>What about survival?</h2>
+
+  <p>We saw no clear association between <em>CLDN18</em> expression and survival in pancreatic cancer (<span class="path">TCGA &rsaquo; TCGA-PAAD &rsaquo; Survival</span>). That fits a gene that is tumor-associated but not necessarily a driver of malignancy or morbidity. Stomach adenocarcinoma shows the same thing: higher expression is not associated with survival there either, and across TCGA (<span class="path">Reference &rsaquo; Pan-Cancer Survival</span>) the only associations appear in cancers with low overall <em>CLDN18</em> expression.</p>
+
+  <p>This is an important point. Each of these associations has to be read in the larger context of the disease and the gene. GeneFox helps here by flagging with a warning symbol any result where it cannot reliably estimate a hazard ratio from the underlying data.</p>
+
+  <figure class="narrow">
+    <span class="plate"><img src="img/paad-km.png" width="1204" height="468" alt="GeneFox Kaplan-Meier curves for CLDN18-high and CLDN18-low pancreatic tumors. The two curves cross repeatedly and track closely throughout follow-up." loading="lazy"></span>
+    <figcaption><span class="label">Kaplan–Meier</span><em>CLDN18</em>-high (blue) and -low (green) pancreatic tumors. The curves cross repeatedly. Exploratory and unadjusted.</figcaption>
+  </figure>
+
+  <figure class="narrow">
+    <span class="plate"><img src="img/pan-cancer-survival.png" width="1200" height="1522" alt="GeneFox forest plot of Cox hazard ratios for CLDN18-high versus low across 27 TCGA cancers. LGG, LIHC and MESO are highlighted in red with hazard ratios above 1; the rest, including PAAD and STAD, have confidence intervals crossing 1. LGG and PAAD carry warning symbols." loading="lazy"></span>
+    <figcaption><span class="label">Pan-cancer survival</span>Cox hazard ratios, <em>CLDN18</em>-high vs -low, across TCGA. Only LGG, LIHC and MESO are highlighted. A warning symbol marks estimates GeneFox considers unreliable. Exploratory and unadjusted.</figcaption>
+  </figure>
+
+  <h2>Ten minutes, one phone</h2>
+
+  <p>With GeneFox we worked through this case study in about 10 minutes: a gene target with an FDA-approved therapy, followed into a new candidate indication. You can run the same kind of exploratory analysis on your own genes and indications of interest from the palm of your hand, with no bioinformatics experience required. GeneFox is available now for iOS, macOS and Android from the <a href="https://apps.apple.com/app/genefox/id6778824242">App Store</a> and <a href="https://play.google.com/store/apps/details?id=com.vds.GeneFox">Google Play</a>, or at <a href="https://genefox.app/download">genefox.app/download</a>.</p>
+
+  <div class="note">
+    <p>These are exploratory analyses of public data and have not been peer reviewed. Associations are unadjusted and suggest questions to follow up, not conclusions. GeneFox is for research exploration and hypothesis generation. It is not intended for clinical decision making.</p>
+  </div>
+
+  <div class="footer-plug">
+    <p><strong>GeneFox is built to help researchers decide which questions are worth deeper investment. When you're ready for that deeper work (reproducible pipelines, multi-omic integration, biomarker and translational analysis), <a href="https://vindhyadatascience.com">Vindhya Data Science</a> can help. <a href="mailto:info@vindhyadatascience.com">Get in touch</a>.</strong></p>
+  </div>
+
+  <h2>References</h2>
+  <ol class="refs">
+    <li>GeneFox: <a href="https://genefox.app/">genefox.app</a></li>
+    <li>FDA approves zolbetuximab-clzb with chemotherapy for gastric or gastroesophageal junction adenocarcinoma (October 2024): <a href="https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-zolbetuximab-clzb-chemotherapy-gastric-or-gastroesophageal-junction-adenocarcinoma">fda.gov</a></li>
+    <li>Genotype-Tissue Expression (GTEx) Portal: <a href="https://www.gtexportal.org/home/">gtexportal.org</a></li>
+    <li>NCI Genomic Data Commons (TCGA): <a href="https://portal.gdc.cancer.gov">portal.gdc.cancer.gov</a></li>
+    <li>Wagle M-C, et al. A transcriptional MAPK Pathway Activity Score (MPAS) is a clinically relevant biomarker in multiple cancer types. <em>npj Precision Oncology</em> 2018: <a href="https://www.nature.com/articles/s41698-018-0051-4">nature.com/articles/s41698-018-0051-4</a></li>
+    <li>FDA approves daraxonrasib for metastatic pancreatic adenocarcinoma (August 2026): <a href="https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-daraxonrasib-metastatic-pancreatic-adenocarcinoma">fda.gov</a></li>
+    <li>Moffitt RA, et al. Virtual microdissection identifies distinct tumor- and stroma-specific subtypes of pancreatic ductal adenocarcinoma. <em>Nature Genetics</em> 2015: <a href="https://pubmed.ncbi.nlm.nih.gov/26343385/">pubmed.ncbi.nlm.nih.gov/26343385</a></li>
+    <li>GSE71729: <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE71729">ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE71729</a></li>
+  </ol>
+</article>
+
+<div class="article-end">
+  <p>&copy; 2021&ndash;2026 Vindhya Data Science, Inc. &middot; <a href="https://vindhyadatascience.com/">vindhyadatascience.com</a> &middot; <a href="mailto:info@vindhyadatascience.com">info@vindhyadatascience.com</a></p>
+</div>
+
+</body>
+</html>

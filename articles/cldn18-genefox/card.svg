@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-label="CLDN18.2: looking beyond gastric cancer, a GeneFox case study">
+  <!-- Box geometry is traced from the GeneFox pan-cancer CLDN18 plot
+       (01_cldn18-pan-cancer-expression): boxes, medians and whiskers keep
+       their relative positions; only the x scale is changed. -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#161028"/>
+      <stop offset="55%" stop-color="#221a38"/>
+      <stop offset="100%" stop-color="#2c1f42"/>
+    </linearGradient>
+    <linearGradient id="horizon" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#b53694" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#b53694" stop-opacity="0.20"/>
+    </linearGradient>
+    <linearGradient id="wordmark" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#a9a0f0"/>
+      <stop offset="100%" stop-color="#e06bbf"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#5cb8e6" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#5cb8e6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <rect y="620" width="1600" height="280" fill="url(#horizon)"/>
+
+  <g>
+    <text x="120" y="190" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="26" letter-spacing="9" fill="#8a8ae0">VINDHYA DATA SCIENCE · GENEFOX CASE STUDY</text>
+    <text x="110" y="350" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-weight="700" font-size="160" fill="url(#wordmark)">CLDN18.2</text>
+    <text x="120" y="430" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="42" fill="#dcd9ea">Looking beyond gastric cancer for a</text>
+    <text x="120" y="484" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="42" fill="#dcd9ea">known antibody target</text>
+  </g>
+
+  <ellipse cx="1030" cy="730" rx="420" ry="120" fill="url(#glow)"/>
+  <g>
+    <g stroke="#4a4360" stroke-width="2" stroke-dasharray="6 8">
+      <line x1="420" y1="610" x2="420" y2="850"/>
+      <line x1="844" y1="610" x2="844" y2="850"/>
+      <line x1="1269" y1="610" x2="1269" y2="850"/>
+    </g>
+    <g font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace" font-size="26" text-anchor="end">
+      <text x="390" y="669" fill="#9a94b8">TCGA-STAD</text>
+      <text x="390" y="739" fill="#8fd3f4">TCGA-PAAD</text>
+      <text x="390" y="809" fill="#9a94b8">TCGA-LUAD</text>
+    </g>
+    <line x1="428" y1="660" x2="1480" y2="660" stroke="#d67ab8" stroke-width="3" opacity="0.6"/>
+    <rect x="840" y="640" width="379" height="40" rx="7" fill="#6f6fa8" opacity="0.85"/>
+    <rect x="1050" y="648" width="24" height="24" transform="rotate(45 1062 660)" fill="#b53694"/>
+
+    <line x1="420" y1="730" x2="1429" y2="730" stroke="#d67ab8" stroke-width="3" opacity="0.6"/>
+    <rect x="813" y="710" width="357" height="40" rx="7" fill="#5cb8e6"/>
+    <rect x="1024" y="718" width="24" height="24" transform="rotate(45 1036 730)" fill="#b53694"/>
+
+    <line x1="420" y1="800" x2="1422" y2="800" stroke="#d67ab8" stroke-width="3" opacity="0.6"/>
+    <rect x="506" y="780" width="375" height="40" rx="7" fill="#b56fa6" opacity="0.75"/>
+    <rect x="705" y="788" width="24" height="24" transform="rotate(45 717 800)" fill="#b53694"/>
+  </g>
+</svg>
