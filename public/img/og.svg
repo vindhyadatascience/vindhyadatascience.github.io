@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- Link-preview source for og.png (1200x630; previews don't take SVG).
+       Composed from the site's own dark banner and white logo. -->
+  <rect width="1200" height="630" fill="#1a1c2c"/>
+  <image xlink:href="banner_dark.svg" x="-375" y="0" width="1575" height="630"/>
+  <image xlink:href="VDS-FullLogo-White-CMYK.svg" x="80" y="80" width="400" height="224"/>
+  <g font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="32" fill="#dcd9ea">
+    <text x="88" y="400">Data science &amp; bioinformatics</text>
+    <text x="88" y="442">contract research organization</text>
+  </g>
+</svg>
