@@ -1,5 +1,29 @@
 [
     {
+        "title": "vmup in 80 seconds: spin up a VM, tunnel in, get to work",
+        "description": "Oct 27, 2026 - Data scientists shouldn't have to click through a cloud console or learn Terraform to get a secure machine to work on, so we built vmup. This short film shows the whole flow. One command from your terminal builds an isolated VPC, an IAP-only firewall and a compute instance with Terraform, and shows the hourly cost before you launch. You reach the VM through an IAP tunnel to localhost, with no public IPs. When you're done, tear it all down, and your persistent data disk stays, ready to attach to the next VM.\n\nvmup is a single binary for macOS, Linux and Windows, free and open source under Apache-2.0.",
+        "imageUrl": "https://storage.googleapis.com/vds-website-public/public/news_img/vmup-liftoff-film-poster.jpg",
+        "videoUrl": "https://storage.googleapis.com/vds-website-public/public/video/vmup-liftoff-film.mp4",
+        "links": [
+            {
+                "text": "Docs",
+                "url": "https://vindhyadatascience.com/vmup/"
+            },
+            {
+                "text": "GitHub",
+                "url": "https://github.com/vindhyadatascience/vmup"
+            },
+            {
+                "text": "Read the article",
+                "url": "/articles/vmup-tui/"
+            },
+            {
+                "text": "LinkedIn",
+                "url": "https://www.linkedin.com/feed/update/urn:li:activity:7520916405186252800/"
+            }
+        ]
+    },
+    {
         "title": "Case study: looking for new indications for a CLDN18.2 antibody with GeneFox",
         "description": "Sep 25, 2026 - Zolbetuximab, approved in 2024 for gastric cancer, is an antibody that targets CLDN18.2, a protein found on the surface of gastric cancer cells. Could other cancers express enough of it to be worth a closer look? We took the question to GeneFox, our mobile transcriptomics app, and worked through it in about 10 minutes using GTEx, TCGA and GEO data.\n\nPancreatic adenocarcinoma stood out: CLDN18 expression was far higher in pancreatic tumors than in normal pancreas, concentrated in the common adenocarcinoma histologies and the classical subtype, and similar in primary and metastatic samples. The article walks through each step, from normal-tissue expression to genome-wide correlates, KRAS/MAPK signaling and survival. These are exploratory, unadjusted analyses of public data that suggest questions to follow up, not conclusions.",
         "imageUrl": "/articles/cldn18-genefox/card.svg",
